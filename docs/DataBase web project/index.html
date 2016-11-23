@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+    <title>welcome to Fei Chinese Dish </title>	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/NavSchemaHideAndShow.js"></script>
+    <link type="text/css" rel="stylesheet" href="StyleSheets/carousel.css">
+</head>
+
+<body>
+    <div id="header" >
+        <div class="logo" >
+        	 	<img alt="" src="png/index/logo2.jpeg" style="width: 120%;" >
+        </div>
+         
+      
+    		<div style="color: black;float: right;">
+    			<img alt="" src="png/index/phone.jpeg" height="17" width="17" class="ico_place">
+    			My phone:412-315-1699
+    		</div>
+     
+  
+	    <div id="nav" >
+	        <ul>
+	            <li><a href="/">
+	                Home    
+	                </a></li>
+	            <li onmouseover="showls(this)" onmouseout="nonels(this)"><a href="">Introdution</a>
+	                <ul style="z-index: 200;">
+	                	    <li><a href="/" style="z-index: 100;">tutoring</a></li>
+	                </ul>
+	            </li>
+	            <li onmouseover="showls(this)" onmouseout="nonels(this)" style="z-index: 200;"><a href="">Computer</a>
+	                <ul style="z-index: 200;">
+	                    <li><a href="">Hardware</a></li>
+	                    <li><a href="">style</a></li>
+	                  	
+	                </ul>
+	            </li>
+	           
+	            <li><a href="contact.html">About Us</a></li>
+	        </ul>
+	    </div>
+	    
+	    
+    </div>
+    <div>
+    		<form  id="form" enctype="multipart/form-data" action="" method="post">
+    			user:<br>
+    			<input type="text" value="please enter your username"><br>
+    			password:<br>
+    			<input type="password" value="please enter your password"><br>
+    			<input type="button" value="login"/>
+    		</form>
+    	</div>
+    <!--
+    	the photo show
+    -->
+ 
+
+<div class="J_Poster poster-main"  data-setting='{
+                                                                                    "width":800,
+                                                                                    "height":270,
+                                                                                    "posterWidth":640,
+                                                                                    "posterHeight":270,
+                                                                                    "scale":0.8,
+                                                                                    "autoPlay":true,
+                                                                                    "delay":5000,
+                                                                                    "speed":300,
+                                                                                    "vericalAlign":"top"
+																					}'>
+	<div class="poster-btn poster-prev-btn"></div>
+    <ul class="poster-list">
+    		<li class="poster-item"><a href="#"><img alt="" src="png/index/brower1.png" style="width:80%;" ></a></li>
+        <li class="poster-item"><a href="#"><img alt="" src="png/index/brower2.jpg" style="width:80%;"></a></li>
+        <li class="poster-item"><a href="#"><img alt="" src="png/index/brower3.jpg" style="width:80%;"></a></li>
+        <li class="poster-item"><a href="#"><img alt="" src="png/index/brower4.jpg" style="width:80%;"></a></li>
+    </ul>
+    <div class="poster-btn poster-next-btn"></div>
+</div>
+    
+
+<script>
+
+$(function(){
+	Carousel.init($(".J_Poster"));
+});
+</script>
+
+
+    
+ 
+</body>
+</html>
