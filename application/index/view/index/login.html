@@ -6,9 +6,11 @@
 	</head>
 	<body>
 		<center>
-			Welcome
+			{if condition="isset($username)"}Welcome {$username}! Now it is {$time}
+			{else /}Welcome! Now it is {$time}
+			{/if}
 
-			<form name="queryInput" action="login.php" method="POST">
+			<form name="queryInput" action="" method="POST">
 				Username:<input type="text" name="username">
 				Password:<input type="text" name="password">
 				<input type="submit" value="submit">
