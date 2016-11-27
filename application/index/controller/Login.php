@@ -51,6 +51,7 @@ class Login extends Controller
                     //redirect('http://'.$_SERVER['HTTP_HOST']);
                     //$this->redirect($_SERVER['HTTP_HOST'].str_replace(".html", "", url("Index/index")));
                     $_SESSION['username'] = $user["username"];
+                    $_SESSION['userID'] = $user['']
                     $url = str_replace(".html", "", url("Index/index"));
                     $url = str_replace("/index", "", $url);
                     $this->success('登录成功！'.$_SESSION['username'], $url);
