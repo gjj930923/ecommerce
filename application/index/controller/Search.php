@@ -5,6 +5,17 @@ class Search extends Controller
 {
     public function index()
     {
+        session_start();
+        if(isset($_SESSION['customerID'])){
+            if($_SESSION['customerID'] % 2 == 1){
+                $customer = Home_customers::get($_SESSION['customerID']);
+                $this->assign('customer', $customer);
+            }
+            else{
+                $customer = Business_customers::get($_SESSION['customerID']);
+                $this->assign('customer', $customer);
+            }
+        }
         $keyword = $_GET['keyword'];
         $condition = "name LIKE %".$keyword."%";
         if(!empty($_GET['type'])) {

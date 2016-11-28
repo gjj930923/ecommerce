@@ -8,8 +8,6 @@ class Login extends Controller
 {
     public function index()
     {
-        //$time = date("Y-m-d",time());
-        //$this->assign('time', $time);
         return $this->fetch();
     }
     /*public function login($username="",$password="")
@@ -33,59 +31,60 @@ class Login extends Controller
     }*/
 
     public function login(){
-        $time = date("Y-m-d",time());
         if(isset($_POST["username"])&&isset($_POST["password"]))
         {
             if(!empty($_POST["username"])&&!empty($_POST["password"]))
             {
                 $username = $_POST["username"];
                 $password = $_POST["password"];
-                $condition=array("username"=>$username,"password"=>$password);
-                $user=db("login")->where($condition)->find();
-                if($user)
+                $condition = "username = " . $username;
+                $home_customer=db("home_customers")->where($condition)->find();
+                if($home_customer)
                 {
-                    session_start();
-                    //return $this->fetch("index");
-                    //$this->success('新增成功', 'index');
-                    //$this->redirect('index');
-                    //redirect('http://'.$_SERVER['HTTP_HOST']);
-                    //$this->redirect($_SERVER['HTTP_HOST'].str_replace(".html", "", url("Index/index")));
-                    $_SESSION['username'] = $user["username"];
-                    $_SESSION['userID'] = $user['']
-                    $url = str_replace(".html", "", url("Index/index"));
-                    $url = str_replace("/index", "", $url);
-                    $this->success('登录成功！'.$_SESSION['username'], $url);
-                    //redirect(Url::build("index"));
-                    //return "OH MY GOD!";
-                    //$this->redirect(url("Index/index"));
-                    //return "OH MY GOD!";
+                    if($home_customer['password'] == $password){
+                        session_start();
+                        $_SESSION['username'] = $home_customer['username'];
+                        $_SESSION['customerID'] = $home_customer['customerID'];
+                        $url = str_replace(".html", "", url("Index/index"));
+                        $url = str_replace("/index", "", $url);
+                        $this->success('Welcome, '.$home_customer['nick_name'] . '!', $url);
+                    }
+                    else{
+                        $this->error('Incorrect username or password.');
+                    }
                 }
                 else
                 {
-                    $this->error('新增失败');
+                    $business_customer = db("business_customers")->where($condition)->find();
+                    if($business_customer['password'] == $password){
+                        session_start();
+                        $_SESSION['username'] = $business_customer['username'];
+                        $_SESSION['customerID'] = $business_customer['customerID'];
+                        $url = str_replace(".html", "", url("Index/index"));
+                        $url = str_replace("/index", "", $url);
+                        $this->success('Welcome, '.$business_customer['company_name'] . '!', $url);
+                    }
+                    else{
+                        $this->error('Incorrect username or password.');
+                    }
                 }
-                //return "Hello " . $_POST['username'];
-                //$this->assign('username', $_POST["username"]);
             }
             else
             {
                 $this->assign('notice', "Please enter your Username and Password");
-                //$this->error('User does not exist!');
                 return $this->fetch();
             }
         }
         else
         {
-            //return "Please contact IT departemnt.";
+            //Show the login page.
             return $this->fetch();
         }
-        //$this->assign('time', $time);
-
     }
 
     function logout(){
         session_start();
-        unset($_SESSION['username']);
+        unset($_SESSION['username'], $_SESSION['customerID']);
         $url = str_replace(".html", "", url("Index/index"));
         $url = str_replace("/index", "", $url);
         $this->success('Logout success!', $url);
