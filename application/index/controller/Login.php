@@ -37,19 +37,22 @@ class Login extends Controller
             {
                 $username = $_POST["username"];
                 $password = $_POST["password"];
-                $condition = "username = " . $username;
+                $condition = array("username"=>$username);
                 $home_customer=db("home_customers")->where($condition)->find();
                 if($home_customer)
                 {
-                    if($home_customer['password'] == $password){
+                    if($home_customer['password'] == $password)
+                    {
                         session_start();
                         $_SESSION['username'] = $home_customer['username'];
                         $_SESSION['customerID'] = $home_customer['customerID'];
+                        $_SESSION['nick_name']=$home_customer['nick_name'];
                         $url = str_replace(".html", "", url("Index/index"));
                         $url = str_replace("/index", "", $url);
                         $this->success('Welcome, '.$home_customer['nick_name'] . '!', $url);
                     }
-                    else{
+                    else
+                    {
                         $this->error('Incorrect username or password.');
                     }
                 }
@@ -60,6 +63,7 @@ class Login extends Controller
                         session_start();
                         $_SESSION['username'] = $business_customer['username'];
                         $_SESSION['customerID'] = $business_customer['customerID'];
+                        $_SESSION['company_name']=$business_customer['company_name'];
                         $url = str_replace(".html", "", url("Index/index"));
                         $url = str_replace("/index", "", $url);
                         $this->success('Welcome, '.$business_customer['company_name'] . '!', $url);
@@ -68,17 +72,20 @@ class Login extends Controller
                         $this->error('Incorrect username or password.');
                     }
                 }
+
             }
             else
             {
-                $this->assign('notice', "Please enter your Username and Password");
-                return $this->fetch();
+                $this->error('Please input your username and password.');
+                //$this->assign('notice', "Please enter your Username and Password");
+                //return $this->fetch();
             }
         }
         else
         {
+            $this->error('Fatal problem!.');
             //Show the login page.
-            return $this->fetch();
+            //$this->error('Please input your username and password.');
         }
     }
 
