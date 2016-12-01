@@ -7,12 +7,12 @@
 <html>
 
 	<head>
+		
 		<meta charset="UTF-8">
 		<title></title>
-		<script></script>
 		<style>
 			td {
-				width="25%" align="right"
+				width:"25%"; align:"right"
 			}
 			
 			td input {
@@ -51,6 +51,32 @@
 				b.style.display = "none";
 			}
 		</script>
+		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			fucntion isExists(obj){
+				var name=$(obj).val();
+				var texname=$(#Username).val();
+				var reg='0';
+				$.ajax({
+					type:"get",
+					url:"user.php",
+					data:"act=vality&uname"+name,
+					async:true,
+					beforeSend:function(){$(#div1).text("checking....");}
+					success:function(res){
+						if(res=="1")
+							$(#div1).text("existing...")
+						if(res=="2")
+							$(#div1).text("passing...")
+						if(res=="3")
+							$(#div1).text("please write your name...")
+					};
+				});	
+			}
+				
+				
+			);
+		</script>
 	</head>
 
 	<body>
@@ -63,6 +89,7 @@
 
 		</div>
 		<div>
+			<div id="div1"></div>
 			<form id="reg_form_P" name="reg_form_P" method="post" action="register_address.html" style="display: none;">
 				<table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
 					<tr>
@@ -76,7 +103,7 @@
 								<table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
 									<tr>
 										<td class="table_name">UserName</td>
-										<td><input type="text" name="Username" /></td>
+										<td><input type="text" name="Username" id="Username" onkeyup="" /></td>
 									</tr>
 									<tr>
 										<td class="table_name">NickName</td>
@@ -96,7 +123,7 @@
 									</tr>
 									<tr>
 										<td class="table_name">Check&nbsp;PassWord</td>
-										<td><input type="checkpassword" /></td>
+										<td><input type="password" /></td>
 									</tr>
 									<tr>
 										<td width="25%" align="right">Income</td>
@@ -179,7 +206,7 @@
 									</tr>
 									<tr>
 										<td class="table_name">Check&nbsp;PassWord</td>
-										<td><input type="checkpassword" /></td>
+										<td><input type="password" /></td>
 									</tr>
 									<tr>
 										<td width="25%" align="right">Income</td>
