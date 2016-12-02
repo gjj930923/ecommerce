@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script></script>
+		<style >
+			td{margin:0px 0px;padding: 0px 0px;}
+			td input{size: 16;}
+			#reg_form{width: 1000px;background-color:aliceblue;border: 2px;font-family: garamond;}
+			
+		</style>
+	</head>
+	<body>
+		<form id="reg_form" name="reg_form1" method="post" action="addCard">
+ 			<table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+			 	<tr>
+			 	<th scope="col">Sign&nbsp;Up</th>
+			 	</tr>
+			 	
+ 				<tr>
+				 	<td>
+				 	<fieldset>
+					 	<legend>Billing&nbsp;Information</legend>
+					 	<table width="85%" border="0"  >
+						 	<tr>
+						 		<td >credit&nbsp;card&nbsp;number</td>
+						 		<td>
+						 			<input type="number" name="creditcard_number"/>
+						 		</td>
+						 		
+						 	</tr>
+						 	<tr>
+						 		<td width="15%">espire&nbsp;date&nbsp;:</td>
+						 		<td >
+						 			<label>year</label>
+						 			<select name="year" >
+						 				<option selected="" value="2016">2016</option>
+						 				<option value="2017">2017</option>
+						 				<option value="2018">2018</option>
+						 				<option value="2019">2019</option>
+						 			</select>
+						 			mon
+						 			<select name="month">
+						 				<option selected="selected"value="1">1</option>
+						 				<option value="2" >2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5" >5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8" >8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+						 			</select>
+						 		</td>
+						 	</tr>
+					 	</table>
+				 	</fieldset>
+				 	</td>
+			 	</tr>
+			 	
+	 				
+			 	<tr>
+			 		<td>
+			 			<table width="85%" border="0" cellspacing="2" cellpadding="0">
+			 			<tr>
+						 	<td align="right"><input type="submit" value="Submit" /></td>
+						 	<td><input type="reset" value="Reset" /></td>
+			 			</tr>
+			 			</table> 
+			 	  	</td>
+			 	</tr>
+ 		</table>
+ 	</form>
+		<form id="goback" action="goback" method="post">
+			<td align="right"><input type="submit" value="Back"></td>
+		</form>
+ 	
+	</body>
+</html>

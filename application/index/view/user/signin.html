@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--
+	作者：offline
+	时间：2016-11-27
+	描述：form id=reg_form_P
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        td {
+            width="25%" align="right"
+        }
+
+        td input {
+            size: 16;
+        }
+
+        #reg_form_P,
+        #reg_form_B {
+            width: 1000px;
+            background-color: aliceblue;
+            border: 2px;
+            font-family: garamond;
+        }
+
+        #reg_form_P .table_name,
+        #reg_form_B .table_name {
+            width: 25%;
+            text-align: right;
+        }
+    </style>
+    <script>
+        function showP() {
+            var a = document.getElementById('reg_form_P');
+            alert(a.name);
+            a.style.display = "block";
+
+            var b = document.getElementById('reg_form_B');
+
+            b.style.display = "none";
+        }
+
+        function showB() {
+            var a = document.getElementById('reg_form_B');
+            a.style.display = "block";
+            var b = document.getElementById('reg_form_P');
+            b.style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<div>
+    <form action="" method="get">
+        choose your customer type:<br /><br />
+        <label><input name="customer" type="radio" value="home" id="home" onclick="showP()"/>home </label>
+        <label><input name="customer" type="radio" value="business" id="business" onclick="showB()"/>business </label>
+    </form>
+
+</div>
+<div>
+    <form id="reg_form_P" name="reg_form_P" method="post" action="addUser" style="display: none;">
+        <table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col">Sign&nbsp;Up</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>Personal&nbsp;Information</legend>
+                        <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+                            <tr>
+                                <td><input type="hidden" name="customerType" value="Home"/></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">UserName</td>
+                                <td><input type="text" name="Username"  required /></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">&nbsp;Password</td>
+                                <td><input type="password" name="Password" title=""required /></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">Check&nbsp;PassWord</td>
+                                <td><input type="password"name="checkPassword"  required /></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">E-mail</td>
+                                <td><input type="text"name="email"  required /></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">NickName</td>
+                                <td><input type="text" name="NickName" required/></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">First&nbsp;Name</td>
+                                <td><input type="text" name="Fname"required /></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">&nbsp;Last&nbsp;Name</td>
+                                <td><input type="text" name="Lname"required /></td>
+                            </tr>
+
+                            <tr>
+                                <td width="25%" align="right">Income</td>
+                                <td><input type="number" size="10"name="Income"/></td>
+                            </tr>
+                            <tr>
+                                <td width="25%" align="right">Age</td>
+                                <td><input type="number" size="10"name="Age" /></td>
+                            </tr>
+                            <tr>
+                                <td width="25%" align="right">Marriage</td>
+                                <td>
+                                    <select name="marriage">
+                                        <option selected="selected" name="1" value="unknown">unknown</option>
+                                        <option  name="1" value="yes">yes</option>
+                                        <option  name="1" value="no">no</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="25%" align="right">gender</td>
+                                <td>
+                                    <select name="gender">
+                                        <option selected="selected"name="2" value="male">male</option>
+                                        <option name="2" value="female">female</option>
+
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table width="85%" border="0" cellspacing="2" cellpadding="0">
+                        <tr>
+                            <td align="right"><input type="submit" value="Submit" /></td>
+                            <td><input type="reset" value="Reset" /></td>
+
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div>
+    <form id="reg_form_B" name="reg_form_B" method="post" action="addUser" style="display: none;">
+        <table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col">Sign&nbsp;Up</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>Business&nbsp;Information</legend>
+                        <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+                            <tr>
+                                <td><input type="hidden" name="customerType" value="Business"/></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">UserName</td>
+                                <td><input type="text" name="Username" required/></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">&nbsp;Password</td>
+                                <td><input type="password" name="Password"  title="" required /></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">Check&nbsp;PassWord</td>
+                                <td><input type="password"name="checkPassword" required/></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">Company Name</td>
+                                <td><input type="text" name="company_name" required/></td>
+                            </tr>
+                            <tr>
+                                <td class="table_name">E-mail</td>
+                                <td><input type="text" name="email" required /></td>
+                            </tr>
+                            <tr>
+                                <td width="25%" align="right">Annual Income</td>
+                                <td><input type="number" name="annual_income" /></td>
+                            </tr>
+                            <tr>
+                                <td width="25%" align="right">Category</td>
+                                <td>
+                                    <select name="category">
+                                        {volist name="business_category" id="vo"}
+                                        <option  name="3" value="{$vo.business_categoryID}">{$vo.business_category_name}</option>
+                                        {/volist}
+
+                                    </select>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table width="85%" border="0" cellspacing="2" cellpadding="0">
+                        <tr>
+                            <td align="right"><input type="submit" value="Submit" /></td>
+                            <td><input type="reset" value="Reset" /></td>
+
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+
+</html>

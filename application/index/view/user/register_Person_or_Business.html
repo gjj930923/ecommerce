@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--
+	作者：offline
+	时间：2016-11-27
+	描述：form id=reg_form_P
+-->
+<html>
+
+	<head>
+		
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			td {
+				width:"25%"; align:"right"
+			}
+			
+			td input {
+				size: 16;
+			}
+			
+			#reg_form_P,
+			#reg_form_B {
+				width: 1000px;
+				background-color: aliceblue;
+				border: 2px;
+				font-family: garamond;
+			}
+			
+			#reg_form_P .table_name,
+			#reg_form_B .table_name {
+				width: 25%;
+				text-align: right;
+			}
+		</style>
+		<script>
+			function showP() {
+				var a = document.getElementById('reg_form_P');
+				alert(a.name);
+				a.style.display = "block";
+
+				var b = document.getElementById('reg_form_B');
+
+				b.style.display = "none";
+			}
+
+			function showB() {
+				var a = document.getElementById('reg_form_B');
+				a.style.display = "block";
+				var b = document.getElementById('reg_form_P');
+				b.style.display = "none";
+			}
+		</script>
+		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			function isExists(obj){
+				var name=$(obj).val();
+				var texname=$("#Username").val();
+				var reg='0';
+				$.ajax({
+					type:"get",
+					url:"User/checkHomeUsername",
+					data:"act=vality&uname"+name,
+					async:true,
+					beforeSend:function(){$("#div1").text("checking....");},
+					success:function(res){
+						if(res=="1")
+							$("#div1").text("existing...");
+						if(res=="0")
+							$("#div1").text("passing...");
+						if(res=="3")
+							$("#div1").text("please write your name...");
+					},
+					error:function(){alert("wrong");}
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<form action="" method="get">
+				choose your customer type:<br /><br />
+				<label><input name="customer" type="radio" value="" id="home" onclick="showP()"/>home </label>
+				<label><input name="customer" type="radio" value="" id="business" onclick="showB()"/>business </label>
+			</form>
+
+		</div>
+		<div>
+			<div id="div1"></div>
+			<form id="reg_form_P" name="reg_form_P" method="post" action="register_address.html" style="display: none;">
+				<table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<th scope="col">Sign&nbsp;Up</th>
+					</tr>
+
+					<tr>
+						<td>
+							<fieldset>
+								<legend>Personal&nbsp;Information</legend>
+								<table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+									<tr>
+										<td class="table_name">UserName</td>
+										<td><input type="text" name="Username" id="Username" onkeyup="isExists(this)" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">NickName</td>
+										<td><input type="text" name="NickName" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">&nbsp;Password</td>
+										<td><input type="password" size="16" title="" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">First&nbsp;Name</td>
+										<td><input type="text" name="Fname" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">&nbsp;Last&nbsp;Name</td>
+										<td><input type="text" name="Lname" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">Check&nbsp;PassWord</td>
+										<td><input type="password" /></td>
+									</tr>
+									<tr>
+										<td width="25%" align="right">Income</td>
+										<td><input type="text" size="30" /></td>
+									</tr>
+									<tr>
+										<td width="25%" align="right">Age</td>
+										<td><input type="text" size="30" /></td>
+									</tr>
+									<tr>
+										<td width="25%" align="right">Marrage</td>
+										<td>
+											<select>
+												<option selected="selected">unknown</option>
+												<option>yes</option>
+												<option>no</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td width="25%" align="right">gender</td>
+										<td>
+											<select>
+												<option selected="selected">male</option>
+												<option>female</option>
+
+											</select>
+										</td>
+									</tr>
+								</table>
+							</fieldset>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<table width="85%" border="0" cellspacing="2" cellpadding="0">
+								<tr>
+									<td align="right"><input type="submit" value="Submit" /></td>
+									<td><input type="reset" value="Reset" /></td>
+
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div>
+			<form id="reg_form_B" name="reg_form_B" method="post" action="register_address.html" style="display: none;">
+				<table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<th scope="col">Sign&nbsp;Up</th>
+					</tr>
+
+					<tr>
+						<td>
+							<fieldset>
+								<legend>Business&nbsp;Information</legend>
+								<table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+									<tr>
+										<td class="table_name">UserName</td>
+										<td><input type="text" name="Username" onkeyup="isExists(this)"/></td>
+									</tr>
+									<tr>
+										<td class="table_name">NickName</td>
+										<td><input type="text" name="NickName" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">&nbsp;Password</td>
+										<td><input type="password" size="16" title="" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">First&nbsp;Name</td>
+										<td><input type="text" name="Fname" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">&nbsp;Last&nbsp;Name</td>
+										<td><input type="text" name="Lname" /></td>
+									</tr>
+									<tr>
+										<td class="table_name">Check&nbsp;PassWord</td>
+										<td><input type="password" /></td>
+									</tr>
+									<tr>
+										<td width="25%" align="right">Income</td>
+										<td><input type="text" size="30" /></td>
+									</tr>
+
+								</table>
+							</fieldset>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<table width="85%" border="0" cellspacing="2" cellpadding="0">
+								<tr>
+									<td align="right"><input type="submit" value="Submit" /></td>
+									<td><input type="reset" value="Reset" /></td>
+
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+
+</html>

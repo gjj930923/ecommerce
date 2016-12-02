@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+	作者：offline
+	时间：2016-11-27
+	描述：form id=reg_form_P
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+     <style>
+         td {
+             width="25%" align="right"
+         }
+
+         td input {
+             size: 16;
+         }
+
+         #reg_form_P,
+         #reg_form_B {
+             width: 1000px;
+             background-color: aliceblue;
+             border: 2px;
+             font-family: garamond;
+         }
+
+         #reg_form_P .table_name,
+         #reg_form_B .table_name {
+             width: 25%;
+             text-align: right;
+         }
+     </style>
+
+
+ </head>
+
+ <body>
+     {if condition="isset($customerID)&&$customerID%2==1"}
+ <div>
+     <form id="reg_form_P" name="reg_form_P" method="post" action="updateInformation" >
+         <table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+             <tr>
+                 <th scope="col">Sign&nbsp;Up</th>
+             </tr>
+
+             <tr>
+                 <td>
+                     <fieldset>
+                         <legend>Personal&nbsp;Information</legend>
+                         <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+                             <tr>
+                                 <td class="table_name">UserName</td>
+                                 <td><input type="text" name="Username" value="{$username}" readonly="true"  /></td>
+                             </tr>
+                             <tr>
+                                 <td class="table_name">E-mail</td>
+                                 <td><input type="text" name="email"  value="{$email}" /></td>
+                             </tr>
+                             <tr>
+                                 <td class="table_name">NickName</td>
+                                 <td><input type="text" name="NickName" value="{$name}"/></td>
+                             </tr>
+                             <tr>
+                                 <td class="table_name">First&nbsp;Name</td>
+                                 <td><input type="text" name="Fname" value="{$fname}"/></td>
+                             </tr>
+                             <tr>
+                                 <td class="table_name">&nbsp;Last&nbsp;Name</td>
+                                 <td><input type="text" name="Lname" value="{$lname}" /></td>
+                             </tr>
+
+                             <tr>
+                                 <td width="25%" align="right">Income</td>
+                                 <td><input type="number" size="10" name="Income" value="{$income}"/></td>
+                             </tr>
+                             <tr>
+                                 <td width="25%" align="right">Age</td>
+                                 <td><input type="number" size="10" name="Age" value="{$age}"/></td>
+                             </tr>
+                             <tr>
+                                 <td width="25%" align="right">Marriage</td>
+                                 <td>
+                                     <select name="marriage">
+                                         <option selected="selected" name="1" value="{$marriage}">{$marriage}</option>
+                                         {if condition="$marriage!='unknown'"}
+                                         <option  name="1" value="unknown">unknown</option>
+                                         {else/}
+                                         {/if}
+                                         {if condition="$marriage!='unknown'"}
+                                         <option  name="1" value="yes">yes</option>
+                                         {else/}
+                                         {/if}
+                                         {if condition="$marriage!='no'"}
+                                         <option  name="1" value="no">no</option>
+                                         {else/}
+                                         {/if}
+                                     </select>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td width="25%" align="right">gender</td>
+                                 <td>
+                                     <select name="gender">
+                                         <option selected="selected" name="2" value="{$gender}">{$gender}</option>
+                                         {if condition="$gender=='male'"}
+                                         <option name="2" value="female">female</option>
+                                         {else/}
+                                         <option name="2" value="male">male</option>
+                                         {/if}
+                                     </select>
+                                 </td>
+                             </tr>
+                         </table>
+                     </fieldset>
+                 </td>
+             </tr>
+
+             <tr>
+                 <td>
+                     <table width="85%" border="0" cellspacing="2" cellpadding="0">
+                         <tr>
+                             <td align="right"><input type="submit" value="Update" /></td>
+                             <td><input type="reset" value="Reset" /></td>
+                         </tr>
+                     </table>
+                 </td>
+             </tr>
+         </table>
+     </form>
+     <form id="goback" action="goback" method="post">
+         <td align="right"><input type="submit" value="Back"></td>
+     </form>
+ </div>
+
+     {elseif condition="isset($customerID)&&$customerID%2==0"}
+ <div>
+     <form id="reg_form_B" name="reg_form_B" method="post" action="updateInformation" >
+         <table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+             <tr>
+                 <th scope="col">Sign&nbsp;Up</th>
+             </tr>
+
+             <tr>
+                 <td>
+                     <fieldset>
+                         <legend>Business&nbsp;Information</legend>
+                         <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+                             <tr>
+                                 <td class="table_name">UserName</td>
+                                 <td><input type="text" name="Username" readonly="true" value="{$username}"/></td>
+                             </tr>
+                             <tr>
+                                 <td class="table_name">Company Name</td>
+                                 <td><input type="text" name="company_name" value="{$name}"/></td>
+                             </tr>
+                             <tr>
+                                 <td class="table_name">E-mail</td>
+                                 <td><input type="text" name="email" value="{$email}" /></td>
+                             </tr>
+                             <tr>
+                                 <td width="25%" align="right">Annual Income</td>
+                                 <td><input type="number" name="annual_income" value="{$annual_income}" /></td>
+                             </tr>
+                             <tr>
+                                 <td width="25%" align="right">Category</td>
+                                 <td>
+                                     <select name="category">
+                                         <option  name="3" value="{$business_categoryID}">{$business_category_name}</option>
+                                         {volist name="business_category" id="vo"}
+                                         <option  name="3" value="{$vo.business_categoryID}">{$vo.business_category_name}</option>
+                                         {/volist}
+                                     </select>
+                                 </td>
+                             </tr>
+                         </table>
+                     </fieldset>
+                 </td>
+             </tr>
+
+             <tr>
+                 <td>
+                     <table width="85%" border="0" cellspacing="2" cellpadding="0">
+                         <tr>
+                             <td align="right"><input type="submit" value="Submit" /></td>
+                             <td><input type="reset" value="Reset" /></td>
+                         </tr>
+                     </table>
+                 </td>
+             </tr>
+         </table>
+     </form>
+     <form id="goback" action="goback" method="post">
+         <td align="right"><input type="submit" value="Back"></td>
+     </form>
+ </div>
+     {else/}
+{/if}
+ </body>
+
+ </html>
