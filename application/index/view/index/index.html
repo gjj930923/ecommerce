@@ -50,15 +50,19 @@
     <div>
     		<form  id="form" enctype="multipart/form-data" action="index/login/login" method="post">
     			user:<br>
-    			<input name="username" type="text" value=""><br>
+    			<input name="username" type="text" value="" required><br>
     			password:<br>
-    			<input name="password" type="password" value=""><br>
+    			<input name="password" type="password" value="" required><br>
     			<input type="submit" value="login"/>
 				<input type="button" value="sign in" onclick="location.href='index/User/signin'"/>
     		</form>
+
     	</div>
 
-    {else/}{$username}<a href="index/login/logout">Exit</a>
+    {else/}{$name}
+		<a href="index/login/logout">Exit</a>
+		<input type="button" value="detailed information" onclick="location.href='index/User/index'"/>
+		<input type="button" value="change password" onclick="location.href='index/User/password'"/>
     {/if}
     <!--
     	the photo show
