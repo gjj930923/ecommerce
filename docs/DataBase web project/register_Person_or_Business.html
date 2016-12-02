@@ -59,7 +59,7 @@
 				var reg='0';
 				$.ajax({
 					type:"get",
-					url:"user.php",
+					url:"",
 					data:"act=vality&uname"+name,
 					async:true,
 					beforeSend:function(){$(#div1).text("checking....");}
@@ -70,7 +70,8 @@
 							$(#div1).text("passing...")
 						if(res=="3")
 							$(#div1).text("please write your name...")
-					};
+					};,
+					error:function(){alert("wrong");}
 				});	
 			}
 				
