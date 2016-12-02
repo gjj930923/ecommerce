@@ -8,28 +8,10 @@ class Login extends Controller
 {
     public function index()
     {
-        return $this->fetch();
+        $url = str_replace(".html", "", url("Index/index"));
+        $url = str_replace("/index", "", $url);
+        $this->redirect($url,301);
     }
-    /*public function login($username="",$password="")
-    {
-        if(isset($_POST['username'])){
-            return "Hello " . $_POST['username'];
-        }
-        else{
-            return "Bye Bye.";
-        }
-        $condition=array("username"=>$username,"password"=>$password);
-        $user=M("User")->where($condition)->select();
-        if ($user)
-        {
-            echo "oh yeah";
-        }
-        else
-        {
-            echo "sorry";
-        }
-    }*/
-
     public function login(){
         if(isset($_POST["username"])&&isset($_POST["password"]))
         {
@@ -49,7 +31,8 @@ class Login extends Controller
                         $_SESSION['nick_name']=$home_customer['nick_name'];
                         $url = str_replace(".html", "", url("Index/index"));
                         $url = str_replace("/index", "", $url);
-                        $this->success('Welcome, '.$home_customer['nick_name'] . '!', $url);
+                        //$this->success('Welcome, '.$home_customer['nick_name'] . '!', $url);
+                        $this->redirect($url,301);
                     }
                     else
                     {
@@ -66,19 +49,23 @@ class Login extends Controller
                         $_SESSION['company_name']=$business_customer['company_name'];
                         $url = str_replace(".html", "", url("Index/index"));
                         $url = str_replace("/index", "", $url);
-                        $this->success('Welcome, '.$business_customer['company_name'] . '!', $url);
+                        //$this->success('Welcome, '.$business_customer['company_name'] . '!', $url);
+                        $this->redirect($url,301);
                     }
-                    else{
+                    else
+                    {
                         $this->error('Incorrect username or password.');
                     }
                 }
-
             }
             else
             {
-                $this->error('Please input your username and password.');
-                //$this->assign('notice', "Please enter your Username and Password");
-                //return $this->fetch();
+                //$this->error('Please enter your username and password.');
+                //$notice= "Please enter your Username and Password";
+                //$_SESSION['notice']=$notice;
+                //$url = str_replace(".html", "", url("Index/index"));
+                //$url = str_replace("/index", "", $url);
+                //$this->redirect($url,301);
             }
         }
         else
@@ -91,10 +78,10 @@ class Login extends Controller
 
     function logout(){
         session_start();
-        unset($_SESSION['username'], $_SESSION['customerID']);
+        unset($_SESSION['username'], $_SESSION['customerID'],$_SESSION['nick_name'],$_SESSION['company_name']);
         $url = str_replace(".html", "", url("Index/index"));
         $url = str_replace("/index", "", $url);
-        $this->success('Logout success!', $url);
+        $this->redirect($url,301);
     }
 }
 
