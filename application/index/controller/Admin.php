@@ -7,6 +7,8 @@ class Admin extends Controller
 {
     public function index()
     {
+        $hardware_list = Db::table("hardwares");
+        $this->assign("hardware_list", $hardware_list);
         return $this->fetch();
     }
     public function addProduct()
