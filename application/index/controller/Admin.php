@@ -22,9 +22,8 @@ class Admin extends Controller
             $status=$_POST['status'];
             $branch=$_POST['branch'];
             $amount=$_POST['amount'];
-            $Url=$_POST['url'];
 
-            $data=(['product_name'=>$product_name,'price'=>$price,'home_discount'=>$home_discount,'business_discount'=>$business_discount,'status'=>$status,'branch'=>$branch,'url'=>$Url,'inventory_amount'=>$amount]);
+            $data=(['product_name'=>$product_name,'price'=>$price,'home_discount'=>$home_discount,'business_discount'=>$business_discount,'status'=>$status,'branch'=>$branch,'inventory_amount'=>$amount]);
             $productID=Db::table('products')->insertGetId($data);
             if ($productID)
             {

@@ -78,11 +78,11 @@
 
                              <tr>
                                  <td width="25%" align="right">Income</td>
-                                 <td><input type="number" size="10" name="Income" value="{$income}"/></td>
+                                 <td><input type="number"  min="0" size="10" name="Income" value="{$income}"/></td>
                              </tr>
                              <tr>
                                  <td width="25%" align="right">Age</td>
-                                 <td><input type="number" size="10" name="Age" value="{$age}"/></td>
+                                 <td><input type="number" min="0" size="10" name="Age" value="{$age}"/></td>
                              </tr>
                              <tr>
                                  <td width="25%" align="right">Marriage</td>
@@ -166,13 +166,13 @@
                              </tr>
                              <tr>
                                  <td width="25%" align="right">Annual Income</td>
-                                 <td><input type="number" name="annual_income" value="{$annual_income}" /></td>
+                                 <td><input type="number" min="0" name="annual_income" value="{$annual_income}" /></td>
                              </tr>
                              <tr>
                                  <td width="25%" align="right">Category</td>
                                  <td>
                                      <select name="category">
-                                         
+
                                          {volist name="business_category" id="vo"}
                                          {if condition="$business_categoryID == $vo.business_categoryID"}
                                          <option  name="3" value="{$vo.business_categoryID}" selected>{$vo.business_category_name}</option>
