@@ -22,7 +22,8 @@
          }
 
          #reg_form_P,
-         #reg_form_B {
+         #reg_form_B ,
+         #reg_form_A{
              width: 1000px;
              background-color: aliceblue;
              border: 2px;
@@ -30,7 +31,8 @@
          }
 
          #reg_form_P .table_name,
-         #reg_form_B .table_name {
+         #reg_form_B .table_name ,
+         #reg_form_A .table_name{
              width: 25%;
              text-align: right;
          }
@@ -170,9 +172,12 @@
                                  <td width="25%" align="right">Category</td>
                                  <td>
                                      <select name="category">
-                                         <option  name="3" value="{$business_categoryID}">{$business_category_name}</option>
+                                         
                                          {volist name="business_category" id="vo"}
-                                         <option  name="3" value="{$vo.business_categoryID}">{$vo.business_category_name}</option>
+                                         {if condition="$business_categoryID == $vo.business_categoryID"}
+                                         <option  name="3" value="{$vo.business_categoryID}" selected>{$vo.business_category_name}</option>
+                                         {else/} <option  name="3" value="{$vo.business_categoryID}">{$vo.business_category_name}</option>
+                                         {/if}
                                          {/volist}
                                      </select>
                                  </td>
@@ -194,10 +199,59 @@
              </tr>
          </table>
      </form>
-     <form id="goback" action="goback" method="post">
+     <form id="goback_B" action="goback" method="post">
          <td align="right"><input type="submit" value="Back"></td>
      </form>
  </div>
+     {elseif condition="isset($adminID)"}
+     <div>
+         <form id="reg_form_A" name="reg_form_A" method="post" action="updateInformation" >
+             <table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+                 <tr>
+                     <th scope="col">Sign&nbsp;Up</th>
+                 </tr>
+
+                 <tr>
+                     <td>
+                         <fieldset>
+                             <legend>Admin&nbsp;Information</legend>
+                             <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+                                 <tr>
+                                     <td class="table_name">UserName</td>
+                                     <td><input type="text" name="Username" readonly="true" value="{$username}"/></td>
+                                 </tr>
+                                 <tr>
+                                     <td class="table_name">First Name</td>
+                                     <td><input type="text" name="fname" value="{$fname}"/></td>
+                                 </tr>
+                                 <tr>
+                                     <td class="table_name">Last Name</td>
+                                     <td><input type="text" name="lname" value="{$lname}"/></td>
+                                 </tr>
+                                 <tr>
+                                     <td class="table_name">E-mail</td>
+                                     <td><input type="text" name="email" value="{$email}" /></td>
+                             </table>
+                         </fieldset>
+                     </td>
+                 </tr>
+
+                 <tr>
+                     <td>
+                         <table width="85%" border="0" cellspacing="2" cellpadding="0">
+                             <tr>
+                                 <td align="right"><input type="submit" value="Submit" /></td>
+                                 <td><input type="reset" value="Reset" /></td>
+                             </tr>
+                         </table>
+                     </td>
+                 </tr>
+             </table>
+         </form>
+         <form id="goback_A" action="goback" method="post">
+             <td align="right"><input type="submit" value="Back"></td>
+         </form>
+     </div>
      {else/}
 {/if}
  </body>

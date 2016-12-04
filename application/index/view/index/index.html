@@ -64,6 +64,10 @@
 		<input type="button" value="detailed information" onclick="location.href='index/User/index'"/>
 		<input type="button" value="change password" onclick="location.href='index/User/password'"/>
     {/if}
+	{if condition="isset($adminID)"}
+	<input type="button" value="New Product" onclick="location.href='index/Admin/index'"/>
+	{else/}
+	{/if}
     <!--
     	the photo show
     -->

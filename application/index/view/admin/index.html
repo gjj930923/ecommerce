@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+	作者：offline
+	时间：2016-11-27
+	描述：form id=reg_form_A
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #addProduct{width: 1000px;background-color:aliceblue;border: 2px;font-family: garamond;}
+        #addProduct .table_name{width:25%;text-align:right;}
+    </style>
+</head>
+<body>
+<form id="addProduct" action="addProduct" method="post">
+    <table  width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>AddProduct</legend>
+                    <table width="80%">
+                        <tr >
+                            <td width="35%" align="right">Product Name</td>
+                            <td><input type="text" name="product_name" required></td>
+                     </tr>
+                        <tr >
+                        <td width="35%" align="right">Price</td>
+                            <td><input type="number" max="100000.0" min="1.0" name="price" required></td>
+                        </tr>
+                        <tr >
+                            <td width="35%" align="right">Inventory Amount</td>
+                            <td><input type="number" min="0" name="amount" required></td>
+                        </tr>
+                        <tr >
+                            <td width="45%" align="right">Home Discount (%)</td>
+                            <td><input type="number" max="100" min="1" name="home_discount" value="100" required></td>
+                        </tr>
+                        <tr >
+                            <td width="45%" align="right">Business Discount(%)</td>
+                            <td><input type="number" max="100" min="1"  name="business_discount" value="100" required></td>
+                        </tr>
+                        <tr >
+                            <td width="35%" align="right">Status</td>
+                            <td>
+                                <select name="status" >
+                                    <option selected="" value="1">Avaliable</option>
+                                    <option value="0">Unavaliable</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr >
+                            <td width="35%" align="right">Branch</td>
+                            <td><input type="text"  name="branch" required></td>
+                        </tr>
+                        <tr >
+                            <td width="35%" align="right">url</td>
+                            <td><input type="text"  name="url" required></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <table width="85%" border="0" >
+                <td align="right"><input type="submit" value="Change"></td>
+                <td><input type="reset" value="Reset"></td>
+            </table>
+        </tr>
+    </table>
+</form>
+<form id="goback_p" action="goback" method="post">
+    <td align="right"><input type="submit" value="Back"></td>
+</form>
+</body>
+</html>

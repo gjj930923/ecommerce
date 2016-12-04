@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>
+			Welcome to INFSCI 2710
+		</title>
+	</head>
+	<body>
+		<center>
+
+			<form name="formLogin" action="./login" method="POST">
+				Username:<input type="text" name="username">
+				Password:<input type="password" name="password">
+				<input type="submit" value="submit">
+			</form>
+			{if condition="isset($notice)"}{$notice}
+			{/if}
+		</center>
+	
+	</body>
+</html>

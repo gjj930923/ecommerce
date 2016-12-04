@@ -50,30 +50,22 @@ class User extends Controller
                 $condition=array('business_categoryID'=>$business_categoryID);
                 $business_category=db('business_category')->where($condition)->find();
                 $this->assign('business_category_name',$business_category['business_category_name']);
+                $business_category = Db::table('business_category')->select();
+                $this->assign('business_category', $business_category);
             }
         }
-
-
-        $business_category = Db::table('business_category')->select();
-        $this->assign('business_category', $business_category);
+        else
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+            $adminID=$_SESSION['adminID'];
+            $condition=array('adminID'=>$adminID);
+            $admin=db('admin')->where($condition)->find();
+            $this->assign('username',$admin['username']);
+            $this->assign('fname',$admin['first_name']);
+            $this->assign('lname',$admin['last_name']);
+            $this->assign('email',$admin['email']);
+        }
        return $this->fetch();
-        /* //Initialize to clarity whether logined
-        session_start();
-        if (!isset($_SESSION['customerID'])) {
-            //$url = str_replace(".html", "", url("Index/index"));
-            //$url = str_replace("/index", "", $url);
-            $this->error("You need to log in first!");
-        } else {
-            if ($_SESSION['customerID'] % 2 == 1) {
-                $customer = db("home_customers")::get($_SESSION['customerID']);
-                $this->assign('customer', $customer);
-            } else {
-                $customer = db("business_customers")::get($_SESSION['customerID']);
-                $this->assign('customer', $customer);
-            }
-        }
-        return $this->fetch();
-        //return "Orders here!";*/
     }
 
     public function signin()
@@ -420,9 +412,26 @@ class User extends Controller
                 }
             }
         }
+        else
+        {
+            $adminID=$_SESSION['adminID'];
+            $first_name=$_POST["fname"];
+            $last_name=$_POST["lname"];
+            $email=$_POST["email"];
+            $data=(['first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,]);
+            $condition=array('adminID'=>$adminID);
+            $result=db('admin')->where($condition)->update($data);
+            if($result)
+            {
+                $url = str_replace(".html", "", url("User/index"));
+                $this->success("update successfully",$url);
+            }
+            else
+            {
+                $this->error("something wrong happen");
+            }
+        }
 
-        $url = str_replace(".html", "", url("User/index"));
-        $this->success("ok",$url);
     }
     public function checkHomeUsername()
     {
@@ -556,7 +565,39 @@ class User extends Controller
         }
         else
         {
-            $this->error("fatal error");
+            $adminID=$_SESSION['adminID'];
+            $old_password=$_POST['old_password'];
+            $new_password=$_POST['new_password'];
+            $check_password=$_POST['check_password'];
+            if($new_password!=$check_password)
+            {
+                $this->error("passwords are not consistent");
+            }
+            else
+            {
+                $condition=array('adminID'=>$adminID);
+                $data=(['password'=>$new_password]);
+                $admin=db('admin')->where($condition)->find();
+                $original_password=$admin['password'];
+                if($original_password==$old_password)
+                    {
+                        $result=db('admin')->where($condition)->update($data);
+                        if($result)
+                        {
+                            $url = str_replace(".html", "", url("Index/index"));
+                            $url = str_replace("/index", "", $url);
+                            $this->success("password has been changed",$url);
+                        }
+                        else
+                        {
+                            $this->error("something wrong happen");
+                        }
+                    }
+                    else
+                    {
+                        $this->error("your old password is incorrect");
+                    }
+                }
         }
     }
 

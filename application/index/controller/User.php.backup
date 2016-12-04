@@ -1,0 +1,64 @@
+<?php
+namespace app\index\controller;
+use think\Controller;
+use think\view;
+use think\Url;
+
+class User extends Controller
+{
+    public function signIn()
+    {
+        return $this->fetch();
+    }
+    public function addUser()
+    {
+        if (isset($_POST["username"])&&isset($_POST["password"]))
+        {
+            $username=$_POST["username"];
+            $password=$_POST["password"];
+            $firstName=$_POST["first name"];
+            $lastName=$_POST["last name"];
+            $email=$_POST["email"];
+            $age=(int)($_POST["age"]);
+            $income=floatval($_POST["income"]);
+            $nickName=$_POST["nickname"];
+            $gender=$_POST["gender"];
+            $marriageStatus=$_POST["marriage status"];
+            $street=$_POST["street"];
+            $city=$_POST["city"];
+            $state=$_POST["state"];
+            $zipCode=$_POST["zip code"];
+            $annualIncome=$_POST["annual income"];
+            $category=$_POST["category"];
+            $companyName=$_POST["company name"];
+            $type=$_POST["type"];
+            if ($type=="Customer")
+            {
+                $condition=array("username"=>$username,"password"=>$password,"firstName"=>$firstName,"lastName"=>$lastName,"email"=>$email,"age"=>$age,"income"=>$income,"nickname"=$nickName);
+                $user=db("Customer")->where($condition)->insert();
+                if ($user!=0)
+                {
+                    $this->assign('ok', "Sign in successfully");
+                    $url = str_replace(".html", "", url("Index/index"));
+                    $url = str_replace("/index", "", $url);
+                    $this->success('登录成功！'.$_SESSION['username'], $url);
+                }
+
+            }
+            else
+            {
+                $condition = array("username" => $username, "password" => $password);
+                $user = db("Business")->where($condition) - insert();
+                $this->assign('ok', "Sign in successfully");
+                return $this->fetch();
+            }
+        }
+        else
+        {
+            return "fatal error.";
+        }
+
+
+    }
+}
+
