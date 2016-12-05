@@ -1,0 +1,84 @@
+#contact {
+	background-color: cornflowerblue;
+    padding-top: 40px;
+}
+
+.wrapper{
+	margin: 0 auto;
+    width: 950px;
+    overflow: hidden;
+}
+#contact h2{
+	color: white;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 45px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#enquiry {
+    position: relative;
+}
+
+div.column{
+	margin-left: 50px;
+	width: 450px;
+	float: left;
+	
+}
+.multi-columns:before {
+    content: ' ';
+    display: table;
+}
+ .multi-columns div.column:first-child {
+    margin-left: 0 ;
+    overflow: hidden;
+}
+input.tb {
+    height: 40px;
+    width: 424px;
+    line-height: 40px;
+    color: #999;
+    margin-bottom: 25px;
+    padding: 0 13px;
+    border-style: none;
+    background-color: #464646;
+    
+ }
+
+textarea.ta {
+    background-color: #464646;
+    border-style: none;
+    color: #999;
+    font: 400 13px Myriad-Pro, 'Myriad Pro';
+    margin-bottom: 25px;
+    padding: 0 13px;
+    display: block;
+    height: 79px;
+    padding: 13px;
+    overflow: hidden;
+    width: 424px;
+}
+
+input.bn {
+    background-color: #666;
+    border-style: none;
+    color: #fff;
+    cursor: pointer;
+    font: 400 14px Myriad-Pro, 'Myriad Pro';
+    height: 40px;
+    letter-spacing: 3px;
+    line-height: 40px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    width: 450px;
+}
+#contact p{
+	color: burlywood;
+    font-size: 13px;
+    margin: 0;
+    padding: 24px 0;
+    text-align: center;
+}

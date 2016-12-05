@@ -1,0 +1,50 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+#site-nav {
+	height: 36px;
+	
+	background-color: #f6f6f6;
+	font-family: garamond;
+	margin: auto;
+}
+
+.site-nav .container {
+	
+	margin: 0 auto;
+}
+
+
+
+.site-nav .user-action {
+	float: left;
+}
+
+.site-nav .quick-menu {
+	float: right;
+}
+
+.site-nav .group .item {
+	float: left;
+	padding: 0 10px;
+	line-height: 14px;
+	cursor: pointer;
+	margin: 11px 0 11px -10px;
+}
+
+.site-nav a {
+	color: #282828;
+}
+
+.site-nav .group .left-split {
+	padding-left: 8px;
+	border-left: 2px solid #ebebeb;
+	margin-left: -2px;
+}

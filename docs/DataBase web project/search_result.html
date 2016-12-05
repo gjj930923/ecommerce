@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>welcome to Fei Chinese Dish </title>
+
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+	<link href="http://www.jq22.com/jquery/font-awesome.4.6.0.css" rel="stylesheet" media="screen">
+	
+	
+	<link type="text/css" rel="stylesheet" href="StyleSheets/sit-nav.css">
+	<link type="text/css" rel="stylesheet" href="StyleSheets/main-nav.css">
+	<link rel="stylesheet" type="text/css" href="StyleSheets/style.css">
+	
+	<link rel="stylesheet" href="StyleSheets/cart_table.css" />
+	<script type="text/javascript" src="js/cart_table.js"></script>
+	<!--<script type="text/javascript" src="js/cart_table.js"></script>-->
+
+	<style>
+		#cart {
+			display: none;
+		}
+	</style>
+	<script>
+		var amount = 0;
+		$(document).ready(function() {
+			//adimin test
+			$("#test").click(function() {
+				alert("2");
+				$(".admin_btn").show();
+				$(".admin_form").show();
+			});
+
+			//cart add test
+			$(".fa.fa-shopping-cart").click(function() {
+				//check if 1st time to clcik button
+
+				$("#cart").show();
+				//get all the tr
+				var cartTable =$('#cartTable');
+				//				var tr = cartTable.children[1].rows;
+				//				var td = tr.children;
+				//				var i;
+				//				for(i = 0; i < td.length; i++) {
+				//					alert(td[i].tagName);
+				//				}
+				//add product to cart
+				var inner = $(this).parent().parent();
+				var price = inner.find(".ct-product-price");
+				var title = inner.find(".ct-product-title");
+				amount = amount + 1;
+				$(this).data('clicked', true);
+				if($(this).data('clicked')) {
+					alert($(this).attr('id'));
+
+					//find parent, so add the children to the cart
+
+					var cart = $(".ct-cart").find("table");
+					var tprice = $("<td><tr></tr></td>").text("price=" + price.text());
+
+					var $atr = $('<tr>');
+					var $atd = $('');
+					var htmlString = ""; //  Content to be added to new div
+
+					htmlString +=
+						'<tr>' +
+						'<td class = "checkbox_cartable"><input class="check-one check" type="checkbox" /></td>' +
+						'<td class="goods"><img src="" alt="" /><span>'+$(this).attr('id')+'</span></td>'+
+						'<td class="price">5999.88</td>'+
+						'<td class="count">'+
+							'<span class="reduce"></span>'+
+									'<input class="count-input" type="text" value="1" />'+
+							'<span class="add">+</span>'+
+							'</td>'+
+						'<td class="subtotal">5999.88</td>'+
+						 '<td class="operation"><span class="delete">delete</span></td>'+
+						'</tr>';
+
+					
+
+					//				<tr>
+					//					<td class="checkbox_cartable"><input class="check-one check" type="checkbox" /></td>
+					//					<td class="goods"><img src="images/1.jpg" alt="" /><span>Casio EX-TR350</span></td>
+					//					<td class="price">5999.88</td>
+									
+					//					<td class="operation"><span class="delete">delete</span></td>
+					//				</tr>					
+
+					cartTable.find('tbody').append(htmlString);
+					
+
+				}
+
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="site-nav" class="site-nav">
+		<div class="container">
+			<div class="group user-action J-user-action">
+				<a class="item" href="" rel="nofollow" onclick="">login</a>
+				<a class="item" href="" rel="nofollow" onclick="">Sign&nbsp;In</a>
+			</div>
+			<div style="float: left;margin-left:360px;padding-top: 10px;">
+				Welcome to browse Here!
+			</div>
+			<div class="group quick-menu">
+				<a rel="nofollow" class="item left-split J-dp-index-trigger">Service<i class="icon i-arrow"></i></a>
+				<a rel="nofollow" class="item left-split" id="J_mobile-page" href="http://www.dianping.com/events/m/index.htm"><i class="icon i-mobile"></i>Retailer</a>
+			</div>
+		</div>
+	</div>
+	<!--<div id="page-header" class="page-header" style="height: 70px;">
+			<div class="container">
+				<img title="fei fish" src="png/index/logo2.jpg" style="float: left;width: 50px;height:50px ;" class="logo" />
+				<a class="city J-city" style="border-left: solid #0373BD;">Pittsburgh
+					<img src="png/index/choice_bar.png" style="width: 5%;" class="icon i-arrow">
+				</a>
+
+				<div class="search-bar">
+					<input class="J-search-input" id="index_search" data-s-cateid="0" data-s-cityid="4186" data-s-chanid="999" type="text" placeholder="search food" />
+
+					<a class="search-btn J-search-btn" id="G_s-btn" style="background-color: white;">
+						<img src="png/index/search_bar.png" style="width: 40%;margin:0px 8px;border: solid #0373BD;" title="search_bar" />
+					</a>
+				</div>
+			</div>
+
+		</div>-->
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+							 	<span class="sr-only">Toggle navigation</span>
+							 	<span class="icon-bar"></span>
+							 	<span class="icon-bar"></span>
+							 	<span class="icon-bar"></span>
+							</button>
+						<img title="fei fish" src="png/index/logo.png" style="float: left;width: 50px;height:50px ;" class="logo" />
+
+						<a class="navbar-brand" href="#" style="color: deepskyblue;">Fei&nbsp;Fish</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="#">Link</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">Action</a>
+									</li>
+									<li>
+										<a href="#">Another action</a>
+									</li>
+									<li>
+										<a href="#">Something else here</a>
+									</li>
+									<li class="divider">
+									</li>
+									<li>
+										<a href="#">Separated link</a>
+									</li>
+									<li class="divider">
+									</li>
+									<li>
+										<a href="#">One more separated link</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<form class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control" />
+							</div> <button type="submit" class="btn btn-default">Submit</button>
+						</form>
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="#">Link</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">Action</a>
+									</li>
+									<li>
+										<a href="#">Another action</a>
+									</li>
+									<li>
+										<a href="#">Something else here</a>
+									</li>
+									<li class="divider">
+									</li>
+									<li>
+										<a href="#">Separated link</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<!--
+		interact to cart
+		
+		
+	-->
+	<button id="test">test</button>
+	<div id="cart" style="margin-left: 170px;">
+		<table id="cartTable">
+			<thead>
+				<tr>
+					<th><label><input class="check-all check" type="checkbox"/>&nbsp;All</label></th>
+					<th>product</th>
+					<th>price</th>
+					<th>amount</th>
+					<th>total</th>
+					<th>operation</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="checkbox_cartable"><input class="check-one check" type="checkbox" /></td>
+					<td class="goods"><img src="images/1.jpg" alt="" /><span>Casio EX-TR350</span></td>
+					<td class="price">5999.88</td>
+					<td class="count">
+						<span class="reduce"></span>
+						<input class="count-input" type="text" value="1" />
+						<span class="add">+</span></td>
+					<td class="subtotal">5999.88</td>
+					<td class="operation"><span class="delete">delete</span></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+		<div class="foot" id="foot">
+			<label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;All</label>
+			<a class="fl delete" id="deleteAll" href="javascript:;">delete</a>
+			<div class="fr closing">check out</div>
+			<div class="fr total">total：$<span id="priceTotal">0.00</span></div>
+			<div class="fr selected" id="selected">selected items:
+				<span id="selectedTotal">0</span>product
+				<span class="arrow up">︽</span>
+				<span class="arrow down">︾</span>
+			</div>
+			<div class="selected-view">
+				<div id="selectedViewList" class="clearfix">
+					<!--<div><img src="images/1.jpg"><span>取消选择</span></div>-->
+				</div>
+				<span class="arrow">◆<span>◆</span></span>
+			</div>
+		</div>
+	</div>
+
+	<!--
+		
+		the search result: show products
+	-->
+	<div class="ct-pageWrapper">
+		<main>
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-12" style="border-left: 1px solid #6495ED;">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="ct-product">
+									<div class="image"><img src="http://demo.jb51.net/js/2015/jQuery+HTML5-Shopping%20Cart/images/product-01.jpg" alt=""></div>
+									<div class="inner">
+										<a href="#" class="btn btn-motive ct-product-button">
+											<i class="fa fa-shopping-cart" id="product1"></i>
+										</a>
+										<h2 class="ct-product-title">Box of macaroons</h2>
+										<p class="ct-product-description">A very delicious macaroons ...</p>
+										<span class="ct-product-price">$19.99</span>
+										<button class="admin_btn" style="display: none;">modify</button>
+										<form class="admin_form" action="" method="get" style="display: none;">
+											<table width="80%">
+												<tr>
+													<td width="35%" align="right">Name</td>
+													<td><input type="text" name="product_name" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Price</td>
+													<td><input type="number" max="100000.0" min="1.0" name="price" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Amount</td>
+													<td><input type="number" min="0" name="amount" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">H_Discount</td>
+													<td><input type="number" max="100" min="1" name="home_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">B_Discount</td>
+													<td><input type="number" max="100" min="1" name="business_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Status</td>
+													<td>
+														<select name="status">
+															<option selected="" value="1">Avaliable</option>
+															<option value="0">Unavaliable</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Branch</td>
+													<td><input type="text" name="branch" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">url</td>
+													<td><input type="text" name="url" required></td>
+												</tr>
+											</table>
+											<input type="submit" value="sub" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="ct-product">
+									<div class="image"><img src="http://demo.jb51.net/js/2015/jQuery+HTML5-Shopping%20Cart/images/product-01.jpg" alt=""></div>
+									<div class="inner">
+										<a href="#" class="btn btn-motive ct-product-button">
+											<i class="fa fa-shopping-cart" id="product2"></i>
+										</a>
+										<h2 class="ct-product-title">Cherry Straws</h2>
+										<p class="ct-product-description">A very delicious macaroons ...</p>
+										<span class="ct-product-price">$34.99</span>
+										<button class="admin_btn" style="display: none;">modify</button>
+										<form class="admin_form" action="" method="get" style="display: none;">
+											<table width="80%">
+												<tr>
+													<td width="35%" align="right">Name</td>
+													<td><input type="text" name="product_name" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Price</td>
+													<td><input type="number" max="100000.0" min="1.0" name="price" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Amount</td>
+													<td><input type="number" min="0" name="amount" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">H_Discount</td>
+													<td><input type="number" max="100" min="1" name="home_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">B_Discount</td>
+													<td><input type="number" max="100" min="1" name="business_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Status</td>
+													<td>
+														<select name="status">
+															<option selected="" value="1">Avaliable</option>
+															<option value="0">Unavaliable</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Branch</td>
+													<td><input type="text" name="branch" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">url</td>
+													<td><input type="text" name="url" required></td>
+												</tr>
+											</table>
+											<input type="submit" value="sub" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="ct-product">
+									<div class="image"><img src="http://demo.jb51.net/js/2015/jQuery+HTML5-Shopping%20Cart/images/product-01.jpg" alt=""></div>
+									<div class="inner">
+										<a href="#" class="btn btn-motive ct-product-button">
+											<i class="fa fa-shopping-cart" id="product3"></i>
+										</a>
+										<h2 class="ct-product-title">Coffee Macaroons</h2>
+										<p class="ct-product-description">A very delicious macaroons ...</p>
+										<span class="ct-product-price">$59.99</span>
+										<button class="admin_btn" style="display: none;">modify</button>
+										<form class="admin_form" action="" method="get" style="display: none;">
+											<table width="80%">
+												<tr>
+													<td width="35%" align="right">Name</td>
+													<td><input type="text" name="product_name" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Price</td>
+													<td><input type="number" max="100000.0" min="1.0" name="price" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Amount</td>
+													<td><input type="number" min="0" name="amount" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">H_Discount</td>
+													<td><input type="number" max="100" min="1" name="home_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">B_Discount</td>
+													<td><input type="number" max="100" min="1" name="business_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Status</td>
+													<td>
+														<select name="status">
+															<option selected="" value="1">Avaliable</option>
+															<option value="0">Unavaliable</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Branch</td>
+													<td><input type="text" name="branch" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">url</td>
+													<td><input type="text" name="url" required></td>
+												</tr>
+											</table>
+											<input type="submit" value="sub" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="ct-product">
+									<div class="image"><img src="http://demo.jb51.net/js/2015/jQuery+HTML5-Shopping%20Cart/images/product-01.jpg" alt=""></div>
+									<div class="inner">
+										<a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+										<h2 class="ct-product-title">Finetti ones</h2>
+										<p class="ct-product-description">A very delicious macaroons ...</p>
+										<span class="ct-product-price">$9.99</span>
+										<button class="admin_btn" style="display: none;">modify</button>
+										<form class="admin_form" action="" method="get" style="display: none;">
+											<table width="80%">
+												<tr>
+													<td width="35%" align="right">Name</td>
+													<td><input type="text" name="product_name" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Price</td>
+													<td><input type="number" max="100000.0" min="1.0" name="price" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Amount</td>
+													<td><input type="number" min="0" name="amount" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">H_Discount</td>
+													<td><input type="number" max="100" min="1" name="home_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">B_Discount</td>
+													<td><input type="number" max="100" min="1" name="business_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Status</td>
+													<td>
+														<select name="status">
+															<option selected="" value="1">Avaliable</option>
+															<option value="0">Unavaliable</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Branch</td>
+													<td><input type="text" name="branch" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">url</td>
+													<td><input type="text" name="url" required></td>
+												</tr>
+											</table>
+											<input type="submit" value="sub" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="ct-product">
+									<div class="image"><img src="http://demo.jb51.net/js/2015/jQuery+HTML5-Shopping%20Cart/images/product-01.jpg" alt=""></div>
+									<div class="inner">
+										<a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+										<h2 class="ct-product-title">Minty duo</h2>
+										<p class="ct-product-description">A very delicious macaroons ...</p>
+										<span class="ct-product-price">$3.99</span>
+										<button class="admin_btn" style="display: none;">modify</button>
+										<form class="admin_form" action="" method="get" style="display: none;">
+											<table width="80%">
+												<tr>
+													<td width="35%" align="right">Name</td>
+													<td><input type="text" name="product_name" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Price</td>
+													<td><input type="number" max="100000.0" min="1.0" name="price" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Amount</td>
+													<td><input type="number" min="0" name="amount" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">H_Discount</td>
+													<td><input type="number" max="100" min="1" name="home_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="45%" align="right">B_Discount</td>
+													<td><input type="number" max="100" min="1" name="business_discount" value="100" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Status</td>
+													<td>
+														<select name="status">
+															<option selected="" value="1">Avaliable</option>
+															<option value="0">Unavaliable</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">Branch</td>
+													<td><input type="text" name="branch" required></td>
+												</tr>
+												<tr>
+													<td width="35%" align="right">url</td>
+													<td><input type="text" name="url" required></td>
+												</tr>
+											</table>
+											<input type="submit" value="sub" />
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="ct-product">
+									<div class="image"><img src="http://demo.jb51.net/js/2015/jQuery+HTML5-Shopping%20Cart/images/product-01.jpg" alt=""></div>
+									<div class="inner">
+										<a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+										<h2 class="ct-product-title">Pistachio</h2>
+										<p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$13.99</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+#nav {background-color:white; width:500px; height:100px; margin-left: 250px;margin-top: 30;}
+        
+        ul { list-style:none; }
+        #nav ul li {float:left; line-height:40px; width:180px;text-align:center; position:relative;padding:0px 10px;border-radius:10px;}
+        #nav ul li ul{position:absolute; left:0;display:none;}
+        #nav ul li ul li {float:none; width:180px;padding:2px 10px;z-index:100;border-radius:10px;}
+        #nav a {text-decoration:none; color:white; background-color:#1E90FF; padding:0 10px; display:block;}
+        #nav a:hover {color:#1E90FF;background-color:white; }
+      
+        #header {    
+        				width: 1095px;
+					position: relative;
+					height: 165px;
+					margin: 0 auto;
+					z-index: 2;}
+		.logo{     
+					width: 317px;
+					height: 165px;
+					position: absolute;
+					left: -38px;
+					top: 0;
+			}
+    		.header_top{
+		    				height: 35px;
+		   			    background: url(png/index/) no-repeat right;
+		  				text-align: right;
+	  				}
+	  	.header_top span {
+						    font-size: 12px;
+						    color: #fff;
+						    display: inline-block;
+						    margin-right: 12px;
+						}
+		.ico_place {		
+					    position: relative;
+					    top: 3px;
+					    margin-right: 5px;
+					}
+
+
+/*the selected menu*/
+
+a{
+	text-decoration:none ;
+}
+
+.select_title{
+	padding-top: 10px;
+}
+.select_title strong {
+    width: 50%;
+    height: 66px;
+    line-height: 32px;
+    font-weight: 400;
+	font-size: 24;
+	
+}
+
+.sum {
+    background: url(../png/menu/background.jpg) center top;
+    width: 1000px;
+}
+
+.c_nav_wrap,.w1000m {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.c_tit {
+    padding-top: 10px;
+}
+
+.c_tit strong {
+    width: 50%;
+    height: 66px;
+    line-height: 32px;
+}
+
+.c_sortitems {
+    margin-top: 18px;
+}
+
+#w1000m_id .showmenu {
+    height: 375px;
+    overflow:hidden ;
+}
+ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+.i_con1 {
+    margin-right: -30px;
+    zoom:1;
+}
+.i_con1 li {
+    width: 306px;
+    margin: 0 20px 28px 0;
+    padding: 6px;
+    border: 1px solid #eaeaea;
+    float: left;
+    background: #fff;
+}
+.pic a {
+    display: block;
+    width: 120px;
+    float: left;
+    height: 150px;
+}
+
+.c {
+    width: 170px;
+    margin-left: 10px;
+    float: left;
+    
+    display: block;
+}
+.c strong a {
+    width: 160px;
+    height: 30px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+
+.i_con1 p, .i_con1 strong {
+    margin-top: 10px;
+}
