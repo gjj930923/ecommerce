@@ -56,6 +56,21 @@
                         </tr>
                     </table>
                 </fieldset>
+                {if condition = "isset($hardware_list)"}
+                <fieldset>
+                    <legend>Hardware Selection</legend>
+                    <table width="80%">
+
+                        {volist name = "hardware_list" id = "vo"}
+                        <tr>
+                            <td width="35%" align="right">{$vo.hardware_name}</td>
+                            <td><input type="checkbox" name="hardware[]" value="{$vo.hardwareID}"></td>
+                        </tr>
+                        {/volist}
+
+                    </table>
+                </fieldset>
+                {/if}
             </td>
         </tr>
         <tr>

@@ -7,7 +7,7 @@ class Admin extends Controller
 {
     public function index()
     {
-        $hardware_list = Db::table("hardwares");
+        $hardware_list = Db::table("hardwares")->order("hardware_categoryID")->select();
         $this->assign("hardware_list", $hardware_list);
         return $this->fetch();
     }
@@ -24,6 +24,7 @@ class Admin extends Controller
             $status=$_POST['status'];
             $branch=$_POST['branch'];
             $amount=$_POST['amount'];
+            $hardware_list = $_POST['hardware'];
 
             $data=(['product_name'=>$product_name,'price'=>$price,'home_discount'=>$home_discount,'business_discount'=>$business_discount,'status'=>$status,'branch'=>$branch,'inventory_amount'=>$amount]);
             $productID=Db::table('products')->insertGetId($data);
@@ -34,6 +35,13 @@ class Admin extends Controller
                 $result=Db::table('manage')->insert($data);
                 if($result)
                 {
+                    if($hardware_list){
+                        $hardware_data = [];
+                        foreach ($hardware_list as $hardwareID){
+                            $hardware_data[] = array('productID' => $productID, 'hardwareID' => $hardwareID);
+                        }
+                        Db::name('products_have_hardware')->insertAll($hardware_data);
+                    }
                     $url = str_replace(".html", "", url("Admin/index"));
                     $this->success("ok",$url);
                 }
