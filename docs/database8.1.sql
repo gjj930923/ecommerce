@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-12-04 18:34:49
+-- Generation Time: 2016-12-05 21:59:51
 -- 服务器版本： 10.0.27-MariaDB-0ubuntu0.16.04.1
 -- PHP Version: 7.0.8-0ubuntu0.16.04.3
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecommerce`
 --
+CREATE DATABASE IF NOT EXISTS `ecommerce` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `ecommerce`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- 表的结构 `address`
 --
 
+DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
   `addressID` int(11) NOT NULL,
   `state` varchar(20) DEFAULT NULL,
@@ -47,6 +50,7 @@ INSERT INTO `address` (`addressID`, `state`, `city`, `street`, `zip_code`) VALUE
 -- 表的结构 `admin`
 --
 
+DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `adminID` int(15) NOT NULL,
   `first_name` varchar(45) DEFAULT NULL,
@@ -69,6 +73,7 @@ INSERT INTO `admin` (`adminID`, `first_name`, `last_name`, `username`, `password
 -- 表的结构 `billinginfo`
 --
 
+DROP TABLE IF EXISTS `billinginfo`;
 CREATE TABLE `billinginfo` (
   `billingID` int(11) NOT NULL,
   `creditcard_number` varchar(20) DEFAULT NULL,
@@ -89,6 +94,7 @@ INSERT INTO `billinginfo` (`billingID`, `creditcard_number`, `expire_month`, `ex
 -- 表的结构 `business_category`
 --
 
+DROP TABLE IF EXISTS `business_category`;
 CREATE TABLE `business_category` (
   `business_categoryID` int(11) NOT NULL,
   `business_category_name` varchar(45) DEFAULT NULL
@@ -100,6 +106,7 @@ CREATE TABLE `business_category` (
 -- 表的结构 `business_customers`
 --
 
+DROP TABLE IF EXISTS `business_customers`;
 CREATE TABLE `business_customers` (
   `customerID` int(11) NOT NULL,
   `username` varchar(45) NOT NULL,
@@ -116,6 +123,7 @@ CREATE TABLE `business_customers` (
 -- 表的结构 `cart`
 --
 
+DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
   `customerID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
@@ -128,6 +136,7 @@ CREATE TABLE `cart` (
 -- 表的结构 `customers_have_address`
 --
 
+DROP TABLE IF EXISTS `customers_have_address`;
 CREATE TABLE `customers_have_address` (
   `addressID` int(11) NOT NULL,
   `customerID` int(11) NOT NULL
@@ -146,6 +155,7 @@ INSERT INTO `customers_have_address` (`addressID`, `customerID`) VALUES
 -- 表的结构 `customers_have_billinginfo`
 --
 
+DROP TABLE IF EXISTS `customers_have_billinginfo`;
 CREATE TABLE `customers_have_billinginfo` (
   `billingID` int(11) NOT NULL,
   `customerID` int(11) NOT NULL
@@ -164,6 +174,7 @@ INSERT INTO `customers_have_billinginfo` (`billingID`, `customerID`) VALUES
 -- 表的结构 `hardwares`
 --
 
+DROP TABLE IF EXISTS `hardwares`;
 CREATE TABLE `hardwares` (
   `hardwareID` int(11) NOT NULL,
   `hardware_name` varchar(45) DEFAULT NULL,
@@ -213,6 +224,7 @@ INSERT INTO `hardwares` (`hardwareID`, `hardware_name`, `hardware_company`, `har
 -- 表的结构 `hardware_category`
 --
 
+DROP TABLE IF EXISTS `hardware_category`;
 CREATE TABLE `hardware_category` (
   `hardware_categoryID` int(11) NOT NULL,
   `hardware_category_name` varchar(45) DEFAULT NULL
@@ -229,7 +241,7 @@ INSERT INTO `hardware_category` (`hardware_categoryID`, `hardware_category_name`
 (4, 'ROM'),
 (5, 'hard_disk'),
 (6, 'screen_resolution'),
-(7, 'touch_screen');
+(7, 'bluetooth');
 
 -- --------------------------------------------------------
 
@@ -237,6 +249,7 @@ INSERT INTO `hardware_category` (`hardware_categoryID`, `hardware_category_name`
 -- 表的结构 `home_customers`
 --
 
+DROP TABLE IF EXISTS `home_customers`;
 CREATE TABLE `home_customers` (
   `customerID` int(11) NOT NULL,
   `username` varchar(45) NOT NULL,
@@ -264,11 +277,21 @@ INSERT INTO `home_customers` (`customerID`, `username`, `password`, `first_name`
 -- 表的结构 `manage`
 --
 
+DROP TABLE IF EXISTS `manage`;
 CREATE TABLE `manage` (
   `since` datetime NOT NULL,
   `adminID` int(11) NOT NULL,
   `productID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `manage`
+--
+
+INSERT INTO `manage` (`since`, `adminID`, `productID`) VALUES
+('2016-12-05 00:00:00', 1, 1),
+('2016-12-05 00:00:00', 1, 2),
+('2016-12-05 00:00:00', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -276,6 +299,7 @@ CREATE TABLE `manage` (
 -- 表的结构 `orders`
 --
 
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `orderID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
@@ -295,6 +319,7 @@ CREATE TABLE `orders` (
 -- 表的结构 `products`
 --
 
+DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `productID` int(11) NOT NULL,
   `inventory_amount` int(11) NOT NULL,
@@ -306,16 +331,42 @@ CREATE TABLE `products` (
   `branch` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `products`
+--
+
+INSERT INTO `products` (`productID`, `inventory_amount`, `product_name`, `price`, `home_discount`, `business_discount`, `status`, `branch`) VALUES
+(1, 3, 'Hardware Test', 1000, 99, 96, 1, 'Apple'),
+(2, 3, 'Hardware Test', 1000, 99, 96, 1, 'Apple'),
+(3, 3, 'Hardware Test', 1000, 99, 96, 1, 'Apple');
+
 -- --------------------------------------------------------
 
 --
 -- 表的结构 `products_have_hardware`
 --
 
+DROP TABLE IF EXISTS `products_have_hardware`;
 CREATE TABLE `products_have_hardware` (
   `productID` int(11) NOT NULL,
   `hardwareID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `products_have_hardware`
+--
+
+INSERT INTO `products_have_hardware` (`productID`, `hardwareID`) VALUES
+(1, 1),
+(1, 8),
+(1, 14),
+(1, 19),
+(1, 21),
+(1, 24),
+(2, 1),
+(2, 25),
+(3, 1),
+(3, 15);
 
 -- --------------------------------------------------------
 
@@ -323,6 +374,7 @@ CREATE TABLE `products_have_hardware` (
 -- 表的结构 `rate`
 --
 
+DROP TABLE IF EXISTS `rate`;
 CREATE TABLE `rate` (
   `customerID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
@@ -336,6 +388,7 @@ CREATE TABLE `rate` (
 -- 表的结构 `shippers`
 --
 
+DROP TABLE IF EXISTS `shippers`;
 CREATE TABLE `shippers` (
   `shipperID` int(11) NOT NULL,
   `shipper_name` varchar(45) DEFAULT NULL,
@@ -356,6 +409,7 @@ INSERT INTO `shippers` (`shipperID`, `shipper_name`, `shipper_phone`) VALUES
 -- 表的结构 `suppliers`
 --
 
+DROP TABLE IF EXISTS `suppliers`;
 CREATE TABLE `suppliers` (
   `supplierID` int(11) NOT NULL,
   `supplier_name` varchar(45) DEFAULT NULL,
@@ -368,6 +422,7 @@ CREATE TABLE `suppliers` (
 -- 表的结构 `supply`
 --
 
+DROP TABLE IF EXISTS `supply`;
 CREATE TABLE `supply` (
   `since` datetime NOT NULL,
   `supplierID` int(11) NOT NULL,
@@ -547,7 +602,7 @@ ALTER TABLE `orders`
 -- 使用表AUTO_INCREMENT `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用表AUTO_INCREMENT `shippers`
 --
