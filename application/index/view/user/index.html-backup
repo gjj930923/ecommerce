@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+	作者：offline
+	时间：2016-11-27
+	描述：form id=reg_form_P
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script></script>
+		<style >
+			td{width="25%" align="right"}
+			td input{size: 16;}
+			#reg_form{width: 1000px;background-color:aliceblue;border: 2px;font-family: garamond;}
+			#reg_form .table_name{width:25%;text-align:right;}
+		</style>
+	</head>
+	<body>
+		<form id="reg_form" name="reg_form_P" method="post" action="register_address.html" >
+ 			<table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+			 	<tr>
+			 	<th scope="col">Sign&nbsp;Up</th>
+			 	</tr>
+			 	
+ 				<tr>
+				 	<td>
+				 	<fieldset>
+					 	<legend>Personal&nbsp;Information</legend>
+					 	<table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+						 	<tr>
+						 		<td class="table_name">UserName</td>
+						 		<td><input type="text"name="Username" /></td>
+						 	</tr>
+						 	<tr>
+						 		<td class="table_name">NickName</td>
+						 		<td><input type="text"name="NickName" /></td>
+						 	</tr>
+						 	<tr>
+							 	<td class="table_name">&nbsp;Password</td>
+							 	<td><input type="password" size="16" title="" /></td>
+						 	</tr>
+						 	<tr>
+						 		<td class="table_name">First&nbsp;Name</td>
+						 		<td><input type="text"name="Fname" /></td>
+						 	</tr>
+						 	<tr>
+						 		<td class="table_name">&nbsp;Last&nbsp;Name</td>
+						 		<td><input type="text"name="Lname" /></td>
+						 	</tr>
+						 	<tr>
+							 	<td class="table_name">Check&nbsp;PassWord</td>
+							 	<td><input type="checkpassword"  /></td>
+							</tr>
+							<tr>
+							 	<td width="25%" align="right">Income</td>
+							 	<td><input type="text" size="30" /></td>
+							</tr>
+							<tr>
+							 	<td width="25%" align="right">Age</td>
+							 	<td><input type="text" size="30" /></td>
+							</tr>
+							<tr>
+								<td  width="25%" align="right">Marrage</td>
+								<td>
+									<select>
+									 	<option selected="selected">unknown</option>
+									 	<option>yes</option>
+									 	<option>no</option>
+								 	</select>
+								</td>
+							</tr>
+							<tr>
+								<td  width="25%" align="right">gender</td>
+								<td>
+									<select>
+									 	<option selected="selected">male</option>
+									 	<option>female</option>
+									 	
+								 	</select>
+								</td>
+							</tr>
+					 	</table>
+				 	</fieldset>
+				 	</td>
+			 	</tr>
+
+ 				
+		 	<tr>
+		 		<td>
+		 			<table width="85%" border="0" cellspacing="2" cellpadding="0">
+		 			<tr>
+					 	<td align="right"><input type="submit" value="Submit" /></td>
+					 	<td><input type="reset" value="Reset" /></td>
+					 
+		 			</tr>
+		 			</table> 
+		 	  	</td>
+		 	</tr>
+ 		</table>
+ 	</form>
+ 	
+ 	
+	</body>
+</html>

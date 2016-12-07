@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#cpu,
+			#Ram {
+				height: 36px;
+			}
+			
+			#kindname {
+				float: left;
+				left: 0;
+				top: 9px;
+				width: 90px;
+				margin-top: 5px;
+			}
+			
+			#whichkind {
+				position: relative;
+				padding: 3px 0 3px 52px;
+			}
+			
+			#whichkind input {}
+			
+			.radio {
+				width: 10px;
+				float: left;
+			}
+			
+			.choose {
+				display: block;
+				float: left;
+				width: 30px;
+				height: 10px;
+				margin: 10px;
+				margin-top: 3px;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+
+				$('#RamKind').click(function() {
+					alert($(this));
+					alert("hi");
+				});
+				$('#CpuKind').click(function() {
+					alert($(this).name);
+					alert("hi");
+				});
+				$.get("test.cgi", {
+					name: "John",
+					time: "2pm"
+				},
+				function(data) {
+					alert("Data Loaded: " + data);
+				});
+			});
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="cpu">
+				<strong id="kindname">CPU:</strong>
+				<div id="whichkind">
+					<input type="button" class="choose" id="CpuKind" name="i3" value="i3">
+					<input type="button" class="choose" id="CpuKind" name="i5" value="i5">
+					<input type="button" class="choose" id="CpuKind" name="i7" value="i7">
+				</div>
+			</div>
+			<div id="Ram">
+				<strong id="kindname">Rom:</strong>
+				<div id="whichkind">
+					<input type="button" class="choose" id="RamKind">1G
+					<input type="button" class="choose" id="RamKind">2G</span>
+					<input type="button" class="choose" id="RamKind">3G</span>
+				</div>
+			</div>
+		</div>
+		<div id="container">
+			<table>
+
+			</table>
+		</div>
+	</body>
+
+</html>
