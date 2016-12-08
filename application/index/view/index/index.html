@@ -4,20 +4,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		
+
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="StyleSheets/sit-nav.css">
 		<link type="text/css" rel="stylesheet" href="StyleSheets/main-nav.css">
 
-		
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="http:cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
-		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="StyleSheets/sort_nav.css" />
+		<script src="js/sort_nav.js"></script>
 
 	</head>
 
@@ -35,8 +36,11 @@
 						<a class="item" href="index/login/logout" rel="nofollow" onclick="">Exit</a>
 						<a class="item" href="index/User/index" rel="nofollow" onclick="">detailed information</a>
 						<a class="item" href="index/User/password" rel="nofollow" onclick="">change password</a>
+						{if condition="isset($adminID)"}
 						<a class="item" href="index/Admin/index" rel="nofollow" onclick="">New Product</a>
 						<a class="item" href="index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
+						{else/}
+						{/if}
 					</div>
 					{/if}
 					<div style="float: left;margin-left:360px;padding-top: 10px;">
@@ -76,9 +80,9 @@
 							 	<span class="icon-bar"></span>
 							 	<span class="icon-bar"></span>
 							</button>
-								<img title="fei fish" src="png/index/logo.png" style="float: left;width: 50px;height:50px ;" class="logo" />
+								<img title="fei fish" src="png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
 
-								<a class="navbar-brand" href="#">Fei&nbsp;Fish</a>
+								<a class="navbar-brand" href="#">Zhong Guan&nbsp;Cun</a>
 							</div>
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav">
@@ -151,6 +155,88 @@
 		<div id="slide_show">
 			<div class="container">
 				<div class="row clearfix">
+					<div class="" style="width: 300px;">
+						<ul class="topmenu">
+							<div class="toptitle">
+								All sort items
+							</div>
+
+							<li>
+								<a href="#">CPU</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										<dl>
+											<dt><a href="#">i3</a></dt>
+											<dd>
+												<a href="#">FuShiKang</a>
+												<a href="#">Sum</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><a href="#">i5</a></dt>
+											<dd>
+												<a href="#">FuShiKang</a>
+												<a href="#">Sum</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><a href="#">i7</a></dt>
+											<dd>
+												<a href="#">单肩包</a>
+											</dd>
+										</dl>
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#">ROM</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										<dl>
+											<dt><a href="#">256MB</a></dt>
+											<dd>
+												<a href="#">TaiWan</a>
+												<a href="#">American</a>
+											</dd>
+											<dt><a href="#">512MB</a></dt>
+											<dd>
+												<a href="#">TaiWan</a>
+												<a href="#">American</a>
+											</dd>
+										</dl>
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#">Appearance</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+
+										<dl>
+											<dt><a href="#">Working</a></dt>
+											<dd>
+												<a href="#">Thin</a>
+												<a href="#">Very Thin</a>
+											</dd>
+											<dt><a href="#">Home</a></dt>
+											<dd>
+												<a href="#">Thin</a>
+												<a href="#">Very Thin</a>
+											</dd>
+										</dl>
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
 					<div class="col-md-6 column" style="margin-left: 260px;">
 						<div class="carousel slide" id="carousel-193108">
 							<ol class="carousel-indicators">
