@@ -35,8 +35,11 @@
 						<a class="item" href="index/login/logout" rel="nofollow" onclick="">Exit</a>
 						<a class="item" href="index/User/index" rel="nofollow" onclick="">detailed information</a>
 						<a class="item" href="index/User/password" rel="nofollow" onclick="">change password</a>
+						{if condition="isset($adminID)"}
 						<a class="item" href="index/Admin/index" rel="nofollow" onclick="">New Product</a>
 						<a class="item" href="index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
+						{else/}
+						{/if}
 					</div>
 					{/if}
 					<div style="float: left;margin-left:360px;padding-top: 10px;">
