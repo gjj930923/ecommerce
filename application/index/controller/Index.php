@@ -36,11 +36,6 @@ class Index extends Controller
     }
 
     public function login(){
-        $time = date("Y-m-d",time());
-        if(isset($_POST["username"])){
-            $this->assign('username', $_POST["username"]);
-        }
-        $this->assign('time', $time);
         return $this->fetch();
     }
 }
