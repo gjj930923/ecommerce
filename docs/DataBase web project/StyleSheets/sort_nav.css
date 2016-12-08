@@ -65,31 +65,21 @@
 	.topmenu .lihover span {
 		background: white;
 		display: inline-block;
-		z-index: 20;
+		z-index: 2;
 		width: 20px;
 		height: 60px;
 		float: right;
 		position: relative;
 	}
 	
-	.topmenu li b {
-		display: none;
-	}
 	
-	.topmenu .lihover b {
-		display: block;
-		height: 30px;
-		line-height: 30px;
-		font-weight: normal;
-		font-size: 10pt;
-	}
 	
 	.submenu {
 		display: none;
-		width: 715px;
+		width: 205px;
 		left: 220px;
 		position: absolute;
-		top: 40px;
+		top: 180px;
 		border: 1px solid #DDD;
 		z-index: 4;
 		background: white;
@@ -100,15 +90,11 @@
 	
 	.leftdiv {
 		float: left;
-		width: 490px;
+		width: 205px;
 		margin: 5px;
 	}
 	
-	.rightdiv {
-		float: left;
-		width: 200px;
-		margin: 5px;
-	}
+	
 	
 	.leftdiv dl {
 		display: block;
@@ -123,7 +109,7 @@
 		width: 60px;
 		text-align: right;
 		height: 22px;
-		line-height: 22px;
+		/*line-height: 22px;*/
 		padding-right: 6px;
 	}
 	
@@ -151,29 +137,4 @@
 		margin: 4px 0;
 	}
 	
-	.rightdiv dl dd {
-		margin: 3px 0;
-	}
 	
-	.rightdiv dl dt {
-		color: #e4393c;
-		font-weight: bold;
-		font-size: 10pt;
-	}
-	
-	.rightdiv dl dd a {
-		font-size: 9pt;
-		color: #737373;
-		line-height: 22px;
-	}
-	
-	.rightdiv dl dd a:hover {
-		color: #737373;
-		font-weight: normal;
-	}
-	
-	.rightPic {
-		position: relative;
-		right: -35px;
-		bottom: -30px;
-	}
