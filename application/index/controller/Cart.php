@@ -1,23 +1,24 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
+use think\Db;
 class Cart extends Controller
 {
     public function _initialize()
     {
         session_start();
-        if(!isset($_SESSION['userID'])){
+        if(!isset($_SESSION['customerID'])){
             //$url = str_replace(".html", "", url("Index/index"));
             //$url = str_replace("/index", "", $url);
             $this->error("You need to log in first!");
         }
         else{
             if($_SESSION['customerID'] % 2 == 1){
-                $customer = Home_customers::get($_SESSION['customerID']);
+                $customer = Db::table("home_customers")->where("customerID=".$_SESSION['customerID']);
                 $this->assign('customer', $customer);
             }
             else{
-                $customer = Business_customers::get($_SESSION['customerID']);
+                $customer = Db::table("business_customers")->where("customerID=".$_SESSION['customerID']);
                 $this->assign('customer', $customer);
             }
         }
@@ -51,11 +52,10 @@ class Cart extends Controller
                 $this->error("Address Unavailable!");
             }
             else{
-                $order = new Order;
-                $productID = explode("+", $_GET['productID']);
+                $productID = explode(" ", $_GET['productID']);
                 foreach ($productID as $id){
-                    $product = Db::table('product')->where('ID=' . $id)->find();
-                    $amount = Db::table('cart')->where('customerID=' . $userID . "AND productID=" . $id)->find();
+                    $product = Db::table('product')->where(array('ID' => $id))->find();
+                    $amount = Db::table('cart')->where(array('customerID=' => $userID, "productID" => $id))->find();
                     if(!$product){
                         $this->error("A product in the cart does not exist");
                     }
@@ -70,16 +70,28 @@ class Cart extends Controller
                     }
                     else{
                         $list = array();
-                        $list[0]['billinginfo_ID'] = $_POST['cardID'];
-                        $list[0]['Customer_ID'] = $userID;
-                        $list[0]['product_ID'] = $id;
-                        $list[0]['shipper_ID'] = $_POST['shipperID'];
-                        $return = $order->saveAll($list);
+                        $list['billingID'] = $_POST['billingID'];
+                        $list['CustomerID'] = $userID;
+                        $list['productID'] = $id;
+                        $list['shipper_addressID'] = $_POST['shipper_addressID'];
+                        $list['billing_addressID'] = $_POST['billing_addressID'];
+                        $list['shipper_ID'] = $_POST['shipperID'];
+                        $list['since'] = time();
+                        $list['quantity'] = $amount['quantity'];
+                        $list['price'] = $product['price'];
+                        if($userID % 2 == 1){
+                            $list['price'] *= $product['home_discount'];
+                        }
+                        else{
+                            $list['price'] *= $product['business_discount'];
+                        }
+                        $return = Db::table('orders')->insert($list);
                         if($return){
                             //delete the product in the cart
                             $condition = array("customerID" => $userID,  "productID" => $id);
-                            Cart::destroy($condition);
+                            Db::table("cart")->where($condition)->delete();
                             //modify the inventory amount
+                            Db::table("products")->where("productID", $id)->setDec("inventory_amount", $amount['quantity']);
                             $product = Product::get($id);
                             $product->inventory_amount -= $amount['quantity'];
                             $product->save();
@@ -88,14 +100,14 @@ class Cart extends Controller
                 }
                 $url = str_replace(".html", "", url("Order/index"));
                 $url = str_replace("/index", "", $url);
-                $this->success("Your order has benn placed!", $url);
+                $this->success("Your order has been placed!", $url);
             }
         }
         else{
             //The string of productID is a series of product ID(s)
             if(isset($_GET['productID'])){
                 $productIDs = $_GET['productID'];
-                $productIDs = str_replace("+", ",", $productIDs);
+                $productIDs = str_replace(" ", ",", $productIDs);
                 $condition = 'customerID = ' . $userID . " AND productID IN (" . $productIDs . ")";
                 $cartList = Db::table('cart')->where($condition)->select();
                 if(empty($cartList)){
@@ -111,6 +123,30 @@ class Cart extends Controller
             else{
                 $this->error("No products to be checked out! Please check your cart. ");
             }
+        }
+    }
+
+    public function addToCart(){
+        $customerID = $_POST['customerID'];
+        $productID = $_POST['productID'];
+        if(isset($_POST['quantity']) && is_numeric($_POST['quantity'])){
+            $quantity = $_POST['quantity'];
+        }
+        else{
+            $quantity = 1;
+        }
+        if(is_numeric($customerID) && is_numeric($productID)){
+            Db::table("cart")->where(array('customerID' => $customerID, 'productID' => $productID))->delete();
+            $insertData = array('customerID' => $customerID, 'productID' => $productID, 'quantity' => $quantity);
+            if(Db::table("cart")->insert($insertData)){
+                return json_encode($insertData);
+            }
+            else{
+                return -2;
+            }
+        }
+        else{
+            return -1;
         }
     }
 }
