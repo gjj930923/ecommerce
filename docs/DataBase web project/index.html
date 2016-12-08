@@ -19,7 +19,11 @@
 		<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" href="StyleSheets/sort_nav.css" />
 		<script src="js/sort_nav.js"></script>
-
+		
+		<style>
+			.slide_middle{ margin-left: 360px;width: 600px;}
+			.sort_left{width: 200px;float: left;}
+		</style>
 	</head>
 
 	<body>
@@ -106,14 +110,7 @@
 											</li>
 											<li class="divider">
 											</li>
-											<li>
-												<a href="#">Separated link</a>
-											</li>
-											<li class="divider">
-											</li>
-											<li>
-												<a href="#">One more separated link</a>
-											</li>
+										
 										</ul>
 									</li>
 								</ul>
@@ -122,30 +119,7 @@
 										<input type="text" class="form-control" />
 									</div> <button type="submit" class="btn btn-default">Submit</button>
 								</form>
-								<!--<ul class="nav navbar-nav navbar-right">
-								<li>
-									<a href="#">Link</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="#">Action</a>
-										</li>
-										<li>
-											<a href="#">Another action</a>
-										</li>
-										<li>
-											<a href="#">Something else here</a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="#">Separated link</a>
-										</li>
-									</ul>
-								</li>
-							</ul>-->
+								
 							</div>
 						</nav>
 					</div>
@@ -155,7 +129,7 @@
 		<div id="slide_show">
 			<div class="container">
 				<div class="row clearfix">
-					<div  style="width: 300px;float: left;">
+					<div  class="sort_left" >
 						<ul class="topmenu">
 							<div class="toptitle">
 								All sort items
@@ -237,7 +211,7 @@
 
 						</ul>
 					</div>
-					<div class="col-md-6 column" style="margin-left: 260px;width: 200px;float: left;">
+					<div class="slide_middle">
 						<div class="carousel slide" id="carousel-193108">
 							<ol class="carousel-indicators">
 								<li data-slide-to="0" data-target="#carousel-193108">
