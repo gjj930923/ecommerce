@@ -125,6 +125,7 @@ class User extends Controller
                         }
                         $result=Db::table('home_customers')->insertGetId($data);
                     }
+
                         if ($result)
                         {
                             $condition=array('username'=>$username);
@@ -191,7 +192,7 @@ class User extends Controller
                         {
                             $data = (['customerID'=>$customerID,'username' => $username, 'password' => $password,'email' => $email,'annual_income'=>$annual_income,'company_name'=>$company_name,'business_categoryID'=>$category]);
                         }
-                        $result=Db::table('business_customers')->insertGetId($data);
+                        $result=Db::table('business_customers')->insert($data);
                     }
                     if ($result)
                     {

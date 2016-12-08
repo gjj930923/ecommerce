@@ -11,6 +11,10 @@ class Admin extends Controller
         $this->assign("hardware_list", $hardware_list);
         return $this->fetch();
     }
+    public function newAdmin()
+    {
+        return $this->fetch();
+    }
     public function addProduct()
     {
         session_start();
@@ -22,7 +26,6 @@ class Admin extends Controller
             $home_discount=$_POST['home_discount'];
             $business_discount=$_POST['business_discount'];
             $status=$_POST['status'];
-            $branch=$_POST['branch'];
             $amount=$_POST['amount'];
             $hardware_list = $_POST['hardware'];
 
@@ -66,5 +69,59 @@ class Admin extends Controller
         $url = str_replace(".html", "", url("Index/index"));
         $url = str_replace("/index", "", $url);
         $this->redirect($url,301);
+    }
+    public function addAdmin()
+    {
+        if(isset($_POST["username"])&&isset($_POST["password"])&&isset($_POST["check_password"])&&isset($_POST["fname"])&&isset($_POST["lname"])&&isset($_POST["email"]))
+        {
+            $username=$_POST["username"];
+            $password = $_POST["password"];
+            $checkpassword = $_POST["check_password"];
+            $fname=$_POST["fname"];
+            $lname=$_POST["lname"];
+            $email=$_POST["email"];
+            $result=$this->doubleName($username);
+            if($result)
+            {
+                $this->error("The username has already existed. Please make a new one");
+            }
+            else
+            {
+                if ($password != $checkpassword)
+                {
+                    $this->error("The password are not same");
+                }
+                else
+                {
+                    $data = (['username' => $username, 'password' => $password,  'first_name' => $fname, 'last_name' => $lname, 'email' => $email]);
+                    $result=Db::table('admin')->insert($data);
+                }
+                if ($result)
+                {
+                    $url = str_replace(".html", "", url("Index/index"));
+                    $url = str_replace("/index", "", $url);
+                    $this->success('Add successfully', $url);
+                }
+                else
+                {
+                    $this->error("something weird happen");
+                }
+            }
+        }
+        else
+        {
+            $this->error("fatal error!");
+        }
+
+    }
+    public function doubleName($username)
+    {
+            $condition = array('username' => $username);
+            $result = db("admin")->where($condition)->find();
+            if ($result) {
+                return 1;
+            } else {
+                return 0;
+            }
     }
 }

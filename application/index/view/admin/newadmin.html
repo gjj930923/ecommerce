@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+	作者：offline
+	时间：2016-11-27
+	描述：form id=reg_form_A
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #addAdmin{width: 1000px;background-color:aliceblue;border: 2px;font-family: garamond;}
+        #addAdmin .table_name{width:25%;text-align:right;}
+    </style>
+</head>
+<body>
+<form id="addAdmin" action="addAdmin" method="post">
+    <table  width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>Add_Administration</legend>
+                    <table width="80%">
+                        <tr >
+                            <td width="35%" align="right">Username</td>
+                            <td><input type="text" name="username" required></td>
+                        </tr>
+                        <tr >
+                            <td width="35%" align="right">Password</td>
+                            <td><input type="password"  name="password" required></td>
+                        </tr>
+                        <tr >
+                            <td width="35%" align="right">Check Password</td>
+                            <td><input type="password" name="check_password" required></td>
+                        </tr>
+                        <tr >
+                            <td width="45%" align="right">First Name</td>
+                            <td><input type="text"  name="fname" value="" required></td>
+                        </tr>
+                        <tr >
+                            <td width="45%" align="right">Last Name</td>
+                            <td><input type="text"   name="lname" value="" required></td>
+                        </tr>
+                        <tr >
+                            <td width="45%" align="right">E-mail</td>
+                            <td><input type="text"   name="email" value="" required></td>
+                        </tr>
+        <tr>
+            <table width="85%" border="0" >
+                <td align="right"><input type="submit" value="Add"></td>
+                <td><input type="reset" value="Reset"></td>
+            </table>
+        </tr>
+    </table>
+</form>
+<form id="goback_p" action="goback" method="post">
+    <td align="right"><input type="submit" value="Back"></td>
+</form>
+</body>
+</html>

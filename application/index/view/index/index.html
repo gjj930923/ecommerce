@@ -28,13 +28,15 @@
 					{if condition="!isset($username)"}
 					<div class="group user-action J-user-action">
 						<a class="item" href="index/index/login" rel="nofollow" onclick="">login</a>
-						<a class="item" href="" rel="nofollow" onclick="">Sign&nbsp;In</a>
+						<a class="item" href="index/User/signin" rel="nofollow" onclick="">Sign&nbsp;In</a>
 					</div>
 					{else/}
 					<div class="group user-action J-user-action">
 						<a class="item" href="index/login/logout" rel="nofollow" onclick="">Exit</a>
 						<a class="item" href="index/User/index" rel="nofollow" onclick="">detailed information</a>
 						<a class="item" href="index/User/password" rel="nofollow" onclick="">change password</a>
+						<a class="item" href="index/Admin/index" rel="nofollow" onclick="">New Product</a>
+						<a class="item" href="index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
 					</div>
 					{/if}
 					<div style="float: left;margin-left:360px;padding-top: 10px;">
