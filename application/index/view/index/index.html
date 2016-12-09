@@ -98,26 +98,54 @@
 								<a href="#">CPU</a><span></span>
 								<div class="submenu">
 									<div class="leftdiv">
+										{volist name="cpu" id="vo"}
 										<dl>
-											<dt><a href="#">i3</a></dt>
-											<dd>
-												<a href="#">FuShiKang</a>
-												<a href="#">Sum</a>
-											</dd>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#">GPU</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="gpu" id="vo"}
 										<dl>
-											<dt><a href="#">i5</a></dt>
-											<dd>
-												<a href="#">FuShiKang</a>
-												<a href="#">Sum</a>
-											</dd>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#">Screen Size</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="screen_size" id="vo"}
 										<dl>
-											<dt><a href="#">i7</a></dt>
-											<dd>
-												<a href="#">Intel</a>
-											</dd>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#">Rom</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="rom" id="vo"}
+											<dl>
+												<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+											</dl>
+										{/volist}
 									</div>
 									<div class="rightdiv">
 									</div>
@@ -125,48 +153,50 @@
 							</li>
 
 							<li>
-								<a href="#">Screen Size</a><span></span>
+								<a href="#">Hard Disk</a><span></span>
 								<div class="submenu">
 									<div class="leftdiv">
+										{volist name="hard_disk" id="vo"}
 										<dl>
-											<dt><a href="#">256MB</a></dt>
-											<dd>
-												<a href="#">TaiWan</a>
-												<a href="#">American</a>
-											</dd>
-											<dt><a href="#">512MB</a></dt>
-											<dd>
-												<a href="#">TaiWan</a>
-												<a href="#">American</a>
-											</dd>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
+										{/volist}
 									</div>
 									<div class="rightdiv">
 									</div>
 								</div>
 							</li>
-							<li>
-								<a href="#">Appearance</a><span></span>
-								<div class="submenu">
-									<div class="leftdiv">
 
+							<li>
+								<a href="#">Screen resolution</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="screen_resolution" id="vo"}
 										<dl>
-											<dt><a href="#">Working</a></dt>
-											<dd>
-												<a href="#">Thin</a>
-												<a href="#">Very Thin</a>
-											</dd>
-											<dt><a href="#">Home</a></dt>
-											<dd>
-												<a href="#">Thin</a>
-												<a href="#">Very Thin</a>
-											</dd>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
+										{/volist}
 									</div>
 									<div class="rightdiv">
 									</div>
 								</div>
 							</li>
+
+							<li>
+								<a href="#">Bluetooth</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="bluetooth" id="vo"}
+										<dl>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+										</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+
 
 						</ul>
 					</div>

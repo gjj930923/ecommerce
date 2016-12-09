@@ -1,10 +1,26 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
+use think\Db;
 class Index extends Controller
 {
     public function index()
     {
+        $cpus = Db::table("hardwares")->where('hardware_categoryID',1)->select();
+        $this->assign('cpu',$cpus);
+        $gpus = Db::table("hardwares")->where('hardware_categoryID',2)->select();
+        $this->assign('gpu',$gpus);
+        $screen_sizes = Db::table("hardwares")->where('hardware_categoryID',3)->select();
+        $this->assign('screen_size',$screen_sizes);
+        $roms = Db::table("hardwares")->where('hardware_categoryID',4)->select();
+        $this->assign('rom',$roms);
+        $hard_disks = Db::table("hardwares")->where('hardware_categoryID',5)->select();
+        $this->assign('hard_disk',$hard_disks);
+        $screen_resolutions = Db::table("hardwares")->where('hardware_categoryID',6)->select();
+        $this->assign('screen_resolution',$screen_resolutions);
+        $bluetooths = Db::table("hardwares")->where('hardware_categoryID',7)->select();
+        $this->assign('bluetooth',$bluetooths);
+
         session_start();
         if(isset($_SESSION["username"]))
         {

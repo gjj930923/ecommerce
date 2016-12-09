@@ -118,10 +118,10 @@
 								
 								
 							</ul>
-							<form class="navbar-form navbar-right" role="search" style="width: 300px;">
+							<form class="navbar-form navbar-right" role="search" >
 								<div class="form-group">
-									<input type="text" class="form-control" />
-								</div> <button type="submit" class="btn btn-default">Submit</button>
+									<input type="text" class="form-control" style="width: 300px"/>
+								</div> <button type="submit" class="btn btn-default" >Submit</button>
 							</form>
 						</div>
 					</nav>
@@ -151,19 +151,20 @@
 					</tr>
 				</thead>
 				<tbody>
+				{volist name = "orders" id = "vo"}
 					<tr>
- 
-						<td class="orderID"></td>
-						<td class="goods"><span>AMD</span></td>
-						<td class="price"></td>
-						<td class="customerID"></td>
-						<td class="BillingID"></td>
-						<td class="billing_addressID"></td>
-						<td class="ship_addressID"></td>
-						<td class="amount"></td>
-						<td class="since"> </td>
-						<td class="status"></td>
+						<td class="orderID">{$vo.orderID}</td>
+						<td class="goods">{$vo.productID}</td>
+						<td class="price">{$vo.price}</td>
+						<td class="customerID">{$vo.customerID}</td>
+						<td class="BillingID">{$vo.billingID}</td>
+						<td class="billing_addressID">{$vo.billing_addressID}</td>
+						<td class="ship_addressID">{$vo.ship_addressID}</td>
+						<td class="amount">{$vo.quantity}</td>
+						<td class="since">{$vo.since} </td>
+						<td class="status">{$vo.status}</td>
 					</tr>
+				{/volist}
 				</tbody>
 			</table>
 

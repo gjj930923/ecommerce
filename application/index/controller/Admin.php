@@ -161,6 +161,47 @@ class Admin extends Controller
         {
             $this->assign('adminID',$_SESSION['adminID']);
         }
+
+        $orders=Db('orders')->order('status')->select();
+        $this->assign('orders',$orders);
+        /*$orderIDs=array();
+        $productIDs=array();
+        $customerIDs=array();
+        $billingIDs=array();
+        $ship_addressIDs=array();
+        $billing_addressIDs=array();
+        $sinces=array();
+        $quantities=array();
+        $prices=array();
+        $statuses=array();
+
+        $orderIDs[]=$orders['orderID'];
+        $productIDs[]=$orders['productID'];
+        $customerIDs[]=$orders['customerID'];
+        $billingIDs[]=$orders['billingID'];
+        $ship_addressIDs[]=$orders['ship_addressID'];
+        $billing_addressIDs[]=$orders['billing_addressID'];
+        $sinces[]=$orders['since'];
+        $quantities[]=$orders['quantity'];
+        $prices[]=$orders['price'];
+        $statuses[]=$orders['status'];
+
+        $this->assign('orderID',$orderIDs);
+        $this->assign('productID',$productIDs);
+        $this->assign('customerID',$customerIDs);
+        $this->assign('billingID',$billingIDs);
+        $this->assign('oship_addressID',$ship_addressIDs);
+        $this->assign('billing_addressID',$billing_addressIDs);
+        $this->assign('since',$sinces);
+        $this->assign('quantity',$quantities);
+        $this->assign('price',$prices);
+        $this->assign('status',$statuses);
+        */
+
+        return $this->fetch();
+
+
+
         return $this->fetch();
     }
 }

@@ -1,132 +1,158 @@
-window.onload = function() {
+window.onload = function () {
+   
 
-	var cartTable = document.getElementById('cartTable');
-	var tr = cartTable.children[1].rows;
-	var checkInputs = document.getElementsByClassName('check');
-	var checkAllInputs = document.getElementsByClassName('check-all');
-	var selectedTotal = document.getElementById('selectedTotal');
-	var priceTotal = document.getElementById('priceTotal');
-	var selected = document.getElementById('selected');
-	var foot = document.getElementById('cartfoot');
-	var selectedViewList = document.getElementById('selectedViewList');
-	var deleteAll = document.getElementById('deleteAll');
+    var cartTable = document.getElementById('cartTable');
+    //var tr = cartTable.children[1].rows;
+    var checkInputs = document.getElementsByClassName('check');
+    var checkAllInputs = document.getElementsByClassName('check-all');
+    var selectedTotal = document.getElementById('selectedTotal');
+    var priceTotal = document.getElementById('priceTotal');
+    var selected = document.getElementById('selected');
+    var foot = document.getElementById('foot');
+    var selectedViewList = document.getElementById('selectedViewList');
+    var deleteAll = document.getElementById('deleteAll');
 
-	//calculate
-	function getTotal() {
-		
-		var seleted = 0;
-		var price = 0;
-		var HTMLstr = '';
-		var cartTable = document.getElementById('cartTable');
-		var tr = cartTable.children[1].rows;
-		for(var i = 0, len = tr.length; i < len; i++) {
-			
-			if(tr[i].getElementsByTagName('input')[0].checked) {
-				
-				tr[i].className = 'on';
-				seleted += parseInt(tr[i].getElementsByTagName('input')[1].value);
-				price += parseFloat(tr[i].cells[4].innerHTML);
-				HTMLstr += '<div><img src="' + tr[i].getElementsByTagName('img')[0].src + '"><span class="del" index="' + i + '">取消选择</span></div>'
-			} else {
-			
-				tr[i].className = '';
-			}
-		}
+    //calculate
+    function getTotal() {
+        var seleted = 0;
+        var price = 0;
+        var HTMLstr = '';
+        for (var i = 0, len = tr.length; i < len; i++) {
+            if (tr[i].getElementsByTagName('input')[0].checked) {
+                tr[i].className = 'on';
+                seleted += parseInt(tr[i].getElementsByTagName('input')[1].value);
+                price += parseFloat(tr[i].cells[4].innerHTML);
+                HTMLstr += '<div><img src="' + tr[i].getElementsByTagName('img')[0].src + '"><span class="del" index="' + i + '">取消选择</span></div>'
+            }
+            else {
+                tr[i].className = '';
+            }
+        }
 
-		selectedTotal.innerHTML = seleted;
-		priceTotal.innerHTML = price.toFixed(2);
-		selectedViewList.innerHTML = HTMLstr;
+        selectedTotal.innerHTML = seleted;
+        priceTotal.innerHTML = price.toFixed(2);
+        selectedViewList.innerHTML = HTMLstr;
 
-		if(seleted == 0) {
-			foot.className = 'cartfoot';
-		}
-	}
+        if (seleted == 0) {
+            foot.className = 'foot';
+        }
+    }
 
-	//toal
-	function getSubTotal(tr) {
-		var tds = tr.parent().parent();
-		var price = parseFloat(tds.find(".price").html());
-		var count = parseInt(tr.parent().find('.count-input').attr('value'));
-		var SubTotal = parseFloat(price * count);
-		tds.find('.subtotal').html(SubTotal);
-	}
+    //toal
+    function getSubTotal(tr) {
+        var tds = tr.cells;
+        var price = parseFloat(tds[2].innerHTML);
+        var count = parseInt(tr.getElementsByTagName('input')[1].value);
+        var SubTotal = parseFloat(price * count);
+        tds[4].innerHTML = SubTotal.toFixed(2);
+    }
 
-	
-		
-	
+    for (var i = 0 , len = checkInputs.length; i < len; i++) {
+        checkInputs[i].onclick = function () {
+            if (this.className === 'check-all check') {
+                for (var j = 0; j < checkInputs.length; j++) {
+                    checkInputs[j].checked = this.checked;
+                }
+            }
+            if (this.checked == false) {
+                for (var k = 0; k < checkAllInputs.length; k++) {
+                    checkAllInputs[k].checked = false;
+                }
+            }
+            getTotal();
+        }
+    }
 
-	selected.onclick = function() {
-		if(foot.className == 'foot') {
-			if(selectedTotal.innerHTML != 0) {
-				foot.className = 'foot show';
-			}
-		} else {
-			foot.className = 'foot';
-		}
-	}
+    selected.onclick = function () {
+        if (foot.className == 'foot') {
+            if (selectedTotal.innerHTML != 0) {
+                foot.className = 'foot show';
+            }
+        }
+        else {
+            foot.className = 'foot';
+        }
+    }
 
-	selectedViewList.onclick = function(e) {
-		e = e || window.event;
-		var el = e.srcElement;
-		if(el.className == 'del') {
-			var index = el.getAttribute('index');
-			var input = tr[index].getElementsByTagName('input')[0];
-			input.checked = false;
-			input.onclick();
-		}
-	}
+    selectedViewList.onclick = function (e) {
+        e = e || window.event;
+        var el = e.srcElement;
+        if (el.className == 'del') {
+            var index = el.getAttribute('index');
+            var input = tr[index].getElementsByTagName('input')[0];
+            input.checked = false;
+            input.onclick();
+        }
+    }
 
-	//               
-	///jQ
+    for (var i = 0; i < tr.length; i++) {
+        tr[i].onclick = function (e) {
+            e = e || window.event;
+            var el = e.srcElement;
+            var cls = el.className;
+            var input = this.getElementsByTagName('input')[1];
+            var val = parseInt(input.value);
+            var reduce = this.getElementsByTagName('span')[1];
+            switch (cls) {
+                case 'add':
+                    input.value = val + 1;
+                    reduce.innerHTML = '-';
+                    getSubTotal(this);
+                    break;
+                case 'reduce':
+                    if (val > 1) {
+                        input.value = val - 1;
+                    }
+                    if (input.value <= 1) {
+                        reduce.innerHTML = '';
+                    }
+                    getSubTotal(this);
+                    break;
+                case 'delete':
+                    var conf = confirm('确定要删除吗？');
+                    if (conf) {
+                        this.parentNode.removeChild(this);
+                    }
+                    break
+                default :
+                    break;
+            }
+            getTotal();
+        }
+        tr[i].getElementsByTagName('input')[1].onkeyup = function () {
+            var val = parseInt(this.value);
+            var tr = this.parentNode.parentNode
+            var reduce = tr.getElementsByTagName('span')[1];
+            if (isNaN(val) || val < 1) {
+                val = 1;
+            }
+            this.value = val;
+            if (val <= 1) {
+                reduce.innerHTML = '';
+            }
+            else {
+                reduce.innerHTML = '-';
+            }
+            getSubTotal(tr);
+            getTotal();
+        }
+    }
 
-	//reduce
-	$(document).on('click',"#cartTable tbody tr td .reduce",function() {
-		var inputC = $(this).parent().find('.count-input');
-		var reduce = $(this).parent().find('.reduce');
+    deleteAll.onclick = function () {
+        if (selectedTotal.innerHTML != '0') {
+            var conf = confirm('确定删除吗？');
+            if (conf) {
+                for (var i = 0; i < tr.length; i++) {
+                    var input = tr[i].getElementsByTagName('input')[0];
+                    if (input.checked) {
+                        tr[i].parentNode.removeChild(tr[i]);
+                        i--;
+                    }
+                }
+            }
+        }
+    }
 
-		var val = parseInt(inputC.attr('value'));
-
-		if(val > 1) {
-			inputC.attr('value', val - 1);
-		}
-		if(val == 1) {
-			inputC.attr('value', val - 1);
-			reduce.html('');
-		}
-		getSubTotal($(this));
-			getTotal();
-
-	});
-	//add
-	$(document).on('click',"#cartTable tbody tr td .add",function() {
-		var inputC = $(this).parent().find('.count-input');
-		var val = parseInt(inputC.attr('value'));
-		var reduce = $(this).parent().find('.reduce');
-		inputC.attr('value', val + 1);
-		reduce.html('-');
-		getSubTotal($(this));
-		getTotal();
-	});
-	//delete
-	$(document).on('click',"#cartTable tbody tr td .delete",function() {
-			var conf = confirm('delete Yes？');
-			if(conf) {
-				$(this).parent().parent().remove();
-			}
-				getTotal();
-	});
-	//check all
-	$(document).on('click','.check-all ',function(){
-//			alert($(".checkbox").length);
-			alert($(".check-one checkbox").attr('checked'));
-			$(".checkbox").prop('checked',true);
-	});
-	$(".fr.closing").click(function(){
-		var conf=confirm('check out ?');
-		if(conf){
-			document.location.href = "index.html";
-		}
-	});
-	checkAllInputs[0].checked = true;
-//	checkAllInputs[0].onclick();
+    checkAllInputs[0].checked = true;
+    checkAllInputs[0].onclick();
 }
