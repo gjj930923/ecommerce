@@ -1,14 +1,5 @@
 window.onload = function() {
 
-
-
-
-
-
-
-
-
-
 //
 	var cartTable = document.getElementById('cartTable');
 	var tr = cartTable.children[1].rows;
@@ -54,9 +45,7 @@ window.onload = function() {
 
 	//toal
 	function getSubTotal(tr) {
-		alert(tr.attr('class'));
 		var tds = tr.parent().parent();
-		alert(tds.prop('tagName'));
 		var price = parseFloat(tds.find(".price").html());
 		var count = parseInt(tr.parent().find('.count-input').attr('value'));
 		var SubTotal = parseFloat(price * count);

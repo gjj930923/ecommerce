@@ -6,8 +6,6 @@
 
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
 	<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
 	<link href="http://www.jq22.com/jquery/font-awesome.4.6.0.css" rel="stylesheet" media="screen">
 	
@@ -36,26 +34,19 @@
 			});
 
 			//cart add test
-			$(".fa.fa-shopping-cart").click(function() {
+			$(".fa.fa-shopping-cart").one('click',function() {
 				//check if 1st time to clcik button
-
+				if($(this).data('click',true)){
 				$("#cart").show();
 				//get all the tr
 				var cartTable =$('#cartTable');
-				//				var tr = cartTable.children[1].rows;
-				//				var td = tr.children;
-				//				var i;
-				//				for(i = 0; i < td.length; i++) {
-				//					alert(td[i].tagName);
-				//				}
-				//add product to cart
 				var inner = $(this).parent().parent();
 				var price = inner.find(".ct-product-price");
 				var title = inner.find(".ct-product-title");
 				amount = amount + 1;
-				$(this).data('clicked', true);
-				if($(this).data('clicked')) {
-					alert($(this).attr('id'));
+				alert('first');
+				
+					alert('first');
 
 					//find parent, so add the children to the cart
 
@@ -91,8 +82,8 @@
 					//				</tr>					
 
 					cartTable.find('tbody').append(htmlString);
+				
 					
-
 				}
 
 			});

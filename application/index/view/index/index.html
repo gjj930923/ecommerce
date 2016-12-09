@@ -43,37 +43,20 @@
 						{if condition="isset($adminID)"}
 						<a class="item" href="index/Admin/index" rel="nofollow" onclick="">New Product</a>
 						<a class="item" href="index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
-						<a class="item" href="index/Admin/newAdmin" rel="nofollow" onclick="">Check all orders</a>
+						<a class="item" href="index/Admin/order_check_admin" rel="nofollow" onclick="">Check all orders</a>
 						{else/}
 						{/if}
 					</div>
 					{/if}
 					<div style="float: left;margin-left:360px;padding-top: 10px;">
-						Welcome to browse Here!
-					</div>
-					<div class="group quick-menu">
-						<a rel="nofollow" class="item left-split J-dp-index-trigger">Service<i class="icon i-arrow"></i></a>
-						<a rel="nofollow" class="item left-split" id="J_mobile-page" href="http://www.dianping.com/events/m/index.htm"><i class="icon i-mobile"></i>Retailer</a>
+						{if condition="isset($name)"}
+						Welcome {$name}!
+						{else/}
+						Welcome to Pitt Zhong Guan CUN !
+						{/if}
 					</div>
 				</div>
 			</div>
-			<!--<div id="page-header" class="page-header" style="height: 70px;">
-			<div class="container">
-				<img title="fei fish" src="png/index/logo2.jpg" style="float: left;width: 50px;height:50px ;" class="logo" />
-				<a class="city J-city" style="border-left: solid #0373BD;">Pittsburgh
-					<img src="png/index/choice_bar.png" style="width: 5%;" class="icon i-arrow">
-				</a>
-
-				<div class="search-bar">
-					<input class="J-search-input" id="index_search" data-s-cateid="0" data-s-cityid="4186" data-s-chanid="999" type="text" placeholder="search food" />
-
-					<a class="search-btn J-search-btn" id="G_s-btn" style="background-color: white;">
-						<img src="png/index/search_bar.png" style="width: 40%;margin:0px 8px;border: solid #0373BD;" title="search_bar" />
-					</a>
-				</div>
-			</div>
-
-		</div>-->
 			<div class="container">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
@@ -87,30 +70,12 @@
 							</button>
 								<img title="fei fish" src="png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
 
-								<a class="navbar-brand" href="">Zhong Guan&nbsp;Cun</a>
+								<a class="navbar-brand" href="">Pitt Zhong Guan&nbsp;Cun</a>
 							</div>
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav">
-									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-										<ul class="dropdown-menu">
-											<li>
-												<a href="#">Action</a>
-											</li>
-											<li>
-												<a href="#">Another action</a>
-											</li>
-											<li>
-												<a href="#">Something else here</a>
-											</li>
-											<li class="divider">
-											</li>
-										</ul>
-									</li>
-								</ul>
-								<form class="navbar-form navbar-left" role="search" >
+								<form class="navbar-form navbar-right" role="search" >
 									<div class="form-group">
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" style="width: 300px"/>
 									</div> <button type="submit" class="btn btn-default">Submit</button>
 								</form>
 								
@@ -133,26 +98,11 @@
 								<a href="#">CPU</a><span></span>
 								<div class="submenu">
 									<div class="leftdiv">
+										{volist name="cpu" id="vo"}
 										<dl>
-											<dt><a href="#">i3</a></dt>
-											<dd>
-												<a href="#">FuShiKang</a>
-												<a href="#">Sum</a>
-											</dd>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
-										<dl>
-											<dt><a href="#">i5</a></dt>
-											<dd>
-												<a href="#">FuShiKang</a>
-												<a href="#">Sum</a>
-											</dd>
-										</dl>
-										<dl>
-											<dt><a href="#">i7</a></dt>
-											<dd>
-												<a href="#">Intel</a>
-											</dd>
-										</dl>
+										{/volist}
 									</div>
 									<div class="rightdiv">
 									</div>
@@ -160,48 +110,93 @@
 							</li>
 
 							<li>
-								<a href="#">ROM</a><span></span>
+								<a href="#">GPU</a><span></span>
 								<div class="submenu">
 									<div class="leftdiv">
+										{volist name="gpu" id="vo"}
 										<dl>
-											<dt><a href="#">256MB</a></dt>
-											<dd>
-												<a href="#">TaiWan</a>
-												<a href="#">American</a>
-											</dd>
-											<dt><a href="#">512MB</a></dt>
-											<dd>
-												<a href="#">TaiWan</a>
-												<a href="#">American</a>
-											</dd>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
+										{/volist}
 									</div>
 									<div class="rightdiv">
 									</div>
 								</div>
 							</li>
 							<li>
-								<a href="#">Appearance</a><span></span>
+								<a href="#">Screen Size</a><span></span>
 								<div class="submenu">
 									<div class="leftdiv">
-
+										{volist name="screen_size" id="vo"}
 										<dl>
-											<dt><a href="#">Working</a></dt>
-											<dd>
-												<a href="#">Thin</a>
-												<a href="#">Very Thin</a>
-											</dd>
-											<dt><a href="#">Home</a></dt>
-											<dd>
-												<a href="#">Thin</a>
-												<a href="#">Very Thin</a>
-											</dd>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
+										{/volist}
 									</div>
 									<div class="rightdiv">
 									</div>
 								</div>
 							</li>
+							<li>
+								<a href="#">Rom</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="rom" id="vo"}
+											<dl>
+												<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+											</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#">Hard Disk</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="hard_disk" id="vo"}
+										<dl>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+										</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#">Screen resolution</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="screen_resolution" id="vo"}
+										<dl>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+										</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#">Bluetooth</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="bluetooth" id="vo"}
+										<dl>
+											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+										</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+
 
 						</ul>
 					</div>

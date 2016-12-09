@@ -7,8 +7,20 @@ class Admin extends Controller
 {
     public function index()
     {
-        $hardware_list = Db::table("hardwares")->order("hardware_categoryID")->select();
-        $this->assign("hardware_list", $hardware_list);
+        $cpus = Db::table("hardwares")->where('hardware_categoryID',1)->select();
+        $this->assign('cpu',$cpus);
+        $gpus = Db::table("hardwares")->where('hardware_categoryID',2)->select();
+        $this->assign('gpu',$gpus);
+        $screen_sizes = Db::table("hardwares")->where('hardware_categoryID',3)->select();
+        $this->assign('screen_size',$screen_sizes);
+        $roms = Db::table("hardwares")->where('hardware_categoryID',4)->select();
+        $this->assign('rom',$roms);
+        $hard_disks = Db::table("hardwares")->where('hardware_categoryID',5)->select();
+        $this->assign('hard_disk',$hard_disks);
+        $screen_resolutions = Db::table("hardwares")->where('hardware_categoryID',6)->select();
+        $this->assign('screen_resolution',$screen_resolutions);
+        $bluetooths = Db::table("hardwares")->where('hardware_categoryID',7)->select();
+        $this->assign('bluetooth',$bluetooths);
         return $this->fetch();
     }
     public function newAdmin()
@@ -27,9 +39,18 @@ class Admin extends Controller
             $business_discount=$_POST['business_discount'];
             $status=$_POST['status'];
             $amount=$_POST['amount'];
-            $hardware_list = $_POST['hardware'];
+            $cpu = $_POST['cpu'];
+            $gpu=$_POST['gpu'];
+            $screen_size = $_POST['screen_size'];
+            $rom=$_POST['rom'];
+            $hard_disk = $_POST['hard_disk'];
+            $screen_resolution=$_POST['screen_resolution'];
+            $bluetooth=$_POST['bluetooth'];
+            $hardware_list=array();
+            $hardware_list[]=$cpu+$gpu+$screen_size+$rom+$hard_disk+$screen_resolution+$bluetooth;
 
-            $data=(['product_name'=>$product_name,'price'=>$price,'home_discount'=>$home_discount,'business_discount'=>$business_discount,'status'=>$status,'branch'=>$branch,'inventory_amount'=>$amount]);
+
+            $data=(['product_name'=>$product_name,'price'=>$price,'home_discount'=>$home_discount,'business_discount'=>$business_discount,'status'=>$status,'inventory_amount'=>$amount]);
             $productID=Db::table('products')->insertGetId($data);
             if ($productID)
             {
@@ -126,6 +147,61 @@ class Admin extends Controller
     }
     public function orders()
     {
+        return $this->fetch();
+    }
+    public function  order_check_admin()
+    {
+        session_start();
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+            $this->assign('name',$_SESSION['name']);
+        }
+        if (isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
+
+        $orders=Db('orders')->order('status')->select();
+        $this->assign('orders',$orders);
+        /*$orderIDs=array();
+        $productIDs=array();
+        $customerIDs=array();
+        $billingIDs=array();
+        $ship_addressIDs=array();
+        $billing_addressIDs=array();
+        $sinces=array();
+        $quantities=array();
+        $prices=array();
+        $statuses=array();
+
+        $orderIDs[]=$orders['orderID'];
+        $productIDs[]=$orders['productID'];
+        $customerIDs[]=$orders['customerID'];
+        $billingIDs[]=$orders['billingID'];
+        $ship_addressIDs[]=$orders['ship_addressID'];
+        $billing_addressIDs[]=$orders['billing_addressID'];
+        $sinces[]=$orders['since'];
+        $quantities[]=$orders['quantity'];
+        $prices[]=$orders['price'];
+        $statuses[]=$orders['status'];
+
+        $this->assign('orderID',$orderIDs);
+        $this->assign('productID',$productIDs);
+        $this->assign('customerID',$customerIDs);
+        $this->assign('billingID',$billingIDs);
+        $this->assign('oship_addressID',$ship_addressIDs);
+        $this->assign('billing_addressID',$billing_addressIDs);
+        $this->assign('since',$sinces);
+        $this->assign('quantity',$quantities);
+        $this->assign('price',$prices);
+        $this->assign('status',$statuses);
+        */
+
+        return $this->fetch();
+
+
+
         return $this->fetch();
     }
 }

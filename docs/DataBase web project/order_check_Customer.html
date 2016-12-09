@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+
+		<link type="text/css" rel="stylesheet" href="StyleSheets/sit-nav.css">
+		<link type="text/css" rel="stylesheet" href="StyleSheets/main-nav.css">
+		<link rel="stylesheet" href="StyleSheets/order_check_Customer.css" />
+		<script src="js/order_check_Customer.js"></script>
+
+		<script>
+			var amount = 0;
+			$(document).ready(function() {
+				//adimin test
+				$("#test").click(function() {
+					alert("2");
+					$(".admin_btn").show();
+					$(".admin_form").show();
+				});
+
+				//cart add test
+				$(".fa.fa-shopping-cart").click(function() {
+					//check if 1st time to clcik button
+
+					$("#cart").show();
+					//get all the tr
+					var cartTable = $('#cartTable');
+					var inner = $(this).parent().parent();
+					var price = inner.find(".ct-product-price");
+					var title = inner.find(".ct-product-title");
+					amount = amount + 1;
+					$(this).data('clicked', true);
+					if($(this).data('clicked')) {
+						alert($(this).attr('id'));
+
+						//find parent, so add the children to the cart
+
+						var cart = $(".ct-cart").find("table");
+						var tprice = $("<td><tr></tr></td>").text("price=" + price.text());
+
+						var $atr = $('<tr>');
+						var $atd = $('');
+						var htmlString = ""; //  Content to be added to new div
+
+						htmlString +=
+							'<tr>' +
+							'<td class = "checkbox_cartable"><input class="check-one check" type="checkbox" /></td>' +
+							'<td class="goods"><img src="" alt="" /><span>' + $(this).attr('id') + '</span></td>' +
+							'<td class="price">5999.88</td>' +
+							'<td class="count">' +
+							'<span class="reduce"></span>' +
+							'<input class="count-input" type="text" value="1" />' +
+							'<span class="add">+</span>' +
+							'</td>' +
+							'<td class="subtotal">5999.88</td>' +
+							'<td class="operation"><span class="delete">delete</span></td>' +
+							'</tr>';
+						cartTable.find('tbody').append(htmlString);
+
+					}
+
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="site-nav" class="site-nav">
+			<div class="container">
+				<div class="group user-action J-user-action">
+					<a class="item" href="" rel="nofollow" onclick="">login</a>
+					<a class="item" href="" rel="nofollow" onclick="">Sign&nbsp;In</a>
+				</div>
+				<div id="login_head" style="display: none;">
+					<span id="Username">name</span>>
+				</div>
+				<div id="withoutlogin_head" style="float: left;margin-left:360px;padding-top: 10px;">
+					Welcome to Pitt Zhong Guan Cun !
+				</div>
+				<div class="group quick-menu">
+					<a rel="nofollow" class="item left-split J-dp-index-trigger">Service<i class="icon i-arrow"></i></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<img title="" src="png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
+				
+							<a class="navbar-brand" href="#">Zhong Guan&nbsp;Cun</a>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+							<form class="navbar-form navbar-right" role="search" style="width: 300px;">
+								<div class="form-group">
+									<input type="text" class="form-control" />
+								</div> <button type="submit" class="btn btn-default">Submit</button>
+							</form>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		
+		<!--
+			
+			
+		-->
+
+		<div>
+			<table id="cartTable" class="cartTable" style="margin-left: 300px;text-align: center;">
+				<thead>
+					<tr>
+						<th>order ID</th>
+						<th>product</th>
+						<th>price</th>
+						<th>amount</th>
+						<th>since</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="orderID"></td>
+						<td class="goods"><img src="" alt="" /><span>AMD</span></td>
+						<td class="price">200</td>
+						<td class="amount"></td>
+						<td class="since"> </td>
+					</tr>
+				</tbody>
+			</table>
+
+			
+				
+			
+
+		</div>
+
+	</body>
+
+</html>

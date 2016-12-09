@@ -9,6 +9,19 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="StyleSheets/sit-nav.css">
+    <link type="text/css" rel="stylesheet" href="StyleSheets/main-nav.css">
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheets/sort_nav.css" />
     <script></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
@@ -81,7 +94,8 @@
          #reg_form_P,
          #reg_form_B ,
          #reg_form_A{
-             width: 1000px;
+             width: 1100px;
+             margin-left: 200px;
              background-color: aliceblue;
              border: 2px;
              font-family: garamond;
@@ -100,6 +114,42 @@
  </head>
 
  <body>
+ <div id="head">
+     <div id="site-nav" class="site-nav">
+         <div class="container">
+             <div style="margin-left: 450px">
+                 Welcome to Pitt Zhong Guan Cun !
+             </div>
+         </div>
+     </div>
+     <div class="container">
+         <div class="row clearfix">
+             <div class="col-md-12 column">
+                 <nav class="navbar navbar-default" role="navigation">
+                     <div class="navbar-header">
+                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                             <span class="sr-only">Toggle navigation</span>
+                             <span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                         </button>
+                         <img title="fei fish" src="png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
+
+                         <a class="navbar-brand" href="../../">Pitt Zhong Guan&nbsp;Cun</a>
+                     </div>
+                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                         <form class="navbar-form navbar-right" role="search" >
+                             <div class="form-group">
+                                 <input type="text" class="form-control" style="width: 300px"/>
+                             </div> <button type="submit" class="btn btn-default">Submit</button>
+                         </form>
+
+                     </div>
+                 </nav>
+             </div>
+         </div>
+     </div>
      {if condition="isset($customerID)&&$customerID%2==1"}
  <div>
      <form id="reg_form_P" name="reg_form_P" method="post" action="updateInformation" >
@@ -119,7 +169,7 @@
                              </tr>
                              <tr>
                                  <td class="table_name">E-mail</td>
-                                 <td><input type="text" name="email"  value="{$email}" /></td>
+                                 <td><input type="email" name="email"  value="{$email}" /></td>
                              </tr>
                              <tr>
                                  <td class="table_name">NickName</td>
@@ -217,7 +267,7 @@
                              </tr>
                              <tr>
                                  <td class="table_name">E-mail</td>
-                                 <td><input type="text" name="email" value="{$email}" /></td>
+                                 <td><input type="email" name="email" value="{$email}" /></td>
                              </tr>
                              <tr>
                                  <td width="25%" align="right">Annual Income</td>
@@ -282,7 +332,7 @@
                                  </tr>
                                  <tr>
                                      <td class="table_name">E-mail</td>
-                                     <td><input type="text" name="email" value="{$email}" /></td>
+                                     <td><input type="email" name="email" value="{$email}" /></td>
                              </table>
                          </fieldset>
                      </td>
