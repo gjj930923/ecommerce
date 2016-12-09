@@ -44,7 +44,10 @@
 						<a class="item" href="index/Admin/index" rel="nofollow" onclick="">New Product</a>
 						<a class="item" href="index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
 						<a class="item" href="index/Admin/order_check_admin" rel="nofollow" onclick="">Check all orders</a>
+						<a class="item" href="index/Admin/product_check_admin" rel="nofollow" onclick="">Check all products</a>
 						{else/}
+						<a class="item" href="index/User/order_check_customer" rel="nofollow" onclick="">Check orders</a>
+
 						{/if}
 					</div>
 					{/if}
@@ -100,7 +103,7 @@
 									<div class="leftdiv">
 										{volist name="cpu" id="vo"}
 										<dl>
-											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+											<dt><a href="index/search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
 										{/volist}
 									</div>
@@ -115,7 +118,21 @@
 									<div class="leftdiv">
 										{volist name="gpu" id="vo"}
 										<dl>
-											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+											<dt><a href="index/search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+										</dl>
+										{/volist}
+									</div>
+									<div class="rightdiv">
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#">Bluetooth</a><span></span>
+								<div class="submenu">
+									<div class="leftdiv">
+										{volist name="bluetooth" id="vo"}
+										<dl>
+											<dt><a href="index/search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
 										{/volist}
 									</div>
@@ -129,7 +146,7 @@
 									<div class="leftdiv">
 										{volist name="screen_size" id="vo"}
 										<dl>
-											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+											<dt><a href="index/search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
 										{/volist}
 									</div>
@@ -143,7 +160,7 @@
 									<div class="leftdiv">
 										{volist name="rom" id="vo"}
 											<dl>
-												<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+												<dt><a href="index/search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 											</dl>
 										{/volist}
 									</div>
@@ -158,7 +175,7 @@
 									<div class="leftdiv">
 										{volist name="hard_disk" id="vo"}
 										<dl>
-											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+											<dt><a href="index/search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
 										{/volist}
 									</div>
@@ -173,7 +190,7 @@
 									<div class="leftdiv">
 										{volist name="screen_resolution" id="vo"}
 										<dl>
-											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
+											<dt><a href="index/search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
 										</dl>
 										{/volist}
 									</div>
@@ -182,20 +199,6 @@
 								</div>
 							</li>
 
-							<li>
-								<a href="#">Bluetooth</a><span></span>
-								<div class="submenu">
-									<div class="leftdiv">
-										{volist name="bluetooth" id="vo"}
-										<dl>
-											<dt><a href="search/index?type={$vo.hardwareID}">{$vo.hardware_name}</a></dt>
-										</dl>
-										{/volist}
-									</div>
-									<div class="rightdiv">
-									</div>
-								</div>
-							</li>
 
 
 						</ul>
