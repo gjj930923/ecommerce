@@ -327,7 +327,10 @@ class User extends Controller
             $this->error("You need to log in first!", $url);
         }
         if(isset($_GET['type']) && $_GET['type'] == "update"){
-            $this->assign("update", true);
+            $this->assign("type", "update");
+        }
+        else if(isset($_GET['type']) && $_GET['type'] == "payment") {
+            $this->assign("type", "payment");
         }
         return $this->fetch();
     }
@@ -349,6 +352,9 @@ class User extends Controller
             {
                 if(isset($_GET['type']) && $_GET['type'] == "update"){
                     $url = str_replace(".html", "", url("User/index"));
+                }
+                else if(isset($_GET['type']) && $_GET['type'] == "payment"){
+                    $url = str_replace(".html", "", url("Cart/payment"));
                 }
                 else{
                     $url = str_replace(".html", "", url("User/fillCardInfo"));
@@ -375,7 +381,10 @@ class User extends Controller
             $this->error("You need to log in first!", $url);
         }
         if(isset($_GET['type']) && $_GET['type'] == "update"){
-            $this->assign("update", true);
+            $this->assign("type", "update");
+        }
+        else if(isset($_GET['type']) && $_GET['type'] == "payment") {
+            $this->assign("type", "payment");
         }
         return $this->fetch();
     }
@@ -396,6 +405,9 @@ class User extends Controller
             {
                 if(isset($_GET['type']) && $_GET['type'] == "update"){
                     $url = str_replace(".html", "", url("User/index"));
+                }
+                else if(isset($_GET['type']) && $_GET['type'] == "payment"){
+                    $url = str_replace(".html", "", url("Cart/payment"));
                 }
                 else{
                     $url = str_replace(".html", "", url("Index/index"));

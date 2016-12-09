@@ -41,9 +41,34 @@ class Search extends Controller
             $condition .= " AND productID IN (" . $subSQL . ")";
         }
         //return "SELECT * FROM products WHERE " . $condition;
-        $result = Db::query("SELECT * FROM products WHERE " . $condition);
+        $result = Db::query("SELECT * FROM products WHERE status=1 AND " . $condition);
+        $resultWithHardware = array();
         //$result = Db::table("products")->where($condition)->select();
         //$result = $result.toArray();
+        //Add hardware list on hardware descriptions
+        $i = 0;
+        foreach ($result as $r) {
+            $productHardware = Db::table("products_have_hardware")->where("productID", $r['productID'])->select();
+            $hwName = array();
+            foreach ($productHardware as $hw){
+                $hwTuple = Db::table("hardwares")->where("hardwareID", $hw['hardwareID'])->find();
+                $hwName[] = $hwTuple['hardware_name'];
+            }
+            foreach ($r as $k => $v){
+                $resultWithHardware[$i][$k] = $v;
+            }
+            $resultWithHardware[$i]['hardware'] = implode(", ", $hwName);
+            if($_SESSION['customerID'] % 2 == 1){
+                $resultWithHardware[$i]['discount_price'] = round($r['price'] * $r['home_discount'] / 100.00, 2);
+            }
+            else{
+                $resultWithHardware[$i]['discount_price'] = round($r['price'] * $r['business_discount'] / 100.00, 2);
+            }
+
+            $i++;
+        }
+        unset($result);
+        $result = $resultWithHardware;
         $this->assign("result", $result);
         //Related hardware
         if($result){
@@ -56,8 +81,23 @@ class Search extends Controller
             $this->assign("hardware", $hardware);
         }
         //Get products in cart
-        $cartList = Db::table("cart")->where(array("customerID" => $_SESSION['customerID']))->select();
-        $this->assign("cartList", $cartList);
+        //$cartList = Db::table("cart")->where(array("customerID" => $_SESSION['customerID']))->select();
+        //$pid = array();
+        //foreach ($cartList as $cl) {
+        //    $pid[] = $cl['productID'];
+        //}
+        //$cartProductList = Db::table('products')->where('productID', 'in', $pid);
+        $cartProductList = Db::query("SELECT * FROM products,cart WHERE cart.customerID = ".$_SESSION['customerID']." AND cart.productID = products.productID ");
+        $cartProductIDs = array();
+        foreach($cartProductList as $list){
+            $cartProductIDs[] = $list['productID'];
+        }
+        if(!empty($cartProductIDs)){
+            $cartProductIDString = implode(",", $cartProductIDs);
+            $this->assign("cartProductIDString", $cartProductIDString);
+        }
+        $this->assign("customerID", $_SESSION['customerID']);
+        $this->assign("cartProductList", $cartProductList);
         return $this->fetch();
     }
 }

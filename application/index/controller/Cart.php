@@ -43,86 +43,127 @@ class Cart extends Controller
     public function payment(){
         $userID = $_SESSION['customerID'];
         //The process of payment with card number
-        if(isset($_POST['cardID'])){
+        if(isset($_POST['billingID']) && isset($_POST['addressID']) && isset($_POST['billingAddressID'])){
             //maybe should be modified
-            if(empty($_POST['shipperID'])){
-                $this->error("Shipper Unavailable!");
+            //$productID = explode(" ", $_GET['productID']);
+            $cartProduct = Db::table("cart")->where("customerID", $userID)->select();
+            $productID = array();
+            foreach ($cartProduct as $p) {
+                $productID[] = $p['productID'];
             }
-            else if(empty($_POST['addressID'])){
-                $this->error("Address Unavailable!");
-            }
-            else{
-                $productID = explode(" ", $_GET['productID']);
-                foreach ($productID as $id){
-                    $product = Db::table('product')->where(array('ID' => $id))->find();
-                    $amount = Db::table('cart')->where(array('customerID=' => $userID, "productID" => $id))->find();
-                    if(!$product){
-                        $this->error("A product in the cart does not exist");
-                    }
-                    else if(intval($product['status']) == 0){
-                        $this->error($productID['name']." is unavailable now!");
-                    }
-                    else if(!$amount){
-                        $this->error("Oh no! Something Wrong with {$productID['name']} in the Cart!");
-                    }
-                    else if(intval($product['Inventory_Amount']) < intval($amount['quantity'])) {
-                        $this->error($productID['name']." is out of stock now!");
+            foreach ($productID as $id){
+                $product = Db::table('products')->where(array('productID' => $id))->find();
+                $amount = Db::table('cart')->where(array('customerID' => $userID, "productID" => $id))->find();
+                if(!$product){
+                    $this->error("A product in the cart does not exist");
+                }
+                else if(intval($product['status']) == 0){
+                    $this->error($productID['name']." is unavailable now!");
+                }
+                else if(!$amount){
+                    $this->error("Oh no! Something Wrong with {$productID['name']} in the Cart!");
+                }
+                else if(intval($product['inventory_amount']) < intval($amount['quantity'])) {
+                    $this->error($productID['name']." is out of stock now!");
+                }
+                else{
+                    $list = array();
+                    $list['status'] = 0;
+                    $list['billingID'] = $_POST['billingID'];
+                    $list['customerID'] = $userID;
+                    $list['productID'] = $id;
+                    $list['ship_addressID'] = $_POST['addressID'];
+                    $list['billing_addressID'] = $_POST['billingAddressID'];
+                    //$list['shipper_ID'] = $_POST['shipperID'];
+                    $list['since'] = time();
+                    $list['quantity'] = $amount['quantity'];
+                    $list['price'] = $product['price'];
+                    if($userID % 2 == 1){
+                        $list['price'] *= $product['home_discount'] / 100.00;
                     }
                     else{
-                        $list = array();
-                        $list['billingID'] = $_POST['billingID'];
-                        $list['CustomerID'] = $userID;
-                        $list['productID'] = $id;
-                        $list['shipper_addressID'] = $_POST['shipper_addressID'];
-                        $list['billing_addressID'] = $_POST['billing_addressID'];
-                        $list['shipper_ID'] = $_POST['shipperID'];
-                        $list['since'] = time();
-                        $list['quantity'] = $amount['quantity'];
-                        $list['price'] = $product['price'];
-                        if($userID % 2 == 1){
-                            $list['price'] *= $product['home_discount'];
-                        }
-                        else{
-                            $list['price'] *= $product['business_discount'];
-                        }
-                        $return = Db::table('orders')->insert($list);
-                        if($return){
-                            //delete the product in the cart
-                            $condition = array("customerID" => $userID,  "productID" => $id);
-                            Db::table("cart")->where($condition)->delete();
-                            //modify the inventory amount
-                            Db::table("products")->where("productID", $id)->setDec("inventory_amount", $amount['quantity']);
-                            $product = Product::get($id);
-                            $product->inventory_amount -= $amount['quantity'];
-                            $product->save();
-                        }
+                        $list['price'] *= $product['business_discount'] / 100.00;
+                    }
+                    $return = Db::table('orders')->insert($list);
+                    if($return){
+                        //delete the product in the cart
+                        $condition = array("customerID" => $userID,  "productID" => $id);
+                        Db::table("cart")->where($condition)->delete();
+                        //modify the inventory amount
+                        Db::table("products")->where("productID", $id)->setDec("inventory_amount", $amount['quantity']);
+
                     }
                 }
-                $url = str_replace(".html", "", url("Order/index"));
-                $url = str_replace("/index", "", $url);
-                $this->success("Your order has been placed!", $url);
             }
+            $url = str_replace(".html", "", url("Order/index"));
+            $this->success("Your order has been placed!", $url);
         }
         else{
             //The string of productID is a series of product ID(s)
-            if(isset($_GET['productID'])){
-                $productIDs = $_GET['productID'];
-                $productIDs = str_replace(" ", ",", $productIDs);
-                $condition = 'customerID = ' . $userID . " AND productID IN (" . $productIDs . ")";
-                $cartList = Db::table('cart')->where($condition)->select();
-                if(empty($cartList)){
-                    $this->error("No products to be checked out! Please check your cart. ");
+            if(isset($_POST['productID']) && isset($_POST['quantity'])){
+                $productIDs = $_POST['productID'];
+                $quantities = $_POST['quantity'];
+                if(count($productIDs) != count($quantities)){
+                    $this->error("Wrong in the Cart!");
                 }
                 else{
-                    $shipperList = Db::table('shipper')->select();
-                    $this->assign('cart', $cartList);
-                    $this->assign('shipperList', $shipperList);
-                    $this->fetch();
+                    if(!is_array($productIDs)){
+                        $this->addCart($userID, $productIDs, $quantities);
+                    }
+                    else{
+                        $i = 0;
+                        foreach ($productIDs as $pid){
+                            $this->addCart($userID, $pid, $quantities[$i]);
+                            $i++;
+                        }
+                    }
                 }
+
             }
-            else{
+
+            //Get the contents of the cart.
+            //$productIDs = $_GET['productID'];
+            //$productIDs = str_replace(" ", ",", $productIDs);
+            //$condition = 'customerID = ' . $userID . " AND productID IN (" . $productIDs . ")";
+            $condition = array('customerID' => $userID);
+            $cartList = Db::table('cart')->where($condition)->select();
+            if(empty($cartList)){
                 $this->error("No products to be checked out! Please check your cart. ");
             }
+            else{
+                //$shipperList = Db::table('shipper')->select();
+                $this->assign('cart', $cartList);
+                //Get address list
+                $addressList = db("customers_have_address")->where('customerID', $userID)->select();
+                $addressIDs = array();
+                foreach ($addressList as $addr) {
+                    $addressIDs[] = $addr['addressID'];
+                }
+                if(!empty($addressIDs)) {
+                    $addresses = db("address")->where("addressID", "in", $addressIDs)->select();
+                    $this->assign("addresses", $addresses);
+                }
+                //Get billing info
+                $billingList = db("customers_have_billinginfo")->where('customerID', $userID)->select();
+                $billingIDs = array();
+                foreach ($billingList as $billing) {
+                    $billingIDs[] = $billing['billingID'];
+                }
+                if(!empty($billingIDs)){
+                    $billinginfos = db("billinginfo")->where("billingID", "in", $billingIDs)->select();
+                    $this->assign("billinginfos", $billinginfos);
+                }
+                return $this->fetch();
+            }
+        }
+    }
+
+    public function addCart($customerID, $productID, $quantity){
+        if(Db::table("cart")->where(array("productID" => $productID, "customerID" => $customerID))->find()){
+            Db::table("cart")->where(array("productID" => $productID, "customerID" => $customerID))->update(array("quantity" => $quantity));
+        }
+        else{
+            Db::table("cart")->insert(array("productID" => $productID, "customerID" => $customerID, "quantity" => $quantity));
         }
     }
 
