@@ -112,7 +112,7 @@ BEGIN
     if new.home_discount >0 && new.home_discount<=100 THEN
       if new.business_discount>0 && new.business_discount<=100 THEN
 		set @productID=@productID+new.productID;
-		set @inventory_amount=@inventory_amount+new.inventory_amount;
+		set @inventory_amounft=@inventory_amount+new.inventory_amount;
 		set @product_name=@product_name+new.product_name;
 		set @price=@price+new.price;
 		set @home_discount=@home_discount+new.home_discount;

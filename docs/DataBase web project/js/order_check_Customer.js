@@ -1,14 +1,5 @@
 window.onload = function() {
 
-
-
-
-
-
-
-
-
-
 //
 	var cartTable = document.getElementById('cartTable');
 	var tr = cartTable.children[1].rows;
