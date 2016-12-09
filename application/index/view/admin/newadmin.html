@@ -8,12 +8,65 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="StyleSheets/sit-nav.css">
+    <link type="text/css" rel="stylesheet" href="StyleSheets/main-nav.css">
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheets/sort_nav.css" />
+    <script src="js/sort_nav.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <style>
         #addAdmin{width: 1000px;background-color:aliceblue;border: 2px;font-family: garamond;}
         #addAdmin .table_name{width:25%;text-align:right;}
     </style>
 </head>
 <body>
+<div id="head">
+    <div id="site-nav" class="site-nav">
+        <div class="container">
+            <div style="margin-left: 450px">
+                Welcome to Pitt Zhong Guan Cun !
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <img title="fei fish" src="png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
+
+                        <a class="navbar-brand" href="../../">Pitt Zhong Guan&nbsp;Cun</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <form class="navbar-form navbar-right" role="search" >
+                            <div class="form-group">
+                                <input type="text" class="form-control" style="width: 300px"/>
+                            </div> <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div>
 <form id="addAdmin" action="addAdmin" method="post">
     <table  width="450" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -51,10 +104,7 @@
                 <td><input type="reset" value="Reset"></td>
             </table>
         </tr>
-    </table>
 </form>
-<form id="goback_p" action="goback" method="post">
-    <td align="right"><input type="submit" value="Back"></td>
-</form>
+        </div>
 </body>
 </html>

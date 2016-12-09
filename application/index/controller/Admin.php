@@ -124,4 +124,9 @@ class Admin extends Controller
                 return 0;
             }
     }
+    public function orders()
+    {
+        return $this->fetch();
+    }
 }
+

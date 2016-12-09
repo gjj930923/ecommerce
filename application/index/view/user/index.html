@@ -70,14 +70,13 @@
 
      <style>
          td {
-             width: 25%; align: right
+             width="25%" align="right"
          }
 
          td input {
              size: 16;
          }
-         #address_form,
-         #billing_form,
+
          #reg_form_P,
          #reg_form_B ,
          #reg_form_A{
@@ -86,8 +85,7 @@
              border: 2px;
              font-family: garamond;
          }
-         #address_form .table_name,
-         #billing_form .table_name,
+
          #reg_form_P .table_name,
          #reg_form_B .table_name ,
          #reg_form_A .table_name{
@@ -100,13 +98,12 @@
  </head>
 
  <body>
-
      {if condition="isset($customerID)&&$customerID%2==1"}
  <div>
      <form id="reg_form_P" name="reg_form_P" method="post" action="updateInformation" >
          <table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
              <tr>
-                 <th scope="col">Update&nbsp;Information</th>
+                 <th scope="col">Sign&nbsp;Up</th>
              </tr>
 
              <tr>
@@ -255,9 +252,6 @@
              </tr>
          </table>
      </form>
-     <form id="goback_B" action="goback" method="post">
-         <td align="right"><input type="submit" value="Back"></td>
-     </form>
  </div>
      {elseif condition="isset($adminID)"}
      <div>
@@ -304,12 +298,10 @@
                  </tr>
              </table>
          </form>
-         <form id="goback_A" action="goback" method="post">
-             <td align="right"><input type="submit" value="Back"></td>
-         </form>
      </div>
      {else/}
 {/if}
+
      {if condition="!isset($adminID)"}
      <div>
          <form id="address_form" action="updateAddress" method="post">
@@ -376,7 +368,7 @@
                                  <tr id="billinginfo_cardnumber">
                                      <td class="table_name">credit&nbsp;card&nbsp;number</td>
                                      <td>
-                                         <input type="text" pattern="[0-9]{16}|[0-9]{19}u" name="creditcard_number" value=""/>
+                                         <input type="text" pattern="[0-9]{16}|[0-9]{19}" name="creditcard_number" value=""/>
                                      </td>
                                  </tr>
 
@@ -417,9 +409,6 @@
                      </td>
                  </tr>
              </table>
-         </form>
-         <form id="goback" action="goback" method="post">
-             <td align="right"><input type="submit" value="Back"></td>
          </form>
      </div>
     {/if}
