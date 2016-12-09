@@ -12,17 +12,17 @@ class Index extends Controller
             if (isset($_SESSION['adminID']))
             {
                 $this->assign('adminID',$_SESSION['adminID']);
-                $this->assign('name',$_SESSION['first_name']." ".$_SESSION['last_name']);
+                $this->assign('name',$_SESSION['name']);
             }
             else
             {
                 if($_SESSION['customerID'] % 2 == 1)
                 {
-                    $this->assign('name',$_SESSION['nick_name']);
+                    $this->assign('name',$_SESSION['name']);
                 }
                 else
                 {
-                    $this->assign('name',$_SESSION['company_name']);
+                    $this->assign('name',$_SESSION['name']);
                 }
             }
 

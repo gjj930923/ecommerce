@@ -24,8 +24,9 @@
     <script src="js/sort_nav.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <style>
-        #addProduct{width: 1000px;background-color:aliceblue;border: 2px;font-family: garamond;}
+        #addProduct{margin-left:200px;width: 1100px;background-color:aliceblue;border: 2px;font-family: garamond;}
         #addProduct .table_name{width:25%;text-align:right;}
+        #kind_table{ margin-left: 10px; width :900px; border:1px solid blue;}
     </style>
 </head>
 <body>
@@ -65,14 +66,16 @@
             </div>
         </div>
     </div>
-    </div>>
+    </div>
     <div>
 <form id="addProduct" action="addProduct" method="post">
-    <table  width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+    <table  width="900" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
             <td>
                 <fieldset>
+                    <div style="margin-left: 300px">
                     <legend>AddProduct</legend>
+                        </div>
                     <table width="80%">
                         <tr >
                             <td width="35%" align="right">Product Name</td>
@@ -105,33 +108,146 @@
                         </tr>
                     </table>
                 </fieldset>
-                {if condition = "isset($hardware_list)"}
-                <fieldset>
-                    <legend>Hardware Selection</legend>
-                    <table width="80%">
-
-                        {volist name = "hardware_list" id = "vo"}
+                {if condition = "isset($cpu)"}
+                <form id="reg_form" action="" method="post">
+                    <!--CPU-->
+                    <table  class="kind_table" width="100" border="0" align="left" cellpadding="0" >
                         <tr>
-                            <td width="35%" align="right">{$vo.hardware_name}</td>
-                            <td><input type="checkbox" name="hardware[]" value="{$vo.hardwareID}"></td>
+                            <td>
+                                <fieldset>
+                                    <legend>CPU</legend>
+                                    <table width="80%">
+                                        {volist name = "cpu" id = "vo"}
+                                        <tr>
+                                            <td width="55%" align="center">{$vo.hardware_name}</td>
+                                            <td><input type="radio" name="cpu" required value="{$vo.hardwareID}"></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </fieldset>
+                            </td>
                         </tr>
-                        {/volist}
-
                     </table>
-                </fieldset>
+
+                    <!--GPU-->
+                    <table  class="kind_table" width="150" border="0" align="center" cellpadding="0" style="float: left;">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>GPU</legend>
+                                    <table width="100%">
+                                        {volist name = "gpu" id = "vo1"}
+                                        <tr>
+                                            <td width="100%" align="center">{$vo1.hardware_name}</td>
+                                            <td><input type="radio" name="gpu" required value="{$vo1.hardwareID}"></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table   class="kind_table" width="180" border="0" align="center" cellpadding="0" style="float: left;">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Screen&nbsp;size </legend>
+                                    <table width="80%">
+                                        {volist name = "screen_size" id = "vo2"}
+                                        <tr>
+                                            <td width="100%" align="center">{$vo2.hardware_name}</td>
+                                            <td><input type="radio" name="screen_size" required value="{$vo2.hardwareID}"></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table  class="kind_table" width="150" border="0" align="center" cellpadding="0" style="float: left;">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Rom </legend>
+                                    <table width="80%">
+                                        {volist name = "rom" id = "vo3"}
+                                        <tr>
+                                            <td width="100%" align="center">{$vo3.hardware_name}</td>
+                                            <td><input type="radio" name="rom" required value="{$vo3.hardwareID}"></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table  class="kind_table" width="150" border="0" align="center" cellpadding="0" style="float: left;">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Hard Disk </legend>
+                                    <table width="80%">
+                                        {volist name = "hard_disk" id = "vo4"}
+                                        <tr>
+                                            <td width="100%" align="center">{$vo4.hardware_name}</td>
+                                            <td><input type="radio" name="hard_disk" required value="{$vo4.hardwareID}"></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table  class="kind_table" width="200" border="0" align="center" cellpadding="0" style="float: left;">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Screen Resolution</legend>
+                                    <table width="80%">
+                                        {volist name = "screen_resolution" id = "vo5"}
+                                        <tr>
+                                            <td width="100%" align="center">{$vo5.hardware_name}</td>
+                                            <td><input type="radio" name="screen_resolution" required value="{$vo5.hardwareID}"></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table  class="kind_table" width="200" border="0" align="center" cellpadding="0" style="float: left;">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Bluetooth</legend>
+                                    <table width="80%">
+                                        {volist name = "bluetooth" id = "vo6"}
+                                        <tr>
+                                            <td width="100%" align="center">{$vo6.hardware_name}</td>
+                                            <td><input type="radio" name="bluetooth" required  value="{$vo6.hardwareID} "></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
                 {/if}
             </td>
         </tr>
         <tr>
             <table width="85%" border="0" >
-                <td align="right"><input type="submit" value="Add"></td>
-                <td><input type="reset" value="Reset"></td>
+                <td align="right"><input type="submit" value="Add" style="font-size: 20px"></td>
+                <td><input type="reset" value="Reset" style="font-size: 20px"></td>
             </table>
         </tr>
     </table>
-</form>
-<form id="goback_p" action="goback" method="post">
-    <td align="right"><input type="submit" value="Back"></td>
 </form>
 </body>
 </html>

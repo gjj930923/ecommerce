@@ -29,7 +29,7 @@ class Login extends Controller
                         session_start();
                         $_SESSION['username'] = $home_customer['username'];
                         $_SESSION['customerID'] = $home_customer['customerID'];
-                        $_SESSION['nick_name']=$home_customer['nick_name'];
+                        $_SESSION['name']=$home_customer['nick_name'];
                         $url = str_replace(".html", "", url("Index/index"));
                         $url = str_replace("/index", "", $url);
                         //$this->success('Welcome, '.$home_customer['nick_name'] . '!', $url);
@@ -46,7 +46,7 @@ class Login extends Controller
                         session_start();
                         $_SESSION['username'] = $business_customer['username'];
                         $_SESSION['customerID'] = $business_customer['customerID'];
-                        $_SESSION['company_name']=$business_customer['company_name'];
+                        $_SESSION['name']=$business_customer['company_name'];
                         $url = str_replace(".html", "", url("Index/index"));
                         $url = str_replace("/index", "", $url);
                         //$this->success('Welcome, '.$business_customer['company_name'] . '!', $url);
@@ -68,8 +68,7 @@ class Login extends Controller
                         session_start();
                         $_SESSION['username'] = $admin['username'];
                         $_SESSION['adminID'] = $admin['adminID'];
-                        $_SESSION['first_name']=$admin['first_name'];
-                        $_SESSION['last_name']=$admin['last_name'];
+                        $_SESSION['name']=$admin['first_name']." ".$admin['last_name'];
                         $url = str_replace(".html", "", url("Index/index"));
                         $url = str_replace("/index", "", $url);
                         $this->redirect($url, 301);
