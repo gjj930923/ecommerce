@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/application/index/controller/Search.php" line="9" mnemonic="4" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="77c68052-0329-4cb8-9d69-b2a3c5bd982e" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/DataBase web project/png/AMD.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/png/AMD.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/png/E5v4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/png/core2.jpeg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/E-R 2.0.jpg" afterPath="$PROJECT_DIR$/docs/E-R 2.0.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/E-R.png" afterPath="$PROJECT_DIR$/docs/E-R.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/E-R1.0.jpg" afterPath="$PROJECT_DIR$/docs/E-R1.0.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/E-R3.0.jpg" afterPath="$PROJECT_DIR$/docs/E-R3.0.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ecommerce" afterPath="$PROJECT_DIR$/ecommerce" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/public/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/bin/hiddeninput.exe" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/bin/hiddeninput.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/logo.png" afterPath="$PROJECT_DIR$/thinkphp/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE.txt" afterPath="$PROJECT_DIR$/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/command.php" afterPath="$PROJECT_DIR$/application/command.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/common.php" afterPath="$PROJECT_DIR$/application/common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config.php" afterPath="$PROJECT_DIR$/application/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/database.php" afterPath="$PROJECT_DIR$/application/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index/controller/Index.php" afterPath="$PROJECT_DIR$/application/index/controller/Index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index/view/index/index.html" afterPath="$PROJECT_DIR$/application/index/view/index/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index/view/index/index.html-backup" afterPath="$PROJECT_DIR$/application/index/view/index/index.html-backup" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index/view/search/index.html" afterPath="$PROJECT_DIR$/application/index/view/search/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index/view/user/order_check_customer.html" afterPath="$PROJECT_DIR$/application/index/view/user/order_check_customer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/route.php" afterPath="$PROJECT_DIR$/application/route.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/tags.php" afterPath="$PROJECT_DIR$/application/tags.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.php" afterPath="$PROJECT_DIR$/build.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extend/.gitignore" afterPath="$PROJECT_DIR$/extend/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml" afterPath="$PROJECT_DIR$/phpunit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="$PROJECT_DIR$/public/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/StyleSheets/cart_table.css" afterPath="$PROJECT_DIR$/public/StyleSheets/cart_table.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/StyleSheets/sort_nav.css" afterPath="$PROJECT_DIR$/public/StyleSheets/sort_nav.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/cart_table.js" afterPath="$PROJECT_DIR$/public/js/cart_table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/robots.txt" afterPath="$PROJECT_DIR$/public/robots.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/router.php" afterPath="$PROJECT_DIR$/public/router.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/.gitignore" afterPath="$PROJECT_DIR$/runtime/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test" afterPath="$PROJECT_DIR$/test" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ExampleTest.php" afterPath="$PROJECT_DIR$/tests/ExampleTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase.php" afterPath="$PROJECT_DIR$/tests/TestCase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think" afterPath="$PROJECT_DIR$/think" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/.gitignore" afterPath="$PROJECT_DIR$/thinkphp/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/.htaccess" afterPath="$PROJECT_DIR$/thinkphp/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/.travis.yml" afterPath="$PROJECT_DIR$/thinkphp/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/thinkphp/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/LICENSE.txt" afterPath="$PROJECT_DIR$/thinkphp/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/README.md" afterPath="$PROJECT_DIR$/thinkphp/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/base.php" afterPath="$PROJECT_DIR$/thinkphp/base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/codecov.yml" afterPath="$PROJECT_DIR$/thinkphp/codecov.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/composer.json" afterPath="$PROJECT_DIR$/thinkphp/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/console.php" afterPath="$PROJECT_DIR$/thinkphp/console.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/convention.php" afterPath="$PROJECT_DIR$/thinkphp/convention.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/helper.php" afterPath="$PROJECT_DIR$/thinkphp/helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/lang/zh-cn.php" afterPath="$PROJECT_DIR$/thinkphp/lang/zh-cn.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/App.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/App.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Build.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Build.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Cache.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Collection.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Collection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Config.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Console.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Console.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Controller.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Cookie.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Cookie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Db.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Debug.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Debug.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Env.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Env.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Error.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Error.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Exception.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/File.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Hook.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Hook.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Lang.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Loader.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Loader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Log.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Model.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Paginator.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Paginator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Process.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Process.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Request.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Response.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Response.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Route.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Route.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Session.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Template.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Url.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Url.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/Validate.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/Validate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/View.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/View.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/Driver.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/File.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Lite.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Lite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Memcache.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Memcache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Memcached.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Memcached.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Redis.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Redis.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Sqlite.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Sqlite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Wincache.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Wincache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Xcache.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/cache/driver/Xcache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/config/driver/Ini.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/config/driver/Ini.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/config/driver/Json.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/config/driver/Json.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/config/driver/Xml.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/config/driver/Xml.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/Command.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/Command.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/Input.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/Input.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/LICENSE" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/Output.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/Output.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/bin/README.md" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/bin/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/Build.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/Build.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/Clear.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/Clear.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/Help.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/Help.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/Lists.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/Lists.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/Make.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/Make.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/Controller.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/Model.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/stubs/controller.plain.stub" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/stubs/controller.plain.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/stubs/controller.stub" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/stubs/controller.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/stubs/model.stub" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/make/stubs/model.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/optimize/Autoload.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/optimize/Autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/optimize/Config.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/optimize/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/command/optimize/Route.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/command/optimize/Route.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/input/Argument.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/input/Argument.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/input/Definition.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/input/Definition.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/input/Option.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/input/Option.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/Ask.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/Ask.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/Descriptor.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/Descriptor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/Formatter.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/Formatter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/Question.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/Question.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/descriptor/Console.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/descriptor/Console.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/driver/Buffer.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/driver/Buffer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/driver/Console.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/driver/Console.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/driver/Nothing.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/driver/Nothing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/formatter/Stack.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/formatter/Stack.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/formatter/Style.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/formatter/Style.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/question/Choice.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/question/Choice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/console/output/question/Confirmation.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/console/output/question/Confirmation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/controller/Rest.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/controller/Rest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/controller/Yar.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/controller/Yar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/Builder.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/Builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/Connection.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/Query.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/Query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/builder/Mysql.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/builder/Mysql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/builder/Pgsql.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/builder/Pgsql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/builder/Sqlite.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/builder/Sqlite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/builder/Sqlsrv.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/builder/Sqlsrv.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/connector/Mysql.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/connector/Mysql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/connector/Pgsql.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/connector/Pgsql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/connector/Sqlite.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/connector/Sqlite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/connector/Sqlsrv.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/connector/Sqlsrv.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/connector/pgsql.sql" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/connector/pgsql.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/exception/BindParamException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/exception/BindParamException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/exception/DataNotFoundException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/exception/DataNotFoundException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/db/exception/ModelNotFoundException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/db/exception/ModelNotFoundException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/debug/Console.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/debug/Console.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/debug/Html.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/debug/Html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/ClassNotFoundException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/ClassNotFoundException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/DbException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/DbException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/ErrorException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/ErrorException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/Handle.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/Handle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/HttpException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/HttpException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/HttpResponseException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/HttpResponseException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/PDOException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/PDOException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/TemplateNotFoundException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/TemplateNotFoundException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/ThrowableError.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/ThrowableError.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/exception/ValidateException.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/exception/ValidateException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/log/driver/File.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/log/driver/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/log/driver/Socket.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/log/driver/Socket.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/log/driver/Test.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/log/driver/Test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/model/Merge.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/model/Merge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/model/Pivot.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/model/Pivot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/model/Relation.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/model/Relation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/paginator/Collection.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/paginator/Collection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/paginator/driver/Bootstrap.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/paginator/driver/Bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/process/Builder.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/process/Builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/process/Utils.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/process/Utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/process/exception/Faild.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/process/exception/Faild.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/process/exception/Timeout.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/process/exception/Timeout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/process/pipes/Pipes.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/process/pipes/Pipes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/process/pipes/Unix.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/process/pipes/Unix.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/process/pipes/Windows.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/process/pipes/Windows.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/response/Json.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/response/Json.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/response/Jsonp.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/response/Jsonp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/response/Redirect.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/response/Redirect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/response/View.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/response/View.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/response/Xml.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/response/Xml.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/session/driver/Memcache.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/session/driver/Memcache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/session/driver/Memcached.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/session/driver/Memcached.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/session/driver/Redis.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/session/driver/Redis.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/template/TagLib.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/template/TagLib.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/template/driver/File.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/template/driver/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/template/taglib/Cx.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/template/taglib/Cx.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/view/driver/Php.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/view/driver/Php.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/think/view/driver/Think.php" afterPath="$PROJECT_DIR$/thinkphp/library/think/view/driver/Think.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/traits/controller/Jump.php" afterPath="$PROJECT_DIR$/thinkphp/library/traits/controller/Jump.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/traits/model/SoftDelete.php" afterPath="$PROJECT_DIR$/thinkphp/library/traits/model/SoftDelete.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/library/traits/think/Instance.php" afterPath="$PROJECT_DIR$/thinkphp/library/traits/think/Instance.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/phpunit.xml" afterPath="$PROJECT_DIR$/thinkphp/phpunit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/start.php" afterPath="$PROJECT_DIR$/thinkphp/start.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/tpl/default_index.tpl" afterPath="$PROJECT_DIR$/thinkphp/tpl/default_index.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/tpl/page_trace.tpl" afterPath="$PROJECT_DIR$/thinkphp/tpl/page_trace.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/tpl/think_exception.tpl" afterPath="$PROJECT_DIR$/thinkphp/tpl/think_exception.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/.gitignore" afterPath="$PROJECT_DIR$/vendor/.gitignore" />
+    </list>
+    <ignored path="ecommerce.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ecommerce" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+              <folding>
+                <element signature="e#38#59#0#PHP" expanded="true" />
+                <marker date="1481312504786" expanded="true" signature="2297:2316" ph="..." />
+                <marker date="1481312504786" expanded="true" signature="2363:2377" ph="..." />
+                <marker date="1481312504786" expanded="true" signature="2425:2440" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_check_customer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/view/user/order_check_customer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product_check_admin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/view/admin/product_check_admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Search.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/controller/Search.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+              <folding>
+                <element signature="e#38#59#0#PHP" expanded="true" />
+                <marker date="1481306353864" expanded="true" signature="1659:1735" ph="SELECT DISTI... Relation" />
+                <marker date="1481306353864" expanded="true" signature="1659:1749" ph="SELECT DISTI... Relation" />
+                <marker date="1481306353864" expanded="true" signature="1845:1874" ph="SELECT * FRO... products" />
+                <marker date="1481306353864" expanded="true" signature="1919:1947" ph="SELECT * FRO... products" />
+                <marker date="1481306353864" expanded="true" signature="1919:1948" ph="SELECT * FRO... products" />
+                <marker date="1481306353864" expanded="true" signature="1919:1961" ph="SELECT * FRO... products" />
+                <marker date="1481306353864" expanded="true" signature="3708:3858" ph="SELECT DISTI... hardwares" />
+                <marker date="1481306353864" expanded="true" signature="3762:3857" ph="SELECT hardw... products_have_hardware" />
+                <marker date="1481306353864" expanded="true" signature="4348:4361" ph="SELECT * FRO... " />
+                <marker date="1481306353864" expanded="true" signature="4348:4399" ph="SELECT * FRO... products" />
+                <marker date="1481306353864" expanded="true" signature="4348:4471" ph="SELECT * FRO... products" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/view/search/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="228" column="29" selection-start-line="228" selection-start-column="13" selection-end-line="228" selection-end-column="29" />
+              <folding>
+                <element signature="e#3490#3496#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart_table.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/cart_table.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/view/index/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="75" column="108" selection-start-line="75" selection-start-column="108" selection-end-line="75" selection-end-column="108" />
+              <folding>
+                <element signature="e#1616#1622#0" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_result.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/index/view/search/search_result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-76">
+              <caret line="9" column="91" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sort_nav.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/StyleSheets/sort_nav.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="38" column="9" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sort_nav.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/sort_nav.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/application/index/controller/Order.php" />
+        <option value="$PROJECT_DIR$/application/index/model/Home_customer.php" />
+        <option value="$PROJECT_DIR$/application/index/model/Business_customer.php" />
+        <option value="$PROJECT_DIR$/application/index/view/user/fillAddress.html" />
+        <option value="$PROJECT_DIR$/application/index/view/admin/index.html" />
+        <option value="$PROJECT_DIR$/application/index/controller/Admin.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/Login.php" />
+        <option value="$USER_HOME$/html/ecommerce/application/index/view/index/login.html" />
+        <option value="$PROJECT_DIR$/application/index/view/user/signin.html" />
+        <option value="$PROJECT_DIR$/application/index/view/user/index.html" />
+        <option value="$PROJECT_DIR$/public/StyleSheets/cart_table.css" />
+        <option value="$PROJECT_DIR$/application/index/view/user/filladdress.html" />
+        <option value="$PROJECT_DIR$/application/index/view/user/fillcardinfo.html" />
+        <option value="$PROJECT_DIR$/application/index/controller/User.php" />
+        <option value="$PROJECT_DIR$/public/StyleSheets/sort_nav.css" />
+        <option value="$PROJECT_DIR$/application/index/controller/Search.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/Cart.php" />
+        <option value="$PROJECT_DIR$/application/index/view/cart/payment.html" />
+        <option value="$PROJECT_DIR$/public/js/cart_table.js" />
+        <option value="$PROJECT_DIR$/application/index/view/search/index.html" />
+        <option value="$PROJECT_DIR$/application/index/view/user/order_check_customer.html" />
+        <option value="$PROJECT_DIR$/application/index/view/admin/product_check_admin.html" />
+        <option value="$PROJECT_DIR$/application/index/controller/Index.php" />
+        <option value="$PROJECT_DIR$/application/index/view/index/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StyleSheets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cart" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecommerce" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v7.2.0/bin/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/index/model" />
+      <recent name="$PROJECT_DIR$/application/index/controller" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77c68052-0329-4cb8-9d69-b2a3c5bd982e" name="Default" comment="" />
+      <created>1478621999924</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1478621999924</updated>
+      <workItem from="1478622003755" duration="49000" />
+      <workItem from="1478622608352" duration="969000" />
+      <workItem from="1479189639040" duration="6000" />
+      <workItem from="1479604418110" duration="172000" />
+      <workItem from="1479604594888" duration="5167000" />
+      <workItem from="1480195281912" duration="47467000" />
+      <workItem from="1480741232767" duration="4808000" />
+      <workItem from="1480890545759" duration="7399000" />
+      <workItem from="1481040226079" duration="91842000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="157879000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2021522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481312504786" expanded="true" signature="2297:2316" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2363:2377" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2425:2440" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481306353864" expanded="true" signature="1659:1735" ph="SELECT DISTI... Relation" />
+            <marker date="1481306353864" expanded="true" signature="1659:1749" ph="SELECT DISTI... Relation" />
+            <marker date="1481306353864" expanded="true" signature="1845:1874" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1947" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1948" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1961" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="3708:3858" ph="SELECT DISTI... hardwares" />
+            <marker date="1481306353864" expanded="true" signature="3762:3857" ph="SELECT hardw... products_have_hardware" />
+            <marker date="1481306353864" expanded="true" signature="4348:4361" ph="SELECT * FRO... " />
+            <marker date="1481306353864" expanded="true" signature="4348:4399" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="4348:4471" ph="SELECT * FRO... products" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/search/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+          <folding>
+            <element signature="e#3490#3496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/filladdress.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481312504786" expanded="true" signature="2297:2316" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2363:2377" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2425:2440" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481306353864" expanded="true" signature="1659:1735" ph="SELECT DISTI... Relation" />
+            <marker date="1481306353864" expanded="true" signature="1659:1749" ph="SELECT DISTI... Relation" />
+            <marker date="1481306353864" expanded="true" signature="1845:1874" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1947" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1948" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1961" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="3708:3858" ph="SELECT DISTI... hardwares" />
+            <marker date="1481306353864" expanded="true" signature="3762:3857" ph="SELECT hardw... products_have_hardware" />
+            <marker date="1481306353864" expanded="true" signature="4348:4361" ph="SELECT * FRO... " />
+            <marker date="1481306353864" expanded="true" signature="4348:4399" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="4348:4471" ph="SELECT * FRO... products" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/search/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3490#3496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" selection-start-line="13" selection-start-column="8" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4755">
+          <caret line="317" column="24" selection-start-line="317" selection-start-column="24" selection-end-line="317" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481312504786" expanded="true" signature="2297:2316" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2363:2377" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2425:2440" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="8" selection-start-column="8" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481306353864" expanded="true" signature="1659:1735" ph="SELECT DISTI... Relation" />
+            <marker date="1481306353864" expanded="true" signature="1659:1749" ph="SELECT DISTI... Relation" />
+            <marker date="1481306353864" expanded="true" signature="1845:1874" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1947" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1948" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1961" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="3708:3858" ph="SELECT DISTI... hardwares" />
+            <marker date="1481306353864" expanded="true" signature="3762:3857" ph="SELECT hardw... products_have_hardware" />
+            <marker date="1481306353864" expanded="true" signature="4348:4361" ph="SELECT * FRO... " />
+            <marker date="1481306353864" expanded="true" signature="4348:4399" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="4348:4471" ph="SELECT * FRO... products" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" selection-start-line="13" selection-start-column="8" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481312504786" expanded="true" signature="2297:2316" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2363:2377" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2425:2440" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481312504786" expanded="true" signature="2297:2316" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2363:2377" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2425:2440" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481312504786" expanded="true" signature="2297:2316" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2363:2377" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2425:2440" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1020">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Business_customer.php" />
+    <entry file="file://$PROJECT_DIR$/application/index/model/Home_customer.php" />
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/fillAddress.html" />
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/html/ecommerce/application/index/view/index/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/index.html-backup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="64" column="51" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="119" column="28" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
+          <folding>
+            <marker date="1481309096542" expanded="true" signature="87:142" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <marker date="1481310754795" expanded="false" signature="42:73" ph="..." />
+            <marker date="1481310754795" expanded="true" signature="105:10774" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="135:150" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="354:397" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="430:2274" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="500:2194" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="1175:2082" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="1400:1951" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="1458:1812" ph="..." />
+            <marker date="1481310754795" expanded="true" signature="1568:1703" ph="..." />
+            <marker date="1481310754795" expanded="true" signature="1972:2068" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="2099:2183" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="2207:2268" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="2303:2459" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="2490:4047" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="2666:3965" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="2999:3116" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="3133:3955" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="3196:3295" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="3316:3564" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="3593:3824" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="3845:3941" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="3978:4040" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="4089:4334" ph="{...}" />
+            <marker date="1481310754795" expanded="true" signature="4241:4280" ph="..." />
+            <marker date="1481310754795" expanded="true" signature="4288:4327" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/signin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="247" column="84" selection-start-line="247" selection-start-column="84" selection-end-line="247" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/StyleSheets/cart_table.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/filladdress.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="67" column="87" selection-start-line="67" selection-start-column="87" selection-end-line="67" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="427" column="17" selection-start-line="427" selection-start-column="17" selection-end-line="427" selection-end-column="17" />
+          <folding>
+            <element signature="e#4579#4781#0#PHP" expanded="false" />
+            <element signature="e#4786#11540#0#PHP" expanded="false" />
+            <element signature="e#11545#12527#0#PHP" expanded="false" />
+            <element signature="e#12532#13998#0#PHP" expanded="false" />
+            <element signature="e#14045#15028#0#PHP" expanded="false" />
+            <element signature="e#16557#16737#0#PHP" expanded="false" />
+            <element signature="e#16742#19492#0#PHP" expanded="false" />
+            <element signature="e#19498#20451#0#PHP" expanded="false" />
+            <element signature="e#20457#21434#0#PHP" expanded="false" />
+            <element signature="e#21441#22138#0#PHP" expanded="false" />
+            <element signature="e#22143#22880#0#PHP" expanded="false" />
+            <element signature="e#22885#26981#0#PHP" expanded="false" />
+            <element signature="e#27319#28058#0#PHP" expanded="false" />
+            <element signature="e#28064#28823#0#PHP" expanded="false" />
+            <element signature="e#28828#29723#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/fillcardinfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="69" column="41" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="21" column="113" selection-start-line="21" selection-start-column="113" selection-end-line="21" selection-end-column="113" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/cart/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="108" column="108" selection-start-line="108" selection-start-column="106" selection-end-line="108" selection-end-column="108" />
+          <folding>
+            <element signature="e#943#949#0" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3231#3237#0" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3919#3925#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="176" column="58" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="58" />
+          <folding>
+            <element signature="e#4739#4745#0" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7020#7026#0" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7976#7982#0" expanded="true" />
+            <element signature="e#8123#8129#0" expanded="true" />
+            <element signature="e#9071#9077#0" expanded="true" />
+            <element signature="e#9305#9311#0" expanded="true" />
+            <element signature="e#9315#9321#0" expanded="true" />
+            <element signature="e#12860#12866#0" expanded="true" />
+            <element signature="e#13007#13013#0" expanded="true" />
+            <element signature="e#15906#15912#0" expanded="true" />
+            <element signature="e#16070#16076#0" expanded="true" />
+            <element signature="e#18183#18189#0" expanded="true" />
+            <element signature="e#20834#20840#0" expanded="true" />
+            <element signature="e#21838#21844#0" expanded="true" />
+            <element signature="e#21848#21854#0" expanded="true" />
+            <element signature="e#22245#22251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481306353864" expanded="true" signature="1659:1735" ph="SELECT DISTI... Relation" />
+            <marker date="1481306353864" expanded="true" signature="1659:1749" ph="SELECT DISTI... Relation" />
+            <marker date="1481306353864" expanded="true" signature="1845:1874" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1947" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1948" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="1919:1961" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="3708:3858" ph="SELECT DISTI... hardwares" />
+            <marker date="1481306353864" expanded="true" signature="3762:3857" ph="SELECT hardw... products_have_hardware" />
+            <marker date="1481306353864" expanded="true" signature="4348:4361" ph="SELECT * FRO... " />
+            <marker date="1481306353864" expanded="true" signature="4348:4399" ph="SELECT * FRO... products" />
+            <marker date="1481306353864" expanded="true" signature="4348:4471" ph="SELECT * FRO... products" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1481312504786" expanded="true" signature="2297:2316" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2363:2377" ph="..." />
+            <marker date="1481312504786" expanded="true" signature="2425:2440" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/user/order_check_customer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/admin/product_check_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="75" column="108" selection-start-line="75" selection-start-column="108" selection-end-line="75" selection-end-column="108" />
+          <folding>
+            <element signature="e#1616#1622#0" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/cart_table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/search/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="228" column="29" selection-start-line="228" selection-start-column="13" selection-end-line="228" selection-end-column="29" />
+          <folding>
+            <element signature="e#3490#3496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/StyleSheets/sort_nav.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/sort_nav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/search/search_result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="9" column="91" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -11,7 +11,7 @@
 		margin: 0;
 		padding: 0;
 	}
-
+	
 	.toptitle {
 		height: 40px;
 		line-height: 40px;
@@ -77,9 +77,9 @@
 	.submenu {
 		display: none;
 		width: 205px;
-		left: 320px;
+		left: 160px;
 		position: absolute;
-		top: 150px;
+		top: 180px;
 		border: 1px solid #DDD;
 		z-index: 4;
 		background: white;
@@ -90,7 +90,7 @@
 	
 	.leftdiv {
 		float: left;
-		width: 200px;
+		width: 205px;
 		margin: 5px;
 	}
 	
@@ -106,8 +106,8 @@
 	.leftdiv dl dt {
 		display: block;
 		float: left;
-		width: 150px;
-		text-align: center;
+		width: 130px;
+		text-align: right;
 		height: 35px;
 		/*line-height: 22px;*/
 		padding-right: 6px;

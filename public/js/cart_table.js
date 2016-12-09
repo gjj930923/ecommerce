@@ -21,17 +21,14 @@ window.onload = function() {
 		var tr = cartTable.children[1].rows;
 		for(var i = 0, len = tr.length; i < len; i++) {
 			
-			if(tr[i].getElementsByTagName('input')[0].checked) {
+
 				// alert("length"+tr.length);
 				tr[i].className = 'on';
 				seleted += parseInt(tr[i].getElementsByTagName('input')[1].value);
-				price += parseFloat(tr[i].cells[4].innerHTML);
+				price += parseFloat(tr[i].cells[3].innerHTML);
 				// alert("price"+price);
 				HTMLstr += '<div><img src="' + tr[i].getElementsByTagName('img')[0].src + '"><span class="del" index="' + i + '">取消选择</span></div>'
-			} else {
-			
-				tr[i].className = '';
-			}
+
 		}
 
 		selectedTotal.innerHTML = seleted;
