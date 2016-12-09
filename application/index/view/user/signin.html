@@ -9,6 +9,22 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="StyleSheets/sit-nav.css">
+    <link type="text/css" rel="stylesheet" href="StyleSheets/main-nav.css">
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheets/sort_nav.css" />
+    <script src="js/sort_nav.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <style>
         td {
@@ -21,7 +37,8 @@
 
         #reg_form_P,
         #reg_form_B {
-            width: 1000px;
+            width: 1100px;
+            margin-left: 200px;
             background-color: aliceblue;
             border: 2px;
             font-family: garamond;
@@ -31,6 +48,7 @@
         #reg_form_B .table_name {
             width: 25%;
             text-align: right;
+            font-size: 20px;
         }
     </style>
     <script>
@@ -54,11 +72,49 @@
 </head>
 
 <body>
+<div id="head">
+    <div id="site-nav" class="site-nav">
+        <div class="container">
+            <div style="margin-left: 450px">
+                Welcome to Pitt Zhong Guan Cun !
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <img title="fei fish" src="png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
+
+                        <a class="navbar-brand" href="../../">Pitt Zhong Guan&nbsp;Cun</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <form class="navbar-form navbar-right" role="search" >
+                            <div class="form-group">
+                                <input type="text" class="form-control" style="width: 300px"/>
+                            </div> <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
 <div>
     <form action="" method="get">
-        choose your customer type:<br /><br />
-        <label><input name="customer" type="radio" value="home" id="home" onclick="showP()"/>home </label>
-        <label><input name="customer" type="radio" value="business" id="business" onclick="showB()"/>business </label>
+        <div style="margin-left: 600px; font-size: 20px">
+            choose your customer type:
+            </div>
+        <label><input name="customer" type="radio" value="home" id="home" style="margin-left: 650px" onclick="showP()"/>home </label>
+        <label><input name="customer" type="radio" value="business" id="business"  onclick="showB()"/>business </label>
     </form>
 
 </div>
@@ -75,60 +131,60 @@
                         <legend>Personal&nbsp;Information</legend>
                         <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
                             <tr>
-                                <td><input type="hidden" name="customerType" value="Home"/></td>
+                                <td><input type="hidden" name="customerType" value="Home" style="width: 200px"/></td>
                             </tr>
                             <tr>
-                                <td class="table_name">UserName</td>
-                                <td><input type="text" name="Username"  required /></td>
+                                <td class="table_name">UserName: </td>
+                                <td><input type="text" name="Username" style="width: 200px"  required /></td>
                             </tr>
                             <tr>
-                                <td class="table_name">&nbsp;Password</td>
-                                <td><input type="password" name="Password" title=""required /></td>
+                                <td class="table_name">&nbsp;Password: </td>
+                                <td><input type="password" name="Password" style="width: 200px" required /></td>
                             </tr>
                             <tr>
-                                <td class="table_name">Check&nbsp;PassWord</td>
-                                <td><input type="password"name="checkPassword"  required /></td>
+                                <td class="table_name">Check&nbsp;PassWord: </td>
+                                <td><input type="password"name="checkPassword" style="width: 200px" required /></td>
                             </tr>
                             <tr>
-                                <td class="table_name">E-mail</td>
-                                <td><input type="text"name="email"  required /></td>
+                                <td class="table_name">E-mail: </td>
+                                <td><input type="email" name="email" style="width: 200px" required /></td>
                             </tr>
                             <tr>
-                                <td class="table_name">NickName</td>
-                                <td><input type="text" name="NickName" required/></td>
+                                <td class="table_name">NickName: </td>
+                                <td><input type="text" name="NickName" style="width: 200px" required/></td>
                             </tr>
                             <tr>
-                                <td class="table_name">First&nbsp;Name</td>
-                                <td><input type="text" name="Fname"required /></td>
+                                <td class="table_name">First&nbsp;Name: </td>
+                                <td><input type="text" name="Fname" style="width: 200px" required /></td>
                             </tr>
                             <tr>
-                                <td class="table_name">&nbsp;Last&nbsp;Name</td>
-                                <td><input type="text" name="Lname"required /></td>
+                                <td class="table_name">&nbsp;Last&nbsp;Name: </td>
+                                <td><input type="text" name="Lname" style="width: 200px" required /></td>
                             </tr>
 
                             <tr>
-                                <td width="25%" align="right">Income</td>
-                                <td><input type="number" min="0" size="10"name="Income"/></td>
+                                <td class="table_name">Income: </td>
+                                <td><input type="number" min="0" size="10"name="Income" style="width: 200px"/></td>
                             </tr>
                             <tr>
-                                <td width="25%" align="right">Age</td>
-                                <td><input type="number" min="0" size="10"name="Age" /></td>
+                                <td class="table_name">Age: </td>
+                                <td><input type="number" min="0" size="10"name="Age" style="width: 200px" /></td>
                             </tr>
                             <tr>
-                                <td width="25%" align="right">Marriage</td>
+                                <td class="table_name">Marriage: </td>
                                 <td>
                                     <select name="marriage">
-                                        <option selected="selected" name="1" value="unknown">unknown</option>
+                                        <option selected="selected" name="1" value="unknown" >unknown</option>
                                         <option  name="1" value="yes">yes</option>
                                         <option  name="1" value="no">no</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td width="25%" align="right">gender</td>
+                                <td class="table_name">Gender: </td>
                                 <td>
                                     <select name="gender">
-                                        <option selected="selected"name="2" value="male">male</option>
+                                        <option selected="selected"name="2" value="male" style="height: 30px">male</option>
                                         <option name="2" value="female">female</option>
 
                                     </select>
@@ -141,7 +197,7 @@
 
             <tr>
                 <td>
-                    <table width="85%" border="0" cellspacing="2" cellpadding="0">
+                    <table width="85%" border="0" cellspacing="2" cellpadding="0" style="font-size: 15px">
                         <tr>
                             <td align="right"><input type="submit" value="Submit" /></td>
                             <td><input type="reset" value="Reset" /></td>
@@ -186,14 +242,14 @@
                             </tr>
                             <tr>
                                 <td class="table_name">E-mail</td>
-                                <td><input type="text" name="email" required /></td>
+                                <td><input type="email" name="email" required /></td>
                             </tr>
                             <tr>
-                                <td width="25%" align="right">Annual Income</td>
+                                <td class="table_name">Annual Income</td>
                                 <td><input type="number" name="annual_income" /></td>
                             </tr>
                             <tr>
-                                <td width="25%" align="right">Category</td>
+                                <td class="table_name">Category</td>
                                 <td>
                                     <select name="category">
                                         {volist name="business_category" id="vo"}
