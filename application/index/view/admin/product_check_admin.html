@@ -86,7 +86,7 @@
 						{if condition="isset($adminID)"}
 						<a class="item" href="../../index/Admin/index" rel="nofollow" onclick="">New Product</a>
 						<a class="item" href="../../index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
-						<a class="item" href="product_check_admin" rel="nofollow" onclick="">Check all products</a>
+						<a class="item" href="order_check_admin" rel="nofollow" onclick="">Check all orders</a>
 						{else/}
 						{/if}
 				</div>
@@ -135,36 +135,31 @@
 			<table id="cartTable" class="cartTable" style="margin-left: 150px">
 				<thead>
 					<tr>
-						<th>order ID</th>
-						<th>product Name</th>
-						<th>price</th>
-						<th>customerID</th>
-						<th>BillingID</th>
-						<th>billing_addressID</th>
-						<th>ship_addressID</th>
-						<th>amount</th>
-						<th>since</th>
-						<th>status</th>
+						<th>Product ID</th>
+						<th>Inventory Amount</th>
+						<th>Product Name</th>
+						<th>Price</th>
+						<th>Home Discount</th>
+						<th>Business Discount</th>
+						<th>Status</th>
+						<th>Sales Volume</th>
 					</tr>
 				</thead>
 				<tbody>
-				{volist name = "orders" id = "vo"}
-
+				{volist name = "products" id = "vo"}
 					<tr>
-						<td class="orderID">{$vo.orderID}</td>
-						<td class="goods">{$vo.product_name}</td>
-						<td class="price">{$vo.price}</td>
-						<td class="customerID">{$vo.customerID}</td>
-						<td class="BillingID">{$vo.billingID}</td>
-						<td class="billing_addressID">{$vo.billing_addressID}</td>
-						<td class="ship_addressID">{$vo.ship_addressID}</td>
-						<td class="amount">{$vo.quantity}</td>
-						<td class="since">{$vo.since} </td>
+						<td class="orderID">{$vo.productID}</td>
+						<td class="goods">{$vo.inventory_amount}</td>
+						<td class="price">{$vo.product_name}</td>
+						<td class="customerID">{$vo.price}</td>
+						<td class="BillingID">{$vo.home_discount}</td>
+						<td class="billing_addressID">{$vo.business_discount}</td>
 						{if condition="$vo.status==1"}
-						<td class="status">Done</td>
+						<td class="ship_addressID">On the Shelf</td>
 						{else/}
-						<td class="ship_addressID">Processing</td>
+						<td class="ship_addressID">Off the Shelf</td>
 						{/if}
+						<td class="amount">{$vo.sales_volume}</td>
 					</tr>
 				{/volist}
 				</tbody>

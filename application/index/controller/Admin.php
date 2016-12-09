@@ -30,60 +30,59 @@ class Admin extends Controller
     public function addProduct()
     {
         session_start();
-       if(isset($_SESSION['adminID']))
-       {
-            $adminID=$_SESSION['adminID'];
-            $product_name=$_POST['product_name'];
-            $price=$_POST['price'];
-            $home_discount=$_POST['home_discount'];
-            $business_discount=$_POST['business_discount'];
-            $status=$_POST['status'];
-            $amount=$_POST['amount'];
-            $cpu = $_POST['cpu'];
-            $gpu=$_POST['gpu'];
-            $screen_size = $_POST['screen_size'];
-            $rom=$_POST['rom'];
-            $hard_disk = $_POST['hard_disk'];
-            $screen_resolution=$_POST['screen_resolution'];
-            $bluetooth=$_POST['bluetooth'];
-            $hardware_list=array();
-            $hardware_list[]=$cpu+$gpu+$screen_size+$rom+$hard_disk+$screen_resolution+$bluetooth;
+       if(isset($_SESSION['adminID'])) {
+           $adminID = $_SESSION['adminID'];
+           $product_name = $_POST['product_name'];
+           $check = $this->doubleProductName($product_name);
+           if ($check) {
+               $this->error("product name has been already existed!");
+           } else {
+               $price = $_POST['price'];
+               $home_discount = $_POST['home_discount'];
+               $business_discount = $_POST['business_discount'];
+               $status = $_POST['status'];
+               $amount = $_POST['amount'];
+               $cpu = $_POST['cpu'];
+               $gpu = $_POST['gpu'];
+               $screen_size = $_POST['screen_size'];
+               $rom = $_POST['rom'];
+               $hard_disk = $_POST['hard_disk'];
+               $screen_resolution = $_POST['screen_resolution'];
+               $bluetooth = $_POST['bluetooth'];
+               $hardware_list = array();
+               $hardware_list[] = $cpu + $gpu + $screen_size + $rom + $hard_disk + $screen_resolution + $bluetooth;
 
 
-            $data=(['product_name'=>$product_name,'price'=>$price,'home_discount'=>$home_discount,'business_discount'=>$business_discount,'status'=>$status,'inventory_amount'=>$amount]);
-            $productID=Db::table('products')->insertGetId($data);
-            if ($productID)
-            {
-                $date=date("Y/m/d");
-                $data=(['adminID'=>$adminID,'productID'=>$productID,'since'=>$date]);
-                $result=Db::table('manage')->insert($data);
-                if($result)
-                {
-                    if($hardware_list){
-                        $hardware_data = [];
-                        foreach ($hardware_list as $hardwareID){
-                            $hardware_data[] = array('productID' => $productID, 'hardwareID' => $hardwareID);
-                        }
-                        Db::name('products_have_hardware')->insertAll($hardware_data);
-                    }
-                    $url = str_replace(".html", "", url("Admin/index"));
-                    $this->success("ok",$url);
-                }
-                else
-                {
-                    $this->error("something wrong happen");
-                }
-            }
-            else
-            {
-                $this->error("something wrong happen");
-            }
+               $data = (['product_name' => $product_name, 'price' => $price, 'home_discount' => $home_discount, 'business_discount' => $business_discount, 'status' => $status, 'inventory_amount' => $amount]);
+               $productID = Db::table('products')->insertGetId($data);
+               if ($productID) {
+                   $date = date("Y/m/d");
+                   $data = (['adminID' => $adminID, 'productID' => $productID, 'since' => $date]);
+                   $result = Db::table('manage')->insert($data);
+                   if ($result) {
+                       if ($hardware_list) {
+                           $hardware_data = [];
+                           foreach ($hardware_list as $hardwareID) {
+                               $hardware_data[] = array('productID' => $productID, 'hardwareID' => $hardwareID);
+                           }
+                           Db::name('products_have_hardware')->insertAll($hardware_data);
+                       }
+                       $url = str_replace(".html", "", url("Admin/index"));
+                       $this->success("ok", $url);
+                   } else {
+                       $this->error("something wrong happen");
+                   }
+               } else {
+                   $this->error("something wrong happen");
+               }
+           }
+       }
+       else
+           {
+               $this->error("fatal error");
+           }
 
-        }
-        else
-        {
-            $this->error("fatal error");
-        }
+
     }
     public function goback()
     {
@@ -162,10 +161,16 @@ class Admin extends Controller
             $this->assign('adminID',$_SESSION['adminID']);
         }
 
-        $orders=Db('orders')->order('status')->select();
+        $orders=Db('products')->alias('p')->join('orders o','o.productID=p.productID')->select();
         $this->assign('orders',$orders);
-        /*$orderIDs=array();
         $productIDs=array();
+        foreach ($orders as $pro)
+        {
+            $productIDs[]=$pro['productID'];
+        }
+        $products=Db("products")->where('productID','=',$productIDs);
+        $this->assign('products',$products);
+        /*$orderIDs=array();
         $customerIDs=array();
         $billingIDs=array();
         $ship_addressIDs=array();
@@ -174,9 +179,7 @@ class Admin extends Controller
         $quantities=array();
         $prices=array();
         $statuses=array();
-
         $orderIDs[]=$orders['orderID'];
-        $productIDs[]=$orders['productID'];
         $customerIDs[]=$orders['customerID'];
         $billingIDs[]=$orders['billingID'];
         $ship_addressIDs[]=$orders['ship_addressID'];
@@ -202,6 +205,40 @@ class Admin extends Controller
 
 
 
+        return $this->fetch();
+    }
+    public function doubleProductName($product_name)
+    {
+       $condition=array('product_name'=>$product_name);
+        $result=Db('products')->where($condition)->find();
+        if($result)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    public function  updateProduct()
+    {
+
+    }
+    public function product_check_admin()
+    {
+        session_start();
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+            $this->assign('name',$_SESSION['name']);
+        }
+        if (isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
+
+        $products=Db('products')->order(['sales_volume'=>'desc'])->select();
+        $this->assign('products',$products);
         return $this->fetch();
     }
 }

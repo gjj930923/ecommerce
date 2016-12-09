@@ -782,4 +782,21 @@ class User extends Controller
             return "Illegal operation!";
         }
     }
+    public function order_check_customer()
+    {
+        if(isset($_SESSION['customerID']))
+        {
+            $customerID=$_SESSION['customerID'];
+            $orders=Db('products')->alias('p')->join('orders o','o.productID=p.productID')->where('customerID',$customerID)->select();
+            if($orders)
+            {
+                $this->assign('orders',$orders);
+                return $this->fetch();
+            }
+            else
+            {
+                $this->error("It is empty. Go and buy Now!");
+            }
+        }
+    }
 }
