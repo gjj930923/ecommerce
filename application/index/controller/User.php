@@ -13,12 +13,18 @@ class User extends Controller
 {
     public function _initialize()
     {
-
+        session_start();
+        if(!isset($_SESSION['customerID']) && !isset($_SESSION['adminID'])){
+            $url = str_replace(".html", "", url("Index/index"));
+            $url = str_replace(".php", "", $url);
+            $url = str_replace("/index", "", $url);
+            $this->error("You need to log in first!", $url);
+        }
     }
 
     public function index()
     {
-        session_start();
+        //session_start();
         if(isset($_SESSION['customerID']))
         {
             $this->assign('customerID',$_SESSION['customerID']);
@@ -53,6 +59,22 @@ class User extends Controller
                 $business_category = Db::table('business_category')->select();
                 $this->assign('business_category', $business_category);
             }
+            //Get address list
+            $addressList = db("customers_have_address")->where('customerID', $customerID)->select();
+            $addressIDs = array();
+            foreach ($addressList as $addr) {
+                $addressIDs[] = $addr['addressID'];
+            }
+            $addresses = db("address")->where("addressID", "in", $addressIDs)->select();
+            $this->assign("addresses", $addresses);
+            //Get billing info
+            $billingList = db("customers_have_billinginfo")->where('customerID', $customerID)->select();
+            $billingIDs = array();
+            foreach ($billingList as $billing) {
+                $billingIDs[] = $billing['billingID'];
+            }
+            $billinginfos = db("billinginfo")->where("billingID", "in", $billingIDs)->select();
+            $this->assign("billinginfos", $billinginfos);
         }
         else
         {
@@ -366,7 +388,7 @@ class User extends Controller
     }
     public function updateInformation()
     {
-        session_start();
+        //session_start();
         if(isset($_SESSION['customerID']))
         {
             $customerID=$_SESSION['customerID'];
@@ -434,6 +456,52 @@ class User extends Controller
         }
 
     }
+
+    public function updateBillinginfo(){
+        if(isset($_POST['billingID']) && isset($_POST['creditcard_number']) && isset($_POST['year']) && isset($_POST['month'])){
+            //return $_POST['billingID']." ".$_POST['creditcard_number']." ".$_POST['year']." ".$_POST['month'];
+            $data = array();
+            $data['billingID'] = $_POST['billingID'];
+            $data['creditcard_number'] = $_POST['creditcard_number'];
+            $data['expire_year'] = $_POST['year'];
+            $data['expire_month'] = $_POST['month'];
+            $customerID = $_SESSION['customerID'];
+            Db::table("billinginfo")->update($data);
+            if(true){
+                $this->success("Update Billing Information Successfully!");
+            }
+            else{
+                $this->error("Something Wrong with Update Billing Information!");
+            }
+        }
+        else{
+            return "Make America Great Again!";
+        }
+    }
+
+    public function updateAddress(){
+        if(isset($_POST['addressID']) && isset($_POST['street']) && isset($_POST['city']) && isset($_POST['state']) && isset($_POST['zipcode'])){
+            //return $_POST['billingID']." ".$_POST['creditcard_number']." ".$_POST['year']." ".$_POST['month'];
+            $data = array();
+            $data['addressID'] = $_POST['addressID'];
+            $data['street'] = $_POST['street'];
+            $data['city'] = $_POST['city'];
+            $data['state'] = $_POST['state'];
+            $data['zip_code'] = $_POST['zipcode'];
+            $customerID = $_SESSION['customerID'];
+            Db::table("address")->update($data);
+            if(true){
+                $this->success("Update Address Information Successfully!");
+            }
+            else{
+                $this->error("Something Wrong with Update Address Information!");
+            }
+        }
+        else{
+            return "Make America Great Again!";
+        }
+    }
+
     public function checkHomeUsername()
     {
         $username=$_GET['username'];

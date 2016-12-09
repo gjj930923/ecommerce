@@ -11,16 +11,41 @@
     <title></title>
     <script></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("tr[id^='billinginfo_']").hide();
+            $("tr[id^='address_']").hide();
+            $('#billing_submit').hide();
+            $('#address_submit').hide();
+            $("#billingID").click(function () {
+                id = $(this).val();
+                $("tr[id^='billinginfo_']").hide();
+                $("#billinginfo_cardnumber_"+id).show();
+                $("#billinginfo_expire_"+id).show();
+                $('#billing_submit').show();
+            });
+            $("#addressID").click(function () {
+                id = $(this).val();
+                $("tr[id^='billinginfo_']").hide();
+                $("#address_state_"+id).show();
+                $("#address_street_"+id).show();
+                $("#address_zipcode_"+id).show();
+                $("#address_city_"+id).show();
+                $('#address_submit').show();
+            });
+        });
+    </script>
 
      <style>
          td {
-             width="25%" align="right"
+             width: 25%; align: right
          }
 
          td input {
              size: 16;
          }
-
+         #address_form,
+         #billing_form,
          #reg_form_P,
          #reg_form_B ,
          #reg_form_A{
@@ -29,7 +54,8 @@
              border: 2px;
              font-family: garamond;
          }
-
+         #address_form .table_name,
+         #billing_form .table_name,
          #reg_form_P .table_name,
          #reg_form_B .table_name ,
          #reg_form_A .table_name{
@@ -42,12 +68,13 @@
  </head>
 
  <body>
+
      {if condition="isset($customerID)&&$customerID%2==1"}
  <div>
      <form id="reg_form_P" name="reg_form_P" method="post" action="updateInformation" >
          <table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
              <tr>
-                 <th scope="col">Sign&nbsp;Up</th>
+                 <th scope="col">Update&nbsp;Information</th>
              </tr>
 
              <tr>
@@ -133,9 +160,6 @@
                  </td>
              </tr>
          </table>
-     </form>
-     <form id="goback" action="goback" method="post">
-         <td align="right"><input type="submit" value="Back"></td>
      </form>
  </div>
 
@@ -254,6 +278,123 @@
      </div>
      {else/}
 {/if}
+     {if condition="!isset($adminID)"}
+     <div>
+         <form id="address_form" action="updateAddress" method="post">
+             <table  width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+                 <tr>
+                     <td>
+                         <fieldset>
+                             <legend>Address&nbsp;Infomation (<a href="fillAddress?type=update">Add New Address</a>)</legend>
+                             <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+                                 <tr>
+                                     <td class="table_name">Choose Address</td>
+                                     <td>
+                                         <select name="addressID" id="addressID">
+                                             {volist name="addresses" id="vo"}
+                                             <option value="{$vo.addressID}">{$vo.street}</option>
+                                             {/volist}
+                                         </select>
+                                     </td>
+                                 </tr>
+                                 {volist name="addresses" id="vo"}
+                                 <tr id="address_state_{$vo.addressID}">
+                                     <td class="table_name">State</td>
+                                     <td><input type="text"name="state" value="{$vo.state}"></td>
+                                 </tr>
+                                 <tr id="address_city_{$vo.addressID}">
+                                     <td class="table_name">City</td>
+                                     <td><input type="text"name="city" value="{$vo.city}"></td>
+                                 </tr>
+                                 <tr id="address_street_{$vo.addressID}">
+                                     <td class="table_name">Street</td>
+                                     <td><input type="text"name="street" value="{$vo.street}"></td>
+                                 </tr>
+                                 <tr id="address_zipcode_{$vo.addressID}">
+                                     <td class="table_name">zipcode</td>
+                                     <td><input type="text" name="zipcode" value="{$vo.zip_code}"></td>
+                                 </tr>
+                                 {/volist}
+                                 <tr id="address_submit">
+                                     <td align="right"><input type="submit" value="Update" /></td>
+                                     <td><input type="reset" value="Reset" /></td>
+                                </tr>
+                             </table>
+                         </fieldset>
+                     </td>
+                 </tr>
+             </table>
+         </form>
+
+         <form id="billing_form" action="updateBillinginfo" method="post">
+             <table  width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+                 <tr>
+                     <td>
+                         <fieldset>
+                             <legend>Billing&nbsp;Infomation (<a href="fillCardInfo?type=update">Add New Card</a>)</legend>
+                             <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
+                                 <tr>
+                                     <td class="table_name">Choose Card</td>
+                                     <td>
+                                         <select name="billingID" id="billingID">
+                                            {volist name="billinginfos" id="vo"}
+                                            <option value="{$vo.billingID}">{$vo.creditcard_number}</option>
+                                            {/volist}
+                                         </select>
+                                     </td>
+                                 </tr>
+                                 {volist name="billinginfos" id="vo"}
+                                 <tr id="billinginfo_cardnumber_{$vo.billingID}">
+                                     <td class="table_name">credit&nbsp;card&nbsp;number</td>
+                                     <td>
+                                         <input type="number" name="creditcard_number" value="{$vo.creditcard_number}"/>
+                                     </td>
+                                 </tr>
+
+                                 <tr id="billinginfo_expire_{$vo.billingID}">
+                                     <td class="table_name">Expire&nbsp;Date&nbsp</td>
+                                     <td >
+                                         <label>year</label>
+                                         <select name="year" >
+                                             <option {if condition="$vo['expire_year'] eq 2016"}selected{/if} value="2016">2016</option>
+                                             <option {if condition="$vo['expire_year'] eq 2017"}selected{/if} value="2017">2017</option>
+                                             <option {if condition="$vo['expire_year'] eq 2018"}selected{/if} value="2018">2018</option>
+                                             <option {if condition="$vo['expire_year'] eq 2019"}selected{/if} value="2019">2019</option>
+                                         </select>
+                                         mon
+                                         <select name="month">
+                                             <option {if condition="$vo['expire_month'] eq 1"}selected{/if} value="1">1</option>
+                                             <option {if condition="$vo['expire_month'] eq 2"}selected{/if} value="2" >2</option>
+                                             <option {if condition="$vo['expire_month'] eq 3"}selected{/if} value="3">3</option>
+                                             <option {if condition="$vo['expire_month'] eq 4"}selected{/if} value="4">4</option>
+                                             <option {if condition="$vo['expire_month'] eq 5"}selected{/if} value="5" >5</option>
+                                             <option {if condition="$vo['expire_month'] eq 6"}selected{/if} value="6">6</option>
+                                             <option {if condition="$vo['expire_month'] eq 7"}selected{/if} value="7">7</option>
+                                             <option {if condition="$vo['expire_month'] eq 8"}selected{/if} value="8" >8</option>
+                                             <option {if condition="$vo['expire_month'] eq 9"}selected{/if} value="9">9</option>
+                                             <option {if condition="$vo['expire_month'] eq 10"}selected{/if} value="10">10</option>
+                                             <option {if condition="$vo['expire_month'] eq 11"}selected{/if} value="11">11</option>
+                                             <option {if condition="$vo['expire_month'] eq 12"}selected{/if} value="12">12</option>
+                                         </select>
+                                     </td>
+                                 </tr>
+                                 {/volist}
+                                 <tr id="billing_submit">
+                                     <td align="right"><input type="submit" value="Update" /></td>
+                                     <td><input type="reset" value="Reset" /></td>
+                                 </tr>
+                             </table>
+
+                         </fieldset>
+                     </td>
+                 </tr>
+             </table>
+         </form>
+         <form id="goback" action="goback" method="post">
+             <td align="right"><input type="submit" value="Back"></td>
+         </form>
+     </div>
+    {/if}
  </body>
 
  </html>
