@@ -22,10 +22,11 @@ window.onload = function() {
 		for(var i = 0, len = tr.length; i < len; i++) {
 			
 			if(tr[i].getElementsByTagName('input')[0].checked) {
-				
+				// alert("length"+tr.length);
 				tr[i].className = 'on';
 				seleted += parseInt(tr[i].getElementsByTagName('input')[1].value);
 				price += parseFloat(tr[i].cells[4].innerHTML);
+				// alert("price"+price);
 				HTMLstr += '<div><img src="' + tr[i].getElementsByTagName('img')[0].src + '"><span class="del" index="' + i + '">取消选择</span></div>'
 			} else {
 			
@@ -44,9 +45,13 @@ window.onload = function() {
 
 	//toal
 	function getSubTotal(tr) {
+
 		var tds = tr.parent().parent();
+
 		var price = parseFloat(tds.find(".price").html());
+
 		var count = parseInt(tr.parent().find('.count-input').attr('value'));
+
 		var SubTotal = parseFloat(price * count);
 		tds.find('.subtotal').html(SubTotal);
 	}
@@ -90,7 +95,7 @@ window.onload = function() {
 			inputC.attr('value', val - 1);
 		}
 		if(val == 1) {
-			inputC.attr('value', val - 1);
+			// inputC.attr('value', val - 1);
 			reduce.html('');
 		}
 		getSubTotal($(this));
@@ -117,8 +122,8 @@ window.onload = function() {
 	});
 	//check all
 	$(document).on('click','.check-all ',function(){
-//			alert($(".checkbox").length);
-			alert($(".check-one checkbox").attr('checked'));
+//
+
 			$(".checkbox").prop('checked',true);
 	});
 	$(".fr.closing").click(function(){
