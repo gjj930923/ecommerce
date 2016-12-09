@@ -86,6 +86,7 @@
 						{if condition="isset($adminID)"}
 						<a class="item" href="../../index/Admin/index" rel="nofollow" onclick="">New Product</a>
 						<a class="item" href="../../index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
+						<a class="item" href="order_check_admin" rel="nofollow" onclick="">Check all orders</a>
 						<a class="item" href="product_check_admin" rel="nofollow" onclick="">Check all products</a>
 						{else/}
 						{/if}
@@ -115,10 +116,10 @@
 								
 								
 							</ul>
-							<form class="navbar-form navbar-right" role="search" >
+							<form class="navbar-form navbar-right" role="search" method="get" action="../../index/search/index">
 								<div class="form-group">
-									<input type="text" class="form-control" style="width: 300px"/>
-								</div> <button type="submit" class="btn btn-default" >Submit</button>
+									<input type="text" class="form-control" name="keyword" style="width: 300px"/>
+								</div> <button type="submit" class="btn btn-default">Submit</button>
 							</form>
 						</div>
 					</nav>

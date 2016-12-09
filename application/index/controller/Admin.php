@@ -7,6 +7,20 @@ class Admin extends Controller
 {
     public function index()
     {
+        session_start();
+        if(isset($_SESSION['name']))
+        {
+            $this->assign('name',$_SESSION['name']);
+        }
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+        }
+        if(isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
+
         $cpus = Db::table("hardwares")->where('hardware_categoryID',1)->select();
         $this->assign('cpu',$cpus);
         $gpus = Db::table("hardwares")->where('hardware_categoryID',2)->select();
@@ -25,6 +39,19 @@ class Admin extends Controller
     }
     public function newAdmin()
     {
+        session_start();
+        if(isset($_SESSION['name']))
+        {
+            $this->assign('name',$_SESSION['name']);
+        }
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+        }
+        if(isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
         return $this->fetch();
     }
     public function addProduct()
@@ -143,10 +170,6 @@ class Admin extends Controller
             } else {
                 return 0;
             }
-    }
-    public function orders()
-    {
-        return $this->fetch();
     }
     public function  order_check_admin()
     {

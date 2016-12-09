@@ -25,6 +25,19 @@ class User extends Controller
             $url = str_replace("/index", "", $url);
             $this->error("You need to log in first!", $url);
         }
+        //session_start();
+        if(isset($_SESSION['name']))
+        {
+            $this->assign('name',$_SESSION['name']);
+        }
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+        }
+        if(isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
         if(isset($_SESSION['customerID']))
         {
             $this->assign('customerID',$_SESSION['customerID']);
@@ -103,221 +116,110 @@ class User extends Controller
     public function addUser()
     {
 
-        if(isset($_POST['customerType']) && $_POST['customerType'] == "Home")
-        {
-            if(isset($_POST["Username"])&&isset($_POST['customerType'])&&isset($_POST["Password"])&&isset($_POST["checkPassword"])&&isset($_POST["NickName"])&&isset($_POST["Fname"])&&isset($_POST["Lname"])&&isset($_POST["Income"])&&isset($_POST["Age"]))
-            {
-                $username=$_POST["Username"];
-                $customerType=$_POST['customerType'];
+        if (isset($_POST['customerType']) && $_POST['customerType'] == "Home") {
+            if (isset($_POST["Username"]) && isset($_POST['customerType']) && isset($_POST["Password"]) && isset($_POST["checkPassword"]) && isset($_POST["NickName"]) && isset($_POST["Fname"]) && isset($_POST["Lname"]) && isset($_POST["Income"]) && isset($_POST["Age"])) {
+                $username = $_POST["Username"];
+                $customerType = $_POST['customerType'];
                 $password = $_POST["Password"];
                 $checkpassword = $_POST["checkPassword"];
-                $nickname=$_POST["NickName"];
-                $fname=$_POST["Fname"];
-                $lname=$_POST["Lname"];
-                $income=$_POST["Income"];
-                $age=$_POST["Age"];
-                $gender=$_POST["gender"];
-                $marriage=$_POST["marriage"];
-                $email=$_POST["email"];
-                $result=$this->doubleName($username,$customerType);
-                if($result)
-                {
+                $nickname = $_POST["NickName"];
+                $fname = $_POST["Fname"];
+                $lname = $_POST["Lname"];
+                $income = $_POST["Income"];
+                $age = $_POST["Age"];
+                $gender = $_POST["gender"];
+                $marriage = $_POST["marriage"];
+                $email = $_POST["email"];
+                $result = $this->doubleName($username, $customerType);
+                if ($result) {
                     $this->error("The username has already existed. Please make a new one");
-                }
-                else
-                {
-                    if ($password != $checkpassword)
-                    {
+                } else {
+                    if ($password != $checkpassword) {
                         $this->error("The password are not same");
-                    }
-                    else
-                    {
+                    } else {
 
-                        if ($age==""&&$income!="")
-                        {
+                        if ($age == "" && $income != "") {
                             $data = (['username' => $username, 'password' => $password, 'nick_name' => $nickname, 'first_name' => $fname, 'last_name' => $lname, 'income' => $income, 'gender' => $gender, 'marriage_status' => $marriage, 'email' => $email]);
-                        }
-                        else if($income==""&&$age!="")
-                        {
-                            $data = (['username' => $username, 'password' => $password, 'nick_name' => $nickname, 'first_name' => $fname, 'last_name' => $lname, 'gender' => $gender, 'marriage_status' => $marriage, 'email' => $email,'age'=>$age]);
-                        }
-                        else if($income==""&&$age=="")
-                        {
+                        } else if ($income == "" && $age != "") {
+                            $data = (['username' => $username, 'password' => $password, 'nick_name' => $nickname, 'first_name' => $fname, 'last_name' => $lname, 'gender' => $gender, 'marriage_status' => $marriage, 'email' => $email, 'age' => $age]);
+                        } else if ($income == "" && $age == "") {
                             $data = (['username' => $username, 'password' => $password, 'nick_name' => $nickname, 'first_name' => $fname, 'last_name' => $lname, 'gender' => $gender, 'marriage_status' => $marriage, 'email' => $email]);
-                        }
-                        else
-                        {
+                        } else {
                             $data = (['username' => $username, 'password' => $password, 'nick_name' => $nickname, 'first_name' => $fname, 'last_name' => $lname, 'income' => $income, 'age' => $age, 'gender' => $gender, 'marriage_status' => $marriage, 'email' => $email]);
 
                         }
-                        $result=Db::table('home_customers')->insertGetId($data);
+                        $result = Db::table('home_customers')->insertGetId($data);
                     }
 
-                        if ($result)
-                        {
-                            $condition=array('username'=>$username);
-                            $home_customer=db("home_customers")->where($condition)->find();
-                            session_start();
-                            $_SESSION['username'] = $home_customer['username'];
-                            $_SESSION['customerID'] = $home_customer['customerID'];
-                            $_SESSION['nick_name']=$home_customer['nick_name'];
-                            $url = str_replace(".html", "", url("User/fillAddress"));
-                            $this->success('OK!', $url);
-                        }
-                        else
-                        {
-                            $this->error("something weird happen");
-                        }
-                }
-            }
-            else
-            {
-                $this->error("fatal error!");
-            }
-        }
-        else if(isset($_POST['customerType']) && $_POST['customerType'] == "Business")
-        {
-            if(isset($_POST["Username"])&&isset($_POST['customerType'])&&isset($_POST["Password"])&&isset($_POST["checkPassword"])&&isset($_POST["company_name"])&&isset($_POST["annual_income"])&&isset($_POST["category"]))
-            {
-                $username=$_POST["Username"];
-                $customerType=$_POST['customerType'];
-                $password = $_POST["Password"];
-                $checkpassword = $_POST["checkPassword"];
-                $company_name=$_POST["company_name"];
-                $annual_income=$_POST["annual_income"];
-                $category=$_POST["category"];
-                $email=$_POST["email"];
-                $result=$this->doubleName($username,$customerType);
-                if($result)
-                {
-                    $this->error("The username has already existed. Please make a new one");
-                }
-                else
-                {
-                    if ($password != $checkpassword)
-                    {
-                        $this->error("The password are not same");
-                    }
-                    else
-                    {
-                        //$customerID=Db::query("select max(customerID) from business_customers");
-                        $customers = Db::table('business_customers')->field("customerID")->select();
-                        $customerID = 0;
-                        foreach ($customers as $arr)
-                        {
-                            if(intval($arr['customerID']) > $customerID)
-                            {
-                                $customerID = intval($arr['customerID']);
-                            }
-                        }
-                        $customerID=(int)$customerID+2;
-                        if ($annual_income=="")
-                        {
-                            $data = (['customerID'=>$customerID,'username' => $username, 'password' => $password,'email' => $email,'company_name'=>$company_name,'business_categoryID'=>$category]);
-                        }
-                        else
-                        {
-                            $data = (['customerID'=>$customerID,'username' => $username, 'password' => $password,'email' => $email,'annual_income'=>$annual_income,'company_name'=>$company_name,'business_categoryID'=>$category]);
-                        }
-                        $result=Db::table('business_customers')->insert($data);
-                    }
-                    if ($result)
-                    {
-                        $condition=array('username'=>$username);
-                        $business_customer=db('business_customers')->where($condition)->find();
-                        //session_start();
-                        $_SESSION['username'] = $business_customer['username'];
-                        $_SESSION['customerID'] = $business_customer['customerID'];
-                        $_SESSION['company_name']=$business_customer['company_name'];
+                    if ($result) {
+                        $condition = array('username' => $username);
+                        $home_customer = db("home_customers")->where($condition)->find();
+                        ## session_start();
+                        $_SESSION['username'] = $home_customer['username'];
+                        $_SESSION['customerID'] = $home_customer['customerID'];
+                        $_SESSION['name'] = $home_customer['nick_name'];
                         $url = str_replace(".html", "", url("User/fillAddress"));
                         $this->success('OK!', $url);
-                    }
-                    else
-                    {
+                    } else {
                         $this->error("something weird happen");
                     }
                 }
-            }
-            else
-            {
+            } else {
                 $this->error("fatal error!");
             }
-        }
-        else
-        {
+        } else if (isset($_POST['customerType']) && $_POST['customerType'] == "Business") {
+            if (isset($_POST["Username"]) && isset($_POST['customerType']) && isset($_POST["Password"]) && isset($_POST["checkPassword"]) && isset($_POST["company_name"]) && isset($_POST["annual_income"]) && isset($_POST["category"])) {
+                $username = $_POST["Username"];
+                $customerType = $_POST['customerType'];
+                $password = $_POST["Password"];
+                $checkpassword = $_POST["checkPassword"];
+                $company_name = $_POST["company_name"];
+                $annual_income = $_POST["annual_income"];
+                $category = $_POST["category"];
+                $email = $_POST["email"];
+                $result = $this->doubleName($username, $customerType);
+                if ($result) {
+                    $this->error("The username has already existed. Please make a new one");
+                } else {
+                    if ($password != $checkpassword) {
+                        $this->error("The password are not same");
+                    } else {
+                        //$customerID=Db::query("select max(customerID) from business_customers");
+                        $customers = Db::table('business_customers')->field("customerID")->select();
+                        $customerID = 0;
+                        foreach ($customers as $arr) {
+                            if (intval($arr['customerID']) > $customerID) {
+                                $customerID = intval($arr['customerID']);
+                            }
+                        }
+                        $customerID = (int)$customerID + 2;
+                        if ($annual_income == "") {
+                            $data = (['customerID' => $customerID, 'username' => $username, 'password' => $password, 'email' => $email, 'company_name' => $company_name, 'business_categoryID' => $category]);
+                        } else {
+                            $data = (['customerID' => $customerID, 'username' => $username, 'password' => $password, 'email' => $email, 'annual_income' => $annual_income, 'company_name' => $company_name, 'business_categoryID' => $category]);
+                        }
+                        $result = Db::table('business_customers')->insert($data);
+                    }
+                    if ($result) {
+                        $condition = array('username' => $username);
+                        $business_customer = db('business_customers')->where($condition)->find();
+                        //session_start();
+                        $_SESSION['username'] = $business_customer['username'];
+                        $_SESSION['customerID'] = $business_customer['customerID'];
+                        $_SESSION['name'] = $business_customer['company_name'];
+                        $url = str_replace(".html", "", url("User/fillAddress"));
+                        $this->success('OK!', $url);
+                    } else {
+                        $this->error("something weird happen");
+                    }
+                }
+            } else {
+                $this->error("fatal error!");
+            }
+        } else {
             $this->error("fatal error!");
         }
-          /*  if($_POST['password'] == $_POST['confirm_password'])
-            {
-                $home_customer = new Home_customer;
-                $home_customer->age = intval($_POST['age']);
-                $home_customer->email = $_POST['email'];
-                $home_customer->first_name = $_POST['first_name'];
-                $home_customer->gender = $_POST['gender'];
-                $home_customer->income = intval($_POST['income']);
-                $home_customer->last_name = $_POST['last_name'];
-                $home_customer->marriage_status = $_POST['marriage_status'];
-                $home_customer->nick_name = $_POST['nick_name'];
-                $home_customer->password = $_POST['password'];
-                $home_customer->username = $_POST['username'];
-                $home_customer->save();
-                if($home_customer->customerID)
-                {
-                    $_SESSION['customerID'] = $home_customer->customerID;
-                    $_SESSION['username'] = $home_customer->username;
-                    $url = str_replace(".html", "", url("fillAddress"));
-                    $this->redirect($url, 301);
-                }
-                else
-                {
-                    $this->error("Oops! Something wrong with the database!");
-                }
-            }
-            else
-            {
-                $this->error("Oh! Your confirm password is not the same as the password!");
-            }
-        }
-        else if(isset($_POST['customerType']) && $_POST['customerType'] == "Business")
-        {
-            if($_POST['password'] == $_POST['confirm_password']){
-                $business_customer = new Business_customer;
-                $business_customer->annual_income = intval($_POST['annual_income']);
-                $business_customer->business_categoryID = intval($_POST['business_categoryID']);
-                $business_customer->company_name = $_POST['company_name'];
-                $business_customer->password = $_POST['password'];
-                $business_customer->username = $_POST['username'];
-                $business_customer->save();
-                if($business_customer->customerID)
-                {
-                    $_SESSION['customerID'] = $business_customer->customerID;
-                    $_SESSION['username'] = $business_customer->username;
-                    $url = str_replace(".html", "", url("fillAddress"));
-                    $this->redirect($url, 301);
-                }
-                else
-                {
-                    $this->error("Oops! Something wrong with the database!");
-                }
-            }
-            else
-            {
-                $this->error("Oh! Your confirm password is not the same as the password!");
-            }
-        }
-        else
-        {
-            $business_category = Db::table('business_category')->select();
-            $this->assign('business_category', $business_category);
-            return $this->fetch();
-
-
-        $url = str_replace(".html", "", url("User/fillAddress"));
-        $this->success('Welcome! ', $url);*/
-        //return $this->redirect($url,301);
     }
-
-    //Only comes after the signin step
     public function fillAddress()
     {
         if(!isset($_SESSION['customerID']) && !isset($_SESSION['adminID'])){
@@ -331,6 +233,18 @@ class User extends Controller
         }
         else if(isset($_GET['type']) && $_GET['type'] == "payment") {
             $this->assign("type", "payment");
+        }
+        if(isset($_SESSION['name']))
+        {
+            $this->assign('name',$_SESSION['name']);
+        }
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+        }
+        if(isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
         }
         return $this->fetch();
     }
@@ -385,6 +299,18 @@ class User extends Controller
         }
         else if(isset($_GET['type']) && $_GET['type'] == "payment") {
             $this->assign("type", "payment");
+        }
+        if(isset($_SESSION['name']))
+        {
+            $this->assign('name',$_SESSION['name']);
+        }
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+        }
+        if(isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
         }
         return $this->fetch();
     }
@@ -547,34 +473,6 @@ class User extends Controller
         }
     }
 
-    public function checkHomeUsername()
-    {
-        $username=$_GET['username'];
-        if (isset($username)&&!empty($username))
-        {
-           return 1;
-        }
-        else
-        {
-            return 0;
-        }
-        /*$condition=array('username'=>$username);
-        $user=db('home_customers')->where($condition)->find();
-        if ($username)
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }*/
-    }
-    public function register_Person_or_Business()
-    {
-        return $this->fetch();
-    }
-
-
 
     public function doubleName($username,$customerType)
     {
@@ -612,6 +510,18 @@ class User extends Controller
             $url = str_replace(".php", "", $url);
             $url = str_replace("/index", "", $url);
             $this->error("You need to log in first!", $url);
+        }
+        if(isset($_SESSION['name']))
+        {
+            $this->assign('name',$_SESSION['name']);
+        }
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+        }
+        if(isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
         }
         return $this->fetch();
 
@@ -784,6 +694,18 @@ class User extends Controller
     }
     public function order_check_customer()
     {
+        if(isset($_SESSION['name']))
+        {
+            $this->assign('name',$_SESSION['name']);
+        }
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+        }
+        if(isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
         if(isset($_SESSION['customerID']))
         {
             $customerID=$_SESSION['customerID'];

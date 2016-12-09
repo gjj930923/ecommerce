@@ -86,19 +86,32 @@
 	<body>
 		<div id="site-nav" class="site-nav">
 			<div class="container">
+				{if condition="!isset($username)"}
 				<div class="group user-action J-user-action">
-					<a class="item" href="" rel="nofollow" onclick="">login</a>
-					<a class="item" href="" rel="nofollow" onclick="">Sign&nbsp;In</a>
+					<a class="item" href="index/index/login" rel="nofollow" onclick="">login</a>
+					<a class="item" href="index/User/signin" rel="nofollow" onclick="">Sign&nbsp;In</a>
 				</div>
-				<div id="login_head" style="display: none;">
-					<span id="Username">name</span>>
+				{else/}
+				<div class="group user-action J-user-action">
+					<a class="item" href="../../index/login/logout" rel="nofollow" onclick="">Exit</a>
+					<a class="item" href="../../index/User/index" rel="nofollow" onclick="">detailed information</a>
+					<a class="item" href="../../index/User/password" rel="nofollow" onclick="">change password</a>
+					{if condition="isset($adminID)"}
+					<a class="item" href="../../index/Admin/index" rel="nofollow" onclick="">New Product</a>
+					<a class="item" href="../../index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
+					<a class="item" href="../../index/Admin/order_check_admin" rel="nofollow" onclick="">Check all orders</a>
+					<a class="item" href="../../index/Admin/product_check_admin" rel="nofollow" onclick="">Check all products</a>
+					{else/}
+					<a class="item" href="order_check_customer" rel="nofollow" onclick="">Check orders</a>
+					{/if}
 				</div>
-				<div id="withoutlogin_head" style="float: left;margin-left:360px;padding-top: 10px;">
+				{/if}
+				<div >
+					{if condititon:"isset($name)"}
+					Welcome {$name}
+					{else/}
 					Welcome to Pitt Zhong Guan Cun !
-				</div>
-				<div class="group quick-menu">
-					<a rel="nofollow" class="item left-split J-dp-index-trigger">Service<i class="icon i-arrow"></i></a>
-				</div>
+					{/if}
 			</div>
 		</div>
 		
@@ -109,13 +122,13 @@
 						<div class="navbar-header">
 							<img title="" src="png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
 				
-							<a class="navbar-brand" href="../../">Zhong Guan&nbsp;Cun</a>
+							<a class="navbar-brand" href="../../">Pitt Zhong Guan&nbsp;Cun</a>
 						</div>
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-							<form class="navbar-form navbar-right" role="search" style="width: 300px;">
+							<form class="navbar-form navbar-right" role="search" method="get" action="../../index/search/index">
 								<div class="form-group">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" name="keyword" style="width: 300px"/>
 								</div> <button type="submit" class="btn btn-default">Submit</button>
 							</form>
 						</div>

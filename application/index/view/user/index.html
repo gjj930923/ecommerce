@@ -117,8 +117,32 @@
  <div id="head">
      <div id="site-nav" class="site-nav">
          <div class="container">
+             {if condition="!isset($username)"}
+             <div class="group user-action J-user-action">
+                 <a class="item" href="index/index/login" rel="nofollow" onclick="">login</a>
+                 <a class="item" href="index/User/signin" rel="nofollow" onclick="">Sign&nbsp;In</a>
+             </div>
+             {else/}
+             <div class="group user-action J-user-action">
+                 <a class="item" href="../../index/login/logout" rel="nofollow" onclick="">Exit</a>
+                 <a class="item" href="../../index/User/index" rel="nofollow" onclick="">detailed information</a>
+                 <a class="item" href="../../index/User/password" rel="nofollow" onclick="">change password</a>
+                 {if condition="isset($adminID)"}
+                 <a class="item" href="../../index/Admin/index" rel="nofollow" onclick="">New Product</a>
+                 <a class="item" href="../../index/Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
+                 <a class="item" href="../../index/Admin/order_check_admin" rel="nofollow" onclick="">Check all orders</a>
+                 <a class="item" href="../../index/Admin/product_check_admin" rel="nofollow" onclick="">Check all products</a>
+                 {else/}
+                 <a class="item" href="order_check_customer" rel="nofollow" onclick="">Check orders</a>
+                 {/if}
+             </div>
+             {/if}
              <div style="margin-left: 450px">
+                 {if condititon:"isset($name)"}
+                 Welcome {$name}
+                 {else/}
                  Welcome to Pitt Zhong Guan Cun !
+                 {/if}
              </div>
          </div>
      </div>
@@ -139,9 +163,9 @@
                      </div>
                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                         <form class="navbar-form navbar-right" role="search" >
+                         <form class="navbar-form navbar-right" role="search" method="get" action="../../index/search/index">
                              <div class="form-group">
-                                 <input type="text" class="form-control" style="width: 300px"/>
+                                 <input type="text" class="form-control" name="keyword" style="width: 300px"/>
                              </div> <button type="submit" class="btn btn-default">Submit</button>
                          </form>
 
