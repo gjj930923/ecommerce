@@ -7,20 +7,26 @@ class Search extends Controller
     public function _initialize()
     {
         session_start();
-        if(!isset($_SESSION['customerID'])){
+        if(!isset($_SESSION['customerID']) && !isset($_SESSION['adminID'])){
             $url = str_replace(".html", "", url("Index/index"));
             $url = str_replace(".php", "", $url);
             $url = str_replace("/index", "", $url);
             $this->error("You need to log in first!", $url);
         }
         else{
-            if($_SESSION['customerID'] % 2 == 1){
+            if(isset($_SESSION['adminID'])){
+                $admin = Db::table("admin")->where("adminID=".$_SESSION['adminID'])->find();
+                $this->assign("admin", $admin);
+            }
+            else if($_SESSION['customerID'] % 2 == 1){
                 $customer = Db::table("home_customers")->where("customerID=".$_SESSION['customerID'])->find();
                 $this->assign('customer', $customer);
+                $this->assign('name', $customer['nick_name']);
             }
             else{
                 $customer = Db::table("business_customers")->where("customerID=".$_SESSION['customerID'])->find();
                 $this->assign('customer', $customer);
+                $this->assign('name', $customer['company_name']);
             }
         }
     }
@@ -58,13 +64,14 @@ class Search extends Controller
                 $resultWithHardware[$i][$k] = $v;
             }
             $resultWithHardware[$i]['hardware'] = implode(", ", $hwName);
-            if($_SESSION['customerID'] % 2 == 1){
-                $resultWithHardware[$i]['discount_price'] = round($r['price'] * $r['home_discount'] / 100.00, 2);
+            if(isset($_SESSION['customerID'])){
+                if($_SESSION['customerID'] % 2 == 1){
+                    $resultWithHardware[$i]['discount_price'] = round($r['price'] * $r['home_discount'] / 100.00, 2);
+                }
+                else{
+                    $resultWithHardware[$i]['discount_price'] = round($r['price'] * $r['business_discount'] / 100.00, 2);
+                }
             }
-            else{
-                $resultWithHardware[$i]['discount_price'] = round($r['price'] * $r['business_discount'] / 100.00, 2);
-            }
-
             $i++;
         }
         unset($result);
@@ -87,17 +94,26 @@ class Search extends Controller
         //    $pid[] = $cl['productID'];
         //}
         //$cartProductList = Db::table('products')->where('productID', 'in', $pid);
-        $cartProductList = Db::query("SELECT * FROM products,cart WHERE cart.customerID = ".$_SESSION['customerID']." AND cart.productID = products.productID ");
-        $cartProductIDs = array();
-        foreach($cartProductList as $list){
-            $cartProductIDs[] = $list['productID'];
+        if(isset($_SESSION['customerID'])) {
+            $cartProductList = Db::query("SELECT * FROM products,cart WHERE cart.customerID = " . $_SESSION['customerID'] . " AND cart.productID = products.productID ");
+            $cartProductIDs = array();
+            foreach($cartProductList as $list){
+                $cartProductIDs[] = $list['productID'];
+            }
+            if(!empty($cartProductIDs)){
+                $cartProductIDString = implode(",", $cartProductIDs);
+                $this->assign("cartProductIDString", $cartProductIDString);
+            }
         }
-        if(!empty($cartProductIDs)){
-            $cartProductIDString = implode(",", $cartProductIDs);
-            $this->assign("cartProductIDString", $cartProductIDString);
+            //return $_SESSION['customerID'];
+
+        if(isset($_SESSION['customerID'])) {
+            $this->assign("customerID", $_SESSION['customerID']);
+            $this->assign("cartProductList", $cartProductList);
         }
-        $this->assign("customerID", $_SESSION['customerID']);
-        $this->assign("cartProductList", $cartProductList);
+        else{
+            $this->assign("adminID", $_SESSION['adminID']);
+        }
         return $this->fetch();
     }
 }

@@ -6,8 +6,8 @@
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="StyleSheets/sit-nav.css">
-		<link type="text/css" rel="stylesheet" href="StyleSheets/main-nav.css">
+		<link type="text/css" rel="stylesheet" href="../../StyleSheets/sit-nav.css">
+		<link type="text/css" rel="stylesheet" href="../../StyleSheets/main-nav.css">
 		
 		
 		
@@ -20,16 +20,32 @@
 	<body>
 		<div id="site-nav" class="site-nav">
 			<div class="container">
+				{if condition="!isset($customer)"}
 				<div class="group user-action J-user-action">
-					<a class="item" href="" rel="nofollow" onclick="">login</a>
-					<a class="item" href="" rel="nofollow" onclick="">Sign&nbsp;In</a>
+					<a class="item" href="../index/login" rel="nofollow" onclick="">login</a>
+					<a class="item" href="../User/signin" rel="nofollow" onclick="">Sign&nbsp;In</a>
 				</div>
+				{else/}
+				<div class="group user-action J-user-action">
+					<a class="item" href="../login/logout" rel="nofollow" onclick="">Exit</a>
+					<a class="item" href="../User/index" rel="nofollow" onclick="">detailed information</a>
+					<a class="item" href="../User/password" rel="nofollow" onclick="">change password</a>
+					{if condition="isset($adminID)"}
+					<a class="item" href="../Admin/index" rel="nofollow" onclick="">New Product</a>
+					<a class="item" href="../Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
+					<a class="item" href="../Admin/order_check_admin" rel="nofollow" onclick="">Check all orders</a>
+					<a class="item" href="../Admin/product_check_admin" rel="nofollow" onclick="">Check all products</a>
+					{else/}
+					<a class="item" href="../User/order_check_customer" rel="nofollow" onclick="">Check orders</a>
+					{/if}
+				</div>
+				{/if}
 				<div style="float: left;margin-left:360px;padding-top: 10px;">
-					Welcome to browse Here!
-				</div>
-				<div class="group quick-menu">
-					<a rel="nofollow" class="item left-split J-dp-index-trigger">Service<i class="icon i-arrow"></i></a>
-					<a rel="nofollow" class="item left-split" id="J_mobile-page" href="http://www.dianping.com/events/m/index.htm"><i class="icon i-mobile"></i>Retailer</a>
+					{if condition="isset($name)"}
+					Welcome {$name}!
+					{else/}
+					Welcome to Pitt Zhong Guan Cun !
+					{/if}
 				</div>
 			</div>
 		</div>
@@ -55,23 +71,14 @@
 				<div class="col-md-12 column">
 					<nav class="navbar navbar-default" role="navigation">
 						<div class="navbar-header">
-							<img title="" src="png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
+							<img title="" src="../../png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
 				
 							<a class="navbar-brand" href="#">Zhong Guan&nbsp;Cun</a>
 						</div>
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav">
-								<li class="active">
-									<a href="index.html">Home</a>
-								</li>
-								<li>
-									<a href="#">Link</a>
-								</li>
-							
-							</ul>
-							<form class="navbar-form navbar-left" role="search">
+							<form class="navbar-form navbar-right" role="search" action="index/search/index" method="get">
 								<div class="form-group">
-									<input type="text" class="form-control" />
+									<input type="text" name="keyword" class="form-control" style="width: 300px"/>
 								</div> <button type="submit" class="btn btn-default">Submit</button>
 							</form>
 						</div>

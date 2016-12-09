@@ -2,7 +2,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>welcome to Fei Chinese Dish </title>
+	<title>Searching - Pitt Zhong Guan Cun</title>
 
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -49,23 +49,17 @@
 
 
 				var productId= $(this).attr('id').replace("product_", "");
-				alert(productId);
+				//alert(productId);
+				var productIdStr = "0"
 
-				//var counts = $('#cartTable').find('.count ');
-				//var counts = $('.cartproductID').val() || [];
 				{if condition="isset($cartProductIDString)"}
-				var productIdStr = "{$cartProductIDString}";
+				productIdStr = "{$cartProductIDString}";
 				var productId_cart = productIdStr.split(",");
-				//alert(productId_cart[1]);
-				//alert(productId_cart.indexOf(productId));
+
 				{/if}
 
-				//for(i in counts){
-				//	productId_cart.push(counts[i].find('.cartproductID').val());
-				//}
-				//var productId_cart=$('#cartTable').find('.count ').find('.cartproductID').val();
 
-					if(!productId_cart || productId_cart.indexOf(productId) == -1) {
+					if(productIdStr == "0" || productId_cart.indexOf(productId) == -1) {
 						//find parent, so add the children to the cart
 
 						var cart = $(".ct-cart").find("table");
@@ -108,16 +102,32 @@
 
 	<div id="site-nav" class="site-nav">
 		<div class="container">
+			{if condition="!isset($customer) && !isset($admin)"}
 			<div class="group user-action J-user-action">
-				<a class="item" href="" rel="nofollow" onclick="">login</a>
-				<a class="item" href="" rel="nofollow" onclick="">Sign&nbsp;In</a>
+				<a class="item" href="../index/login" rel="nofollow" onclick="">login</a>
+				<a class="item" href="../User/signin" rel="nofollow" onclick="">Sign&nbsp;In</a>
 			</div>
+			{else/}
+			<div class="group user-action J-user-action">
+				<a class="item" href="../login/logout" rel="nofollow" onclick="">Exit</a>
+				<a class="item" href="../User/index" rel="nofollow" onclick="">detailed information</a>
+				<a class="item" href="../User/password" rel="nofollow" onclick="">change password</a>
+				{if condition="isset($admin)"}
+				<a class="item" href="../Admin/index" rel="nofollow" onclick="">New Product</a>
+				<a class="item" href="../Admin/newAdmin" rel="nofollow" onclick="">New Admin</a>
+				<a class="item" href="../Admin/order_check_admin" rel="nofollow" onclick="">Check all orders</a>
+				<a class="item" href="../Admin/product_check_admin" rel="nofollow" onclick="">Check all products</a>
+				{else/}
+				<a class="item" href="../User/order_check_customer" rel="nofollow" onclick="">Check orders</a>
+				{/if}
+			</div>
+			{/if}
 			<div style="float: left;margin-left:360px;padding-top: 10px;">
-				Welcome to browse Here!
-			</div>
-			<div class="group quick-menu">
-				<a rel="nofollow" class="item left-split J-dp-index-trigger">Service<i class="icon i-arrow"></i></a>
-				<a rel="nofollow" class="item left-split" id="J_mobile-page" href="http://www.dianping.com/events/m/index.htm"><i class="icon i-mobile"></i>Retailer</a>
+				{if condition="isset($name)"}
+				Welcome {$name}!
+				{else/}
+				Welcome to Pitt Zhong Guan Cun !
+				{/if}
 			</div>
 		</div>
 	</div>
@@ -149,72 +159,20 @@
 							 	<span class="icon-bar"></span>
 							 	<span class="icon-bar"></span>
 							</button>
-						<img title="fei fish" src="../../png/logo.png" style="float: left;width: 50px;height:50px ;" class="logo" />
+						<img title="fei fish" src="../../png/logo.jpeg" style="float: left;width: 50px;height:50px ;" class="logo" />
 
-						<a class="navbar-brand" href="#" style="color: deepskyblue;">Fei&nbsp;Fish</a>
+						<a class="navbar-brand" href="../.." style="color: deepskyblue;">Pitt Zhong Guan Cun</a>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="active">
-								<a href="index.html">Home</a>
-							</li>
-							<li>
-								<a href="#">Link</a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#">Action</a>
-									</li>
-									<li>
-										<a href="#">Another action</a>
-									</li>
-									<li>
-										<a href="#">Something else here</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="#">Separated link</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="#">One more separated link</a>
-									</li>
-								</ul>
-							</li>
+
 						</ul>
-						<form class="navbar-form navbar-left" role="search">
+
+						<form class="navbar-form navbar-right" role="search" action="" method="get">
 							<div class="form-group">
-								<input type="text" class="form-control" />
+								<input type="text" name="keyword" class="form-control" style="width: 300px"/>
 							</div> <button type="submit" class="btn btn-default">Submit</button>
 						</form>
-						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<a href="#">Link</a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#">Action</a>
-									</li>
-									<li>
-										<a href="#">Another action</a>
-									</li>
-									<li>
-										<a href="#">Something else here</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="#">Separated link</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
 					</div>
 				</nav>
 			</div>
@@ -226,7 +184,9 @@
 		
 		
 	-->
-	<button id="test">test</button>
+	{if condition="isset($adminID)"}
+	<button id="test">Modify Products</button>
+	{/if}
 	<form id="cart" style="margin-left: 170px;" num="cart_submit" method="post" action="../Cart/payment">
 		<table id="cartTable">
 			<thead>
@@ -240,6 +200,7 @@
 				</tr>
 			</thead>
 			<tbody>
+			{if condition="isset($cartProductList)"}
 			{volist name="cartProductList" id="vo"}
 			<tr>
 
@@ -261,6 +222,7 @@
 				<td class="operation"><span class="delete">delete</span></td>
 			</tr>
 			{/volist}
+			{/if}
 			</tbody>
 		</table>
 
@@ -306,29 +268,34 @@
 										</a>
 										<h2 class="ct-product-title">{$vo.product_name}</h2>
 										<p class="ct-product-description">{$vo.hardware}</p>
-										<span class="ct-product-price">${$vo.discount_price}</span>
-										<button class="admin_btn" style="display: none;">modify</button>
-										<form class="admin_form" action="" method="get" style="display: none;">
+										{if condition="isset($customerID)&&$customerID%2==1"}
+										<span class="ct-product-price">${$vo.price * $vo.home_discount / 100.00}</span>
+										{elseif condition="isset($customerID)&&$customerID%2==0"}<span class="ct-product-price">${$vo.price * $vo.business_discount / 100.00}</span>
+										{else/}<span class="ct-product-price">${$vo.price}</span>
+										{/if}
+
+										<form class="admin_form" action="../Admin/updateProduct" method="post" style="display: none;">
 											<table width="80%">
 												<tr>
-													<td width="35%" align="right">{$vo.product_name}</td>
-													<td><input type="text" name="product_name" required></td>
+													<td width="35%" align="right">Name</td>
+													<input type="hidden" name="productID" value="{$vo.productID}" required>
+													<td><input type="text" name="product_name" value="{$vo.product_name}" required></td>
 												</tr>
 												<tr>
-													<td width="35%" align="right">{$vo.price}</td>
-													<td><input type="number" max="100000.0" min="1.0" name="price" required></td>
+													<td width="35%" align="right">Price</td>
+													<td><input type="number" max="100000.0" min="1.0" name="price" value="{$vo.price}" required></td>
 												</tr>
 												<tr>
-													<td width="35%" align="right">{$vo.inventory_amount}</td>
-													<td><input type="number" min="0" name="amount" required></td>
+													<td width="35%" align="right">Inventory Amount</td>
+													<td><input type="number" min="0" name="amount" required value="{$vo.inventory_amount}"></td>
 												</tr>
 												<tr>
-													<td width="45%" align="right">{$vo.home_discount}</td>
-													<td><input type="number" max="100" min="1" name="home_discount" value="100" required></td>
+													<td width="45%" align="right">Home Discount</td>
+													<td><input type="number" max="100" min="1" name="home_discount" value="{$vo.home_discount}" required></td>
 												</tr>
 												<tr>
-													<td width="45%" align="right">{$vo.business_discount}</td>
-													<td><input type="number" max="100" min="1" name="business_discount" value="100" required></td>
+													<td width="45%" align="right">Business Discount</td>
+													<td><input type="number" max="100" min="1" name="business_discount" value="{$vo.business_discount}" required></td>
 												</tr>
 												<tr>
 													<td width="35%" align="right">Status</td>
@@ -340,7 +307,7 @@
 													</td>
 												</tr>
 											</table>
-											<input type="submit" value="sub" />
+											<input type="submit" value="submit" />
 										</form>
 									</div>
 								</div>

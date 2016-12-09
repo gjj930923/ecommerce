@@ -14,12 +14,14 @@ class Cart extends Controller
         }
         else{
             if($_SESSION['customerID'] % 2 == 1){
-                $customer = Db::table("home_customers")->where("customerID=".$_SESSION['customerID']);
+                $customer = Db::table("home_customers")->where("customerID=".$_SESSION['customerID'])->find();
                 $this->assign('customer', $customer);
+                $this->assign('name', $customer['nick_name']);
             }
             else{
-                $customer = Db::table("business_customers")->where("customerID=".$_SESSION['customerID']);
+                $customer = Db::table("business_customers")->where("customerID=".$_SESSION['customerID'])->find();
                 $this->assign('customer', $customer);
+                $this->assign('name', $customer['company_name']);
             }
         }
     }
@@ -75,7 +77,7 @@ class Cart extends Controller
                     $list['ship_addressID'] = $_POST['addressID'];
                     $list['billing_addressID'] = $_POST['billingAddressID'];
                     //$list['shipper_ID'] = $_POST['shipperID'];
-                    $list['since'] = time();
+                    $list['since'] = date("Y-m-d H:i:s",time());
                     $list['quantity'] = $amount['quantity'];
                     $list['price'] = $product['price'];
                     if($userID % 2 == 1){
@@ -95,7 +97,8 @@ class Cart extends Controller
                     }
                 }
             }
-            $url = str_replace(".html", "", url("Order/index"));
+            $url = str_replace(".html", "", url("Index/index"));
+            $url = str_replace("/index", "", $url);
             $this->success("Your order has been placed!", $url);
         }
         else{
