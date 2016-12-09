@@ -245,7 +245,39 @@ class Admin extends Controller
     }
     public function  updateProduct()
     {
-
+        session_start();
+        if(isset($_SESSION['adminID']));
+        {
+            $adminID=$_SESSION['adminID'];
+            $productID=$_POST['productID'];
+            $product_name=$_POST['product_name'];
+            $price=$_POST['price'];
+            $amount=$_POST['amount'];
+            $home_discount=$_POST['home_discount'];
+            $business_discount=$_POST['business_discount'];
+            $status=$_POST['status'];
+            $data=(['product_name'=>$product_name,'price'=>$price,'inventory_amount'=>$amount,'home_discount'=>$home_discount,'business_discount'=>$business_discount,'status'=>$status]);
+            $result=Db('products')->where('productID',$productID)->update($data);
+            if($result)
+            {
+                $date = date("Y/m/d");
+                $data2=(['adminID'=>$adminID,'productID'=>$productID,'since'=>$date]);
+                $result2=Db('manage')->insert($data2);
+                if($result2)
+                {
+                    $url = str_replace(".html", "", url("Search/index"));
+                    $this->success("update successfully", $url);
+                }
+                else
+                {
+                    $this->error("check your manage table. Something wrong happen");
+                }
+            }
+            else
+            {
+                $this->error("something wrong");
+            }
+        }
     }
     public function product_check_admin()
     {
