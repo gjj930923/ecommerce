@@ -1,0 +1,42 @@
+
+
+.set_main{
+	width: 1000px;
+	
+	background-color: wheat ;
+	overflow: hidden;
+}
+
+ul{
+	list-style: none;
+}
+
+ul li{
+	float: left;
+	width: 400px;
+}
+
+ul li a{
+	display: block;
+	float: left;
+	text-decoration: none;
+}
+ul li div{
+	overflow: hidden;
+}
+.htitle{
+	display: block;
+}
+img{
+	padding: 0px 0px;
+	margin: 0px 0px;
+}
+ul li strong{
+
+	overflow: hidden;
+	
+}
+strong a{
+	padding-right:  100px;
+	padding-bottom:20px ;
+}
