@@ -109,7 +109,7 @@ window.onload = function() {
 	});
 	//delete
 	$(document).on('click',"#cartTable tbody tr td .delete",function() {
-			var conf = confirm('确定要删除吗？');
+			var conf = confirm('delete Yes？');
 			if(conf) {
 				$(this).parent().parent().remove();
 			}
@@ -121,7 +121,12 @@ window.onload = function() {
 			alert($(".check-one checkbox").attr('checked'));
 			$(".checkbox").prop('checked',true);
 	});
-
+	$(".fr.closing").click(function(){
+		var conf=confirm('check out ?');
+		if(conf){
+			document.location.href = "index.html";
+		}
+	});
 	checkAllInputs[0].checked = true;
 //	checkAllInputs[0].onclick();
 }
