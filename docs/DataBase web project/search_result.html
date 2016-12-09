@@ -34,26 +34,19 @@
 			});
 
 			//cart add test
-			$(".fa.fa-shopping-cart").click(function() {
+			$(".fa.fa-shopping-cart").one('click',function() {
 				//check if 1st time to clcik button
-
+				if($(this).data('click',true)){
 				$("#cart").show();
 				//get all the tr
 				var cartTable =$('#cartTable');
-				//				var tr = cartTable.children[1].rows;
-				//				var td = tr.children;
-				//				var i;
-				//				for(i = 0; i < td.length; i++) {
-				//					alert(td[i].tagName);
-				//				}
-				//add product to cart
 				var inner = $(this).parent().parent();
 				var price = inner.find(".ct-product-price");
 				var title = inner.find(".ct-product-title");
 				amount = amount + 1;
-				$(this).data('clicked', true);
-				if($(this).data('clicked')) {
-					alert($(this).attr('id'));
+				alert('first');
+				
+					alert('first');
 
 					//find parent, so add the children to the cart
 
@@ -89,8 +82,8 @@
 					//				</tr>					
 
 					cartTable.find('tbody').append(htmlString);
+				
 					
-
 				}
 
 			});
