@@ -65,7 +65,7 @@
 		</div>
 	</div>
 	</div>
-		<form id="reg_form" action="addAddress" method="post" style=" margin-left: 200px;width: 1100px">
+		<form id="reg_form" action="addAddress{if condition='isset($update)'}?type=update{/if}" method="post" style=" margin-left: 200px;width: 1100px">
 			<table  width="450" border="0" align="center" cellpadding="0" cellspacing="0">
 				<tr>
 					<td>
@@ -86,17 +86,24 @@
 								</tr>
 								<tr >
 									<td width="25%" align="right" style="font-size: 20px">zipcode</td>
-									<td><input type="text" name="zipcode" style="width: 200px"> </td>
+									<td><input type="number" min="10000" max="99999" name="zipcode" style="width: 200px"> </td>
 								</tr>
 							</table>
 					</fieldset>
 					</td>
 				</tr>
 				<tr>
+					{if condition="isset($update)"}
 					<table width="83%"  border="0"  style="font-size: 20px">
 						<td align="right"><input type="submit"  value="Submit"></td>
 						<td><input type="reset" value="Reset"></td>
 					</table>
+					{else/}
+					<table width="83%"  border="0"  style="font-size: 20px">
+						<td align="right"><input type="submit"  value="Next"></td>
+						<td><input type="reset" value="Reset"></td>
+					</table>
+					{/if}
 				</tr>
 			</table>
 		</form>

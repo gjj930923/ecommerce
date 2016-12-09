@@ -315,13 +315,16 @@ class User extends Controller
     //Only comes after the signin step
     public function fillAddress()
     {
+        if(isset($_GET['type']) && $_GET['type'] == "update"){
+            $this->assign("update", true);
+        }
         return $this->fetch();
     }
     public function addAddress()
     {
         if(isset($_POST["state"])&&isset($_POST['city'])&&isset($_POST["street"])&&isset($_POST["zipcode"]))
         {
-            session_start();
+            //session_start();
             $state= $_POST["state"];
             $city= $_POST["city"];
             $street=$_POST['street'];
@@ -333,7 +336,12 @@ class User extends Controller
             $result=Db::table('customers_have_address')->insert($data);
             if ($result)
             {
-                $url = str_replace(".html", "", url("User/fillCardInfo"));
+                if(isset($_GET['type']) && $_GET['type'] == "update"){
+                    $url = str_replace(".html", "", url("User/index"));
+                }
+                else{
+                    $url = str_replace(".html", "", url("User/fillCardInfo"));
+                }
                 $this->success("adding address successfully",$url);
             }
             else
@@ -349,13 +357,16 @@ class User extends Controller
     //Only comes after fillAddress step()
     public function fillCardInfo()
     {
+        if(isset($_GET['type']) && $_GET['type'] == "update"){
+            $this->assign("update", true);
+        }
         return $this->fetch();
     }
     public function addCard()
     {
         if(isset($_POST["creditcard_number"])&&isset($_POST['year'])&&isset($_POST["month"]))
         {
-            session_start();
+            //session_start();
             $creditcard_number= $_POST["creditcard_number"];
             $year= $_POST["year"];
             $month=$_POST['month'];
@@ -366,8 +377,13 @@ class User extends Controller
             $result=Db::table('customers_have_billinginfo')->insert($data);
             if ($result)
             {
-                $url = str_replace(".html", "", url("Index/index"));
-                $url = str_replace("/index", "", $url);
+                if(isset($_GET['type']) && $_GET['type'] == "update"){
+                    $url = str_replace(".html", "", url("User/index"));
+                }
+                else{
+                    $url = str_replace(".html", "", url("Index/index"));
+                    $url = str_replace("/index", "", $url);
+                }
                 $this->success("adding billing information successfully",$url);
             }
             else
@@ -683,6 +699,52 @@ class User extends Controller
         else
         {
             return 0;
+        }
+    }
+
+    public function getAddress(){
+        if(isset($_SESSION['customerID'])){
+            if(isset($_POST['addressID'])){
+                $data['addressID'] = $_POST['addressID'];
+                $data['customerID'] = $_SESSION['customerID'];
+                if(db('customers_have_address')->where($data)->find()){
+                    unset($data['customerID']);
+                    $address = db('address')->where($data)->find();
+                    return json_encode($address);
+                }
+                else{
+                    return null;
+                }
+            }
+            else{
+                return "Illegal operation!";
+            }
+        }
+        else{
+            return "Illegal operation!";
+        }
+    }
+
+    public function getBillingInfo(){
+        if(isset($_SESSION['customerID'])){
+            if(isset($_POST['billingID'])){
+                $data['billingID'] = $_POST['billingID'];
+                $data['customerID'] = $_SESSION['customerID'];
+                if(db('customers_have_billinginfo')->where($data)->find()){
+                    unset($data['customerID']);
+                    $billinginfo = db('billinginfo')->where($data)->find();
+                    return json_encode($billinginfo);
+                }
+                else{
+                    return null;
+                }
+            }
+            else{
+                return "Illegal operation!";
+            }
+        }
+        else{
+            return "Illegal operation!";
         }
     }
 }

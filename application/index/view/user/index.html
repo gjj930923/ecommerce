@@ -13,25 +13,57 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
         $(document).ready(function(){
-            $("tr[id^='billinginfo_']").hide();
-            $("tr[id^='address_']").hide();
-            $('#billing_submit').hide();
-            $('#address_submit').hide();
-            $("#billingID").click(function () {
-                id = $(this).val();
-                $("tr[id^='billinginfo_']").hide();
-                $("#billinginfo_cardnumber_"+id).show();
-                $("#billinginfo_expire_"+id).show();
-                $('#billing_submit').show();
-            });
+            //$("tr[id^='billinginfo_']").hide();
+            //$('#billing_submit').hide();
+            id = $("#addressID").val();
+            $.post("getAddress",
+                    {
+                        addressID: id
+                    },function(res){
+                        res = JSON.parse(res);
+                        $("#address_state input").val(res.state);
+                        $("#address_street input").val(res.street);
+                        $("#address_zipcode input").val(res.zip_code);
+                        $("#address_city input").val(res.city);
+                    }
+            );
             $("#addressID").click(function () {
-                id = $(this).val();
-                $("tr[id^='billinginfo_']").hide();
-                $("#address_state_"+id).show();
-                $("#address_street_"+id).show();
-                $("#address_zipcode_"+id).show();
-                $("#address_city_"+id).show();
-                $('#address_submit').show();
+                id = $("#addressID").val();
+                $.post("getAddress",
+                        {
+                            addressID: id
+                        },function(res){
+                            res = JSON.parse(res);
+                            $("#address_state input").val(res.state);
+                            $("#address_street input").val(res.street);
+                            $("#address_zipcode input").val(res.zip_code);
+                            $("#address_city input").val(res.city);
+                        }
+                );
+            });
+            id = $("#billingID").val();
+            $.post("getBillingInfo",
+                    {
+                        billingID: id
+                    },function(res){
+                        res = JSON.parse(res);
+                        $("#billinginfo_cardnumber input").val(res.creditcard_number);
+                        $("#month").val(res.expire_month);
+                        $("#year").val(res.expire_year);
+                    }
+            );
+            $("#billingID").click(function () {
+                id = $("#billingID").val();
+                $.post("getBillingInfo",
+                        {
+                            billingID: id
+                        },function(res){
+                            res = JSON.parse(res);
+                            $("#billinginfo_cardnumber input").val(res.creditcard_number);
+                            $("#month").val(res.expire_month);
+                            $("#year").val(res.expire_year);
+                        }
+                );
             });
         });
     </script>
@@ -297,24 +329,22 @@
                                          </select>
                                      </td>
                                  </tr>
-                                 {volist name="addresses" id="vo"}
-                                 <tr id="address_state_{$vo.addressID}">
+                                 <tr id="address_state">
                                      <td class="table_name">State</td>
-                                     <td><input type="text"name="state" value="{$vo.state}"></td>
+                                     <td><input type="text"name="state""></td>
                                  </tr>
-                                 <tr id="address_city_{$vo.addressID}">
+                                 <tr id="address_city">
                                      <td class="table_name">City</td>
-                                     <td><input type="text"name="city" value="{$vo.city}"></td>
+                                     <td><input type="text"name="city""></td>
                                  </tr>
-                                 <tr id="address_street_{$vo.addressID}">
+                                 <tr id="address_street">
                                      <td class="table_name">Street</td>
-                                     <td><input type="text"name="street" value="{$vo.street}"></td>
+                                     <td><input type="text"name="street"></td>
                                  </tr>
-                                 <tr id="address_zipcode_{$vo.addressID}">
+                                 <tr id="address_zipcode">
                                      <td class="table_name">zipcode</td>
-                                     <td><input type="text" name="zipcode" value="{$vo.zip_code}"></td>
+                                     <td><input type="number" min="10000" max="99999" name="zipcode"></td>
                                  </tr>
-                                 {/volist}
                                  <tr id="address_submit">
                                      <td align="right"><input type="submit" value="Update" /></td>
                                      <td><input type="reset" value="Reset" /></td>
@@ -343,42 +373,40 @@
                                          </select>
                                      </td>
                                  </tr>
-                                 {volist name="billinginfos" id="vo"}
-                                 <tr id="billinginfo_cardnumber_{$vo.billingID}">
+                                 <tr id="billinginfo_cardnumber">
                                      <td class="table_name">credit&nbsp;card&nbsp;number</td>
                                      <td>
-                                         <input type="number" name="creditcard_number" value="{$vo.creditcard_number}"/>
+                                         <input type="text" pattern="[0-9]{16}|[0-9]{19}u" name="creditcard_number" value=""/>
                                      </td>
                                  </tr>
 
-                                 <tr id="billinginfo_expire_{$vo.billingID}">
+                                 <tr id="billinginfo_expire">
                                      <td class="table_name">Expire&nbsp;Date&nbsp</td>
                                      <td >
                                          <label>year</label>
-                                         <select name="year" >
-                                             <option {if condition="$vo['expire_year'] eq 2016"}selected{/if} value="2016">2016</option>
-                                             <option {if condition="$vo['expire_year'] eq 2017"}selected{/if} value="2017">2017</option>
-                                             <option {if condition="$vo['expire_year'] eq 2018"}selected{/if} value="2018">2018</option>
-                                             <option {if condition="$vo['expire_year'] eq 2019"}selected{/if} value="2019">2019</option>
+                                         <select name="year" id="year">
+                                             <option value="2016">2016</option>
+                                             <option value="2017">2017</option>
+                                             <option value="2018">2018</option>
+                                             <option value="2019">2019</option>
                                          </select>
                                          mon
-                                         <select name="month">
-                                             <option {if condition="$vo['expire_month'] eq 1"}selected{/if} value="1">1</option>
-                                             <option {if condition="$vo['expire_month'] eq 2"}selected{/if} value="2" >2</option>
-                                             <option {if condition="$vo['expire_month'] eq 3"}selected{/if} value="3">3</option>
-                                             <option {if condition="$vo['expire_month'] eq 4"}selected{/if} value="4">4</option>
-                                             <option {if condition="$vo['expire_month'] eq 5"}selected{/if} value="5" >5</option>
-                                             <option {if condition="$vo['expire_month'] eq 6"}selected{/if} value="6">6</option>
-                                             <option {if condition="$vo['expire_month'] eq 7"}selected{/if} value="7">7</option>
-                                             <option {if condition="$vo['expire_month'] eq 8"}selected{/if} value="8" >8</option>
-                                             <option {if condition="$vo['expire_month'] eq 9"}selected{/if} value="9">9</option>
-                                             <option {if condition="$vo['expire_month'] eq 10"}selected{/if} value="10">10</option>
-                                             <option {if condition="$vo['expire_month'] eq 11"}selected{/if} value="11">11</option>
-                                             <option {if condition="$vo['expire_month'] eq 12"}selected{/if} value="12">12</option>
+                                         <select name="month" id="month">
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">5</option>
+                                             <option value="6">6</option>
+                                             <option value="7">7</option>
+                                             <option value="8">8</option>
+                                             <option value="9">9</option>
+                                             <option value="10">10</option>
+                                             <option value="11">11</option>
+                                             <option value="12">12</option>
                                          </select>
                                      </td>
                                  </tr>
-                                 {/volist}
                                  <tr id="billing_submit">
                                      <td align="right"><input type="submit" value="Update" /></td>
                                      <td><input type="reset" value="Reset" /></td>
