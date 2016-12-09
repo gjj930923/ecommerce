@@ -312,15 +312,18 @@
                      <td>
                          <fieldset>
                              <legend>Address&nbsp;Infomation (<a href="fillAddress?type=update">Add New Address</a>)</legend>
+                             {if condition="isset($addresses)"}
                              <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
                                  <tr>
                                      <td class="table_name">Choose Address</td>
                                      <td>
+
                                          <select name="addressID" id="addressID">
                                              {volist name="addresses" id="vo"}
                                              <option value="{$vo.addressID}">{$vo.street}</option>
                                              {/volist}
                                          </select>
+
                                      </td>
                                  </tr>
                                  <tr id="address_state">
@@ -344,6 +347,7 @@
                                      <td><input type="reset" value="Reset" /></td>
                                 </tr>
                              </table>
+                             {/if}
                          </fieldset>
                      </td>
                  </tr>
@@ -356,15 +360,18 @@
                      <td>
                          <fieldset>
                              <legend>Billing&nbsp;Infomation (<a href="fillCardInfo?type=update">Add New Card</a>)</legend>
+                             {if condition="isset($billinginfos)"}
                              <table width="85%" border="0" align="center" cellpadding="0" cellspacing="2">
                                  <tr>
                                      <td class="table_name">Choose Card</td>
                                      <td>
+
                                          <select name="billingID" id="billingID">
                                             {volist name="billinginfos" id="vo"}
                                             <option value="{$vo.billingID}">{$vo.creditcard_number}</option>
                                             {/volist}
                                          </select>
+
                                      </td>
                                  </tr>
                                  <tr id="billinginfo_cardnumber">
@@ -406,7 +413,7 @@
                                      <td><input type="reset" value="Reset" /></td>
                                  </tr>
                              </table>
-
+                             {/if}
                          </fieldset>
                      </td>
                  </tr>

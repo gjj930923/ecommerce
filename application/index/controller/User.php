@@ -14,17 +14,17 @@ class User extends Controller
     public function _initialize()
     {
         session_start();
+    }
+
+    public function index()
+    {
+        //session_start();
         if(!isset($_SESSION['customerID']) && !isset($_SESSION['adminID'])){
             $url = str_replace(".html", "", url("Index/index"));
             $url = str_replace(".php", "", $url);
             $url = str_replace("/index", "", $url);
             $this->error("You need to log in first!", $url);
         }
-    }
-
-    public function index()
-    {
-        //session_start();
         if(isset($_SESSION['customerID']))
         {
             $this->assign('customerID',$_SESSION['customerID']);
@@ -65,16 +65,20 @@ class User extends Controller
             foreach ($addressList as $addr) {
                 $addressIDs[] = $addr['addressID'];
             }
-            $addresses = db("address")->where("addressID", "in", $addressIDs)->select();
-            $this->assign("addresses", $addresses);
+            if(!empty($addressIDs)) {
+                $addresses = db("address")->where("addressID", "in", $addressIDs)->select();
+                $this->assign("addresses", $addresses);
+            }
             //Get billing info
             $billingList = db("customers_have_billinginfo")->where('customerID', $customerID)->select();
             $billingIDs = array();
             foreach ($billingList as $billing) {
                 $billingIDs[] = $billing['billingID'];
             }
-            $billinginfos = db("billinginfo")->where("billingID", "in", $billingIDs)->select();
-            $this->assign("billinginfos", $billinginfos);
+            if(!empty($billingIDs)){
+                $billinginfos = db("billinginfo")->where("billingID", "in", $billingIDs)->select();
+                $this->assign("billinginfos", $billinginfos);
+            }
         }
         else
         {
@@ -98,6 +102,7 @@ class User extends Controller
     }
     public function addUser()
     {
+
         if(isset($_POST['customerType']) && $_POST['customerType'] == "Home")
         {
             if(isset($_POST["Username"])&&isset($_POST['customerType'])&&isset($_POST["Password"])&&isset($_POST["checkPassword"])&&isset($_POST["NickName"])&&isset($_POST["Fname"])&&isset($_POST["Lname"])&&isset($_POST["Income"])&&isset($_POST["Age"]))
@@ -220,7 +225,7 @@ class User extends Controller
                     {
                         $condition=array('username'=>$username);
                         $business_customer=db('business_customers')->where($condition)->find();
-                        session_start();
+                        //session_start();
                         $_SESSION['username'] = $business_customer['username'];
                         $_SESSION['customerID'] = $business_customer['customerID'];
                         $_SESSION['company_name']=$business_customer['company_name'];
@@ -315,6 +320,12 @@ class User extends Controller
     //Only comes after the signin step
     public function fillAddress()
     {
+        if(!isset($_SESSION['customerID']) && !isset($_SESSION['adminID'])){
+            $url = str_replace(".html", "", url("Index/index"));
+            $url = str_replace(".php", "", $url);
+            $url = str_replace("/index", "", $url);
+            $this->error("You need to log in first!", $url);
+        }
         if(isset($_GET['type']) && $_GET['type'] == "update"){
             $this->assign("update", true);
         }
@@ -357,6 +368,12 @@ class User extends Controller
     //Only comes after fillAddress step()
     public function fillCardInfo()
     {
+        if(!isset($_SESSION['customerID']) && !isset($_SESSION['adminID'])){
+            $url = str_replace(".html", "", url("Index/index"));
+            $url = str_replace(".php", "", $url);
+            $url = str_replace("/index", "", $url);
+            $this->error("You need to log in first!", $url);
+        }
         if(isset($_GET['type']) && $_GET['type'] == "update"){
             $this->assign("update", true);
         }
@@ -578,13 +595,19 @@ class User extends Controller
     }
     public function password()
     {
+        if(!isset($_SESSION['customerID']) && !isset($_SESSION['adminID'])){
+            $url = str_replace(".html", "", url("Index/index"));
+            $url = str_replace(".php", "", $url);
+            $url = str_replace("/index", "", $url);
+            $this->error("You need to log in first!", $url);
+        }
         return $this->fetch();
 
 
     }
     public function changePassword()
     {
-        session_start();
+        //session_start();
         if(isset($_SESSION['customerID']))
         {
             $customerID=$_SESSION['customerID'];
