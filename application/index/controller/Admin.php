@@ -25,16 +25,19 @@ class Admin extends Controller
         $this->assign('cpu',$cpus);
         $gpus = Db::table("hardwares")->where('hardware_categoryID',2)->select();
         $this->assign('gpu',$gpus);
-        $screen_sizes = Db::table("hardwares")->where('hardware_categoryID',3)->select();
-        $this->assign('screen_size',$screen_sizes);
-        $roms = Db::table("hardwares")->where('hardware_categoryID',4)->select();
-        $this->assign('rom',$roms);
-        $hard_disks = Db::table("hardwares")->where('hardware_categoryID',5)->select();
-        $this->assign('hard_disk',$hard_disks);
-        $screen_resolutions = Db::table("hardwares")->where('hardware_categoryID',6)->select();
-        $this->assign('screen_resolution',$screen_resolutions);
-        $bluetooths = Db::table("hardwares")->where('hardware_categoryID',7)->select();
-        $this->assign('bluetooth',$bluetooths);
+        $RAM_sizes = Db::table("hardwares")->where('hardware_categoryID',3)->select();
+        $this->assign('RAM_size',$RAM_sizes);
+        $screen_sizes = Db::table("hardwares")->where('hardware_categoryID',4)->select();
+        $this->assign('screen_sizes',$screen_sizes);
+        $hard_disk_desc = Db::table("hardwares")->where('hardware_categoryID',5)->select();
+        $this->assign('Hard_disk_Description',$hard_disk_desc);
+        $hard_drive_sizes = Db::table("hardwares")->where('hardware_categoryID',6)->select();
+        $this->assign('Hard_Drive_Size',$hard_drive_sizes);
+        $os = Db::table("hardwares")->where('hardware_categoryID',7)->select();
+        $this->assign('os',$os);
+        $screen_resolutions = Db::table("hardwares")->where('hardware_categoryID',8)->select();
+        $this->assign('screen_resolutions',$screen_resolutions);
+
         return $this->fetch();
     }
     public function newAdmin()
@@ -69,18 +72,29 @@ class Admin extends Controller
                $business_discount = $_POST['business_discount'];
                $status = $_POST['status'];
                $amount = $_POST['amount'];
+               $weight = $_POST['weight'];
+               $brand = $_POST['brand'];
                $cpu = $_POST['cpu'];
                $gpu = $_POST['gpu'];
                $screen_size = $_POST['screen_size'];
-               $rom = $_POST['rom'];
-               $hard_disk = $_POST['hard_disk'];
+               $ram = $_POST['RAM_size'];
+               $hard_disk_desc = $_POST['Hard_disk_Description'];
+               $hard_disk_size = $_POST['Hard_Drive_Size'];
                $screen_resolution = $_POST['screen_resolution'];
-               $bluetooth = $_POST['bluetooth'];
+               $os = $_POST['os'];
+
                $hardware_list = array();
-               $hardware_list[] = $cpu + $gpu + $screen_size + $rom + $hard_disk + $screen_resolution + $bluetooth;
+               $hardware_list[] = $cpu ;
+               $hardware_list[] = $gpu ;
+               $hardware_list[] = $screen_size;
+               $hardware_list[] = $ram ;
+               $hardware_list[] = $hard_disk_desc ;
+               $hardware_list[] = $hard_disk_size ;
+               $hardware_list[] = $screen_resolution ;
+               $hardware_list[] = $os ;
 
 
-               $data = (['product_name' => $product_name, 'price' => $price, 'home_discount' => $home_discount, 'business_discount' => $business_discount, 'status' => $status, 'inventory_amount' => $amount]);
+               $data = (['product_name' => $product_name, 'price' => $price, 'home_discount' => $home_discount, 'business_discount' => $business_discount, 'status' => $status, 'inventory_amount' => $amount,'brand'=>$brand,'weight'=>$weight]);
                $productID = Db::table('products')->insertGetId($data);
                if ($productID) {
                    $date = date("Y/m/d");

@@ -102,27 +102,35 @@
                         </div>
                     <table width="80%">
                         <tr >
-                            <td width="35%" align="right">Product Name</td>
+                            <td width="35%" align="right">Product Name </td>
                             <td><input type="text" name="product_name" required></td>
                      </tr>
                         <tr >
-                        <td width="35%" align="right">Price</td>
+                        <tr >
+                            <td width="35%" align="right">Brand </td>
+                            <td><input type="text" name="brand" required></td>
+                        </tr>
+                        <td width="35%" align="right">Price </td>
                             <td><input type="number" max="100000.0" min="1.0" name="price" required></td>
                         </tr>
                         <tr >
-                            <td width="35%" align="right">Inventory Amount</td>
+                            <td width="35%" align="right">Inventory Amount </td>
                             <td><input type="number" min="0" name="amount" required></td>
                         </tr>
                         <tr >
-                            <td width="45%" align="right">Home Discount (%)</td>
+                            <td width="35%" align="right">Weight(lbs) </td>
+                            <td><input type="number" min="0" name="weight" required></td>
+                        </tr>
+                        <tr >
+                            <td width="45%" align="right">Home Discount (%) </td>
                             <td><input type="number" max="100" min="1" name="home_discount" value="100" required></td>
                         </tr>
                         <tr >
-                            <td width="45%" align="right">Business Discount(%)</td>
+                            <td width="45%" align="right">Business Discount(%) </td>
                             <td><input type="number" max="100" min="1"  name="business_discount" value="100" required></td>
                         </tr>
                         <tr >
-                            <td width="35%" align="right">Status</td>
+                            <td width="35%" align="right">Status </td>
                             <td>
                                 <select name="status" >
                                     <option selected="" value="1">Avaliable</option>
@@ -158,7 +166,7 @@
                         <tr>
                             <td>
                                 <fieldset>
-                                    <legend>GPU</legend>
+                                    <legend>Graphics Coprocessor</legend>
                                     <table width="100%">
                                         {volist name = "gpu" id = "vo1"}
                                         <tr>
@@ -176,12 +184,12 @@
                         <tr>
                             <td>
                                 <fieldset>
-                                    <legend>Screen&nbsp;size </legend>
+                                    <legend>RAM&nbsp;size </legend>
                                     <table width="80%">
-                                        {volist name = "screen_size" id = "vo2"}
+                                        {volist name = "RAM_size" id = "vo2"}
                                         <tr>
                                             <td width="100%" align="center">{$vo2.hardware_name}</td>
-                                            <td><input type="radio" name="screen_size" required value="{$vo2.hardwareID}"></td>
+                                            <td><input type="radio" name="RAM_size" required value="{$vo2.hardwareID}"></td>
                                         </tr>
                                         {/volist}
                                     </table>
@@ -194,12 +202,12 @@
                         <tr>
                             <td>
                                 <fieldset>
-                                    <legend>Rom </legend>
+                                    <legend>Screen Size </legend>
                                     <table width="80%">
-                                        {volist name = "rom" id = "vo3"}
+                                        {volist name = "screen_sizes" id = "vo3"}
                                         <tr>
                                             <td width="100%" align="center">{$vo3.hardware_name}</td>
-                                            <td><input type="radio" name="rom" required value="{$vo3.hardwareID}"></td>
+                                            <td><input type="radio" name="screen_size" required value="{$vo3.hardwareID}"></td>
                                         </tr>
                                         {/volist}
                                     </table>
@@ -212,12 +220,12 @@
                         <tr>
                             <td>
                                 <fieldset>
-                                    <legend>Hard Disk </legend>
+                                    <legend>Hard disk Description</legend>
                                     <table width="80%">
-                                        {volist name = "hard_disk" id = "vo4"}
+                                        {volist name = "Hard_disk_Description" id = "vo4"}
                                         <tr>
                                             <td width="100%" align="center">{$vo4.hardware_name}</td>
-                                            <td><input type="radio" name="hard_disk" required value="{$vo4.hardwareID}"></td>
+                                            <td><input type="radio" name="Hard_disk_Description" required value="{$vo4.hardwareID}"></td>
                                         </tr>
                                         {/volist}
                                     </table>
@@ -230,12 +238,12 @@
                         <tr>
                             <td>
                                 <fieldset>
-                                    <legend>Screen Resolution</legend>
+                                    <legend>Hard-Drive Size</legend>
                                     <table width="80%">
-                                        {volist name = "screen_resolution" id = "vo5"}
+                                        {volist name = "Hard_Drive_Size" id = "vo5"}
                                         <tr>
                                             <td width="100%" align="center">{$vo5.hardware_name}</td>
-                                            <td><input type="radio" name="screen_resolution" required value="{$vo5.hardwareID}"></td>
+                                            <td><input type="radio" name="Hard_Drive_Size" required value="{$vo5.hardwareID}"></td>
                                         </tr>
                                         {/volist}
                                     </table>
@@ -248,12 +256,30 @@
                         <tr>
                             <td>
                                 <fieldset>
-                                    <legend>Bluetooth</legend>
+                                    <legend>Operation System</legend>
                                     <table width="80%">
-                                        {volist name = "bluetooth" id = "vo6"}
+                                        {volist name = "os" id = "vo6"}
                                         <tr>
                                             <td width="100%" align="center">{$vo6.hardware_name}</td>
-                                            <td><input type="radio" name="bluetooth" required  value="{$vo6.hardwareID} "></td>
+                                            <td><input type="radio" name="os" required  value="{$vo6.hardwareID} "></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table  class="kind_table" width="200" border="0" align="center" cellpadding="0" style="float: left;">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Display Resolution Maximum</legend>
+                                    <table width="80%">
+                                        {volist name = "screen_resolutions" id = "vo7"}
+                                        <tr>
+                                            <td width="100%" align="center">{$vo7.hardware_name}</td>
+                                            <td><input type="radio" name="screen_resolution" required  value="{$vo7.hardwareID} "></td>
                                         </tr>
                                         {/volist}
                                     </table>
