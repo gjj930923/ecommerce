@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" href="StyleSheets/little_cart_table.css"/>
+    <script type="text/javascript" src="js/little_cart_table.js"></script>
+</head>
+<body>
+<table id="cartTable">
+    <thead>
+        <tr>
+            <th><label><input class="check-all check" type="checkbox"/>&nbsp;All</label></th>
+            <th>product</th>
+            <th>price</th>
+            <th>amount</th>
+            <th>total</th>
+            <th>operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="goods"><img src="images/1.jpg" alt=""/><span>AMD</span></td>
+            <td class="price">200</td>
+            <td class="count">
+                <span class="reduce"></span>
+                <input class="count-input" type="text" value="1"/>
+                <span class="add">+</span></td>
+            <td class="subtotal">5999.88</td>
+            <td class="operation"><span class="delete">delete</span></td>
+        </tr>
+       
+    </tbody>
+</table>
+
+<div class="cartfoot" id="cartfoot">
+    <label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;All</label>
+    <a class="fl delete" id="deleteAll" href="javascript:;">delete</a>
+    <div class="fr closing">check out</div>
+    <div class="fr total">total：$<span id="priceTotal">0.00</span></div>
+    <div class="fr selected" id="selected">selected items:
+        <span id="selectedTotal">0</span>product
+        <span class="arrow up">︽</span>
+        <span class="arrow down">︾</span>
+    </div>
+    <div class="selected-view">
+        <div id="selectedViewList" class="clearfix">
+            <!--<div><img src="images/1.jpg"><span>取消选择</span></div>-->
+        </div>
+        <span class="arrow">◆<span>◆</span></span>
+    </div>
+</div>
+</body>
+</html>

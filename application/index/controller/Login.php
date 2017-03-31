@@ -69,8 +69,8 @@ class Login extends Controller
                         $_SESSION['username'] = $admin['username'];
                         $_SESSION['adminID'] = $admin['adminID'];
                         $_SESSION['name']=$admin['first_name']." ".$admin['last_name'];
-                        $url = str_replace(".html", "", url("Index/index"));
-                        $url = str_replace("/index", "", $url);
+                        $url = str_replace(".html", "", url("Manager/ManagerIndex"));
+
                         $this->redirect($url, 301);
                     }
                     else
