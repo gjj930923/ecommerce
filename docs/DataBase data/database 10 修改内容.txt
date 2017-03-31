@@ -1,0 +1,14 @@
+版本修改
+1. 增加brand for product（后台需要修改）
+
+2. order表中时间由since 修改为year month date（后台需要修改）
+
+3.更新hardware categories 数据
+
+4.更新hardware 数据
+
+5.product表增加weight属性
+
+6. 插入商品数据
+
+7.插入orders数据
