@@ -1,0 +1,60 @@
+.page-header {
+	height: 70px;
+	background-color: #fff;
+	clear: both;
+}
+
+.page-header .city {
+	position: relative;
+	float: left;
+	height: 36px;
+	font-size: 18px;
+	line-height: 36px;
+	padding: 0 10px;
+	margin: 17px 0 0 17px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.page-header .city-list {
+	position: absolute;
+	left: 128px;
+	top: 62px;
+	border: 1px solid #e3e3e3;
+	background-color: #fff;
+	width: 472px;
+	z-index: 40;
+	padding-bottom: 28px;
+}
+
+.Hide {
+	display: none;
+}
+
+.page-header .search-bar {
+	position: relative;
+	float: right;
+	margin-top: 14px;
+}
+
+.page-header .search-bar input {
+	width: 322px;
+	height: 18px;
+	font-size: 14px;
+	padding: 10px 66px 10px 10px;
+	border: 1px solid #e3e3e3;
+}
+
+.page-header .search-bar .search-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 57px;
+	height: 40px;
+	background-color: #ff8400;
+	cursor: pointer;
+}
+
+#page-header .logo {
+	width: 8%;
+}
