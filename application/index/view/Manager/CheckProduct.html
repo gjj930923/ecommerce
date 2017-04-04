@@ -2,6 +2,15 @@
 <html lang="en"><head>
     <meta charset="utf-8">
     <title>Admin</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="StyleSheets/sit-nav.css">
+    <link type="text/css" rel="stylesheet" href="StyleSheets/main-nav.css">
+    <link rel="stylesheet" href="StyleSheets/order_check_Admin.css" />
+    <script src="js/order_check_Admin.js"></script>
+
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -24,6 +33,60 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/premium.css">
 
+    <script>
+			var amount = 0;
+			$(document).ready(function() {
+				//adimin test
+				$("#test").click(function() {
+					alert("2");
+					$(".admin_btn").show();
+					$(".admin_form").show();
+				});
+
+				//cart add test
+				$(".fa.fa-shopping-cart").click(function() {
+					//check if 1st time to clcik button
+
+					$("#cart").show();
+					//get all the tr
+					var cartTable = $('#cartTable');
+					var inner = $(this).parent().parent();
+					var price = inner.find(".ct-product-price");
+					var title = inner.find(".ct-product-title");
+					amount = amount + 1;
+					$(this).data('clicked', true);
+					if($(this).data('clicked')) {
+						alert($(this).attr('id'));
+
+						//find parent, so add the children to the cart
+
+						var cart = $(".ct-cart").find("table");
+						var tprice = $("<td><tr></tr></td>").text("price=" + price.text());
+
+						var $atr = $('<tr>');
+						var $atd = $('');
+						var htmlString = ""; //  Content to be added to new div
+
+						htmlString +=
+							'<tr>' +
+							'<td class = "checkbox_cartable"><input class="check-one check" type="checkbox" /></td>' +
+							'<td class="goods"><img src="" alt="" /><span>' + $(this).attr('id') + '</span></td>' +
+							'<td class="price">5999.88</td>' +
+							'<td class="count">' +
+							'<span class="reduce"></span>' +
+							'<input class="count-input" type="text" value="1" />' +
+							'<span class="add">+</span>' +
+							'</td>' +
+							'<td class="subtotal">5999.88</td>' +
+							'<td class="operation"><span class="delete">delete</span></td>' +
+							'</tr>';
+						cartTable.find('tbody').append(htmlString);
+
+					}
+
+				});
+			});
+		</script>
 </head>
 <body class=" theme-blue">
 
@@ -106,7 +169,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="./">My Account</a></li>
                     <li class="divider"></li>
-                    <li><a tabindex="-1" href="sign-in.html">Logout</a></li>
+                    <li><a tabindex="-1" href="index/Login/logout">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -125,9 +188,9 @@
 
         <li data-popover="true" data-content="Items in this group require a <strong><a href='http://portnine.com/bootstrap-themes/aircraft' target='blank'>premium license</a><strong>." rel="popover" data-placement="right"><a href="#" data-target=".premium-menu" class="nav-header collapsed" data-toggle="collapse">Products' information<i class="fa fa-collapse"></i></a></li>
         <li><ul class="premium-menu nav nav-list collapse in">
-            <li class="active"><a href="Brands.html"><span class="fa fa-caret-right"></span>Brands</a></li>
+            <li ><a href="Brands.html"><span class="fa fa-caret-right"></span>Brands</a></li>
             <li ><a href="NewProduct.html"><span class="fa fa-caret-right"></span>New Product</a></li>
-            <li ><a href="CheckProduct.html"><span class="fa fa-caret-right"></span>Check Product</a></li>
+            <li class = "active"><a href="CheckProduct.html"><span class="fa fa-caret-right"></span>Check Product</a></li>
         </ul></li>
 
         <li><a href="#" data-target=".accounts-menu" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-fw fa-briefcase"></i> Account <i class="fa fa-collapse"></i></a></li>
@@ -137,7 +200,7 @@
             <li ><a href="NewAdmin.html"><span class="fa fa-caret-right"></span> Add Administration</a></li>
         </ul></li>
 
-        <li><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-fw fa-legal"></i>Sales<i class="fa fa-collapse"></i></a></li>
+        <li><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse">Sales<i class="fa fa-collapse"></i></a></li>
         <li><ul class="legal-menu nav nav-list collapse">
             <li ><a href="sales.html"><span class="fa fa-caret-right"></span>Today's sales</a></li>
             <li ><a href="Overview.html"><span class="fa fa-caret-right"></span>Overview</a></li>
@@ -153,96 +216,49 @@
 <div class="content">
     <div class="header">
 
-        <h1 class="page-title">Brands' info</h1>
+        <h1 class="page-title">Check Product</h1>
         <ul class="breadcrumb">
             <li><a href="index.html">Home</a> </li>
-            <li class="active">Brands' info</li>
+            <li class="active">Check Product</li>
         </ul>
 
     </div>
     <div class="main-content">
-
-        <div class="panel panel-default">
-            <a href="#page-stats" class="panel-heading" data-toggle="collapse">How do the various brands compare by sales volume? </a>
-            <div id="page-stats" class="panel-collapse panel-body collapse in">
-
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="knob-container">
-                            <input class="knob" data-width="200" data-min="0" data-max="3000" data-displayPrevious="true" value="2500" data-fgColor="#92A3C2" data-readOnly=true;>
-                            <h3 class="text-muted text-center">Brand 1</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="knob-container">
-                            <input class="knob" data-width="200" data-min="0" data-max="4500" data-displayPrevious="true" value="3299" data-fgColor="#92A3C2" data-readOnly=true;>
-                            <h3 class="text-muted text-center">Brand 2</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="knob-container">
-                            <input class="knob" data-width="200" data-min="0" data-max="3000" data-displayPrevious="true" value="2500" data-fgColor="#92A3C2" data-readOnly=true;>
-                            <h3 class="text-muted text-center">Brand 3</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="knob-container">
-                            <input class="knob" data-width="200" data-min="0" data-max="3000" data-displayPrevious="true" value="2500" data-fgColor="#92A3C2" data-readOnly=true;>
-                            <h3 class="text-muted text-center">Brand 4</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <table id="cartTable" class="cartTable" style="margin-left: 150px">
+                <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Inventory Amount</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Home Discount</th>
+                    <th>Business Discount</th>
+                    <th>Status</th>
+                    <th>Sales Volume</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name = "products" id = "vo"}
+                <tr>
+                    <td class="orderID">{$vo.productID}</td>
+                    <td class="goods">{$vo.inventory_amount}</td>
+                    <td class="price">{$vo.product_name}</td>
+                    <td class="customerID">{$vo.price}</td>
+                    <td class="BillingID">{$vo.home_discount}</td>
+                    <td class="billing_addressID">{$vo.business_discount}</td>
+                    {if condition="$vo.status==1"}
+                    <td class="ship_addressID">On the Shelf</td>
+                    {else/}
+                    <td class="ship_addressID">Off the Shelf</td>
+                    {/if}
+                    <td class="amount">{$vo.sales_volume}</td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
         </div>
 
-        <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading no-collapse">All brands</div>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Brand Name</th>
-                            <th>Sales</th>
-                            <th>Time period</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
 
         <footer>
             <hr>
