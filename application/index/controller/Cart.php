@@ -77,7 +77,10 @@ class Cart extends Controller
                     $list['ship_addressID'] = $_POST['addressID'];
                     $list['billing_addressID'] = $_POST['billingAddressID'];
                     //$list['shipper_ID'] = $_POST['shipperID'];
-                    $list['since'] = date("Y-m-d H:i:s",time());
+                    $list['year'] = date("Y",time());
+                    $list['month'] = date("m",time());
+                    $list['date'] = date("d",time());
+
                     $list['quantity'] = $amount['quantity'];
                     $list['price'] = $product['price'];
                     if($userID % 2 == 1){

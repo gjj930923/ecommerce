@@ -248,12 +248,16 @@
                     <td class="orderID">{$vo.orderID}</td>
                     <td class="goods">{$vo.product_name}</td>
                     <td class="price">{$vo.price}</td>
+                    <td class="weight">{$vo.weight}</td>
+                    <td class="brand">{$vo.brand}</td>
                     <td class="customerID">{$vo.customerID}</td>
                     <td class="BillingID">{$vo.billingID}</td>
                     <td class="billing_addressID">{$vo.billing_addressID}</td>
                     <td class="ship_addressID">{$vo.ship_addressID}</td>
                     <td class="amount">{$vo.quantity}</td>
-                    <td class="since">{$vo.since} </td>
+                    <td class="year">{$vo.year} </td>
+                    <td class="month">{$vo.month} </td>
+                    <td class="date">{$vo.date} </td>
                     {if condition="$vo.status==1"}
                     <td class="status">Done</td>
                     {else/}
