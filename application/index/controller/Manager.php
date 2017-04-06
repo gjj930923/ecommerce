@@ -163,4 +163,60 @@ class Manager extends Controller
         $this->assign('products',$products);
         return $this->fetch();
     }
+    public function Customer()
+    {
+        session_start();
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+            $this->assign('name',$_SESSION['name']);
+        }
+        if (isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
+        return $this->fetch();
+    }
+    public function Brands()
+    {
+        session_start();
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+            $this->assign('name',$_SESSION['name']);
+        }
+        if (isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
+        return $this->fetch();
+    }
+    public function Sales()
+    {
+        session_start();
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+            $this->assign('name',$_SESSION['name']);
+        }
+        if (isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
+        return $this->fetch();
+    }
+    public function Overview()
+    {
+        session_start();
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+            $this->assign('name',$_SESSION['name']);
+        }
+        if (isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
+        return $this->fetch();
+    }
 }
