@@ -119,15 +119,15 @@
 <div class="sidebar-nav">
     <ul>
         <li><a href="#" data-target=".dashboard-menu" class="nav-header" data-toggle="collapse"><i class="fa fa-fw fa-briefcase"></i>Account<i class="fa fa-collapse"></i></a></li>
-        <li><ul class="dashboard-menu nav nav-list collapse in">
-            <li class = "active"><a href="Detailinfo"><span class="fa fa-caret-right"></span> Detail info</a></li>
+        <li><ul class="dashboard-menu nav nav-list collapse">
+            <li ><a href="Detailinfo"><span class="fa fa-caret-right"></span> Detail info</a></li>
             <li ><a href="password"><span class="fa fa-caret-right"></span> Reset Password</a></li>
             <li ><a href="newAdmin"><span class="fa fa-caret-right"></span> Add Administration</a></li>
         </ul></li>
 
         <li><a href="#" data-target=".accounts-menu" class="nav-header collapsed" data-toggle="collapse"> Customer<i class="fa fa-collapse"></i></a></li>
-        <li><ul class="accounts-menu nav nav-list collapse">
-            <li ><a href="Customer"><span class="fa fa-caret-right"></span>Main</a></li>
+        <li><ul class="accounts-menu nav nav-list collapse in">
+            <li class="active"><a href="Customer"><span class="fa fa-caret-right"></span>Main</a></li>
         </ul></li>
 
         <li data-popover="true"  rel="popover" data-placement="right"><a href="#" data-target=".premium-menu" class="nav-header collapsed" data-toggle="collapse">Products<i class="fa fa-collapse"></i></a></li>
@@ -149,50 +149,16 @@
 
 <div class="content">
     <div class="header">
-
-        <h1 class="page-title">Detail info</h1>
+        <h1 class="page-title">Welcome!</h1>
         <ul class="breadcrumb">
             <li><a href="index.html">Home</a> </li>
-            <li class="active">Detail info</li>
+            <li class="active">Welcome!</li>
         </ul>
-
     </div>
     <div class="main-content">
+        <h1 align = "center">Welcome to Pitt Zhong Guan Cun!</h1>
 
 
-
-
-
-
-        <div class="dialog">
-            <div class="panel panel-default">
-                <p class="panel-heading no-collapse">Admin information</p>
-                <div class="panel-body">
-                    <form id="reg_form_A" name="reg_form_A" method="post" action="updateInformation">
-                        <div class="form-group">
-                            <label>User Name</label>
-                            <input type="text" readonly="true" class="form-control span12" value = "{$username}">
-                        </div>
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" class="form-control span12" value = "{$fname}">
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" class="form-control span12" value = "{$lname}">
-                        </div>
-                        <div class="form-group">
-                            <label>E-mail</label>
-                            <input type="text" class="form-control span12" value = "{$email}">
-                        </div>
-                        <div align = "center">
-                        <input type="submit" value="Submit" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
 
         <footer>
