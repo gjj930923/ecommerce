@@ -301,9 +301,8 @@ class Admin extends Controller
             $this->assign('username',$_SESSION['username']);
             $this->assign('name',$_SESSION['name']);
         }
-        if (isset($_SESSION['adminID']))
-        {
-            $this->assign('adminID',$_SESSION['adminID']);
+        if (isset($_SESSION['adminID'])) {
+            $this->assign('adminID', $_SESSION['adminID']);
         }
 
         $products=Db('products')->order(['sales_volume'=>'desc'])->select();

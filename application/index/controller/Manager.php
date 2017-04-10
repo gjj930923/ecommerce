@@ -166,37 +166,190 @@ class Manager extends Controller
     	public function Customer()
     	{
     	    session_start();
-            if (isset($_SESSION['adminID']))
+            if(isset($_SESSION['name']))
             {
                 $this->assign('name',$_SESSION['name']);
             }
+            if(isset($_SESSION['username']))
+            {
+                $this->assign('username',$_SESSION['username']);
+            }
+            if(isset($_SESSION['adminID']))
+            {
+                $this->assign('adminID',$_SESSION['adminID']);
+            }
+
+            //home customer register
+            $result = db("Homec_count_r")->select();
+            $Homec_r=array();
+            if($result)
+            {
+                foreach ($result as $a)
+                {
+                    $Homec_r[] = $a['count'];
+                }
+            }
+            //business customer register
+            $result = db("Businessc_count_r")->select();
+            $Businessc_r=array();
+            if($result)
+            {
+                foreach ($result as $a)
+                {
+                    $Businessc_r[] = $a['count'];
+                }
+            }
+
+            //home customer made order
+            $result = db("Homec_count")->select();
+            $Homec=array();
+            if($result)
+            {
+                foreach ($result as $a)
+                {
+                    $Homec[] = $a['count'];
+                }
+                $this->assign('total_Homec',$Homec[0]);
+            }
+            //business customer made order
+            $result = db("Businessc_count")->select();
+            $Businessc=array();
+            if($result)
+            {
+                foreach ($result as $a)
+                {
+                    $Businessc[] = $a['count'];
+                }
+                $this->assign('total_Businessc',$Businessc[0]);
+            }
+            $ratio_r=$Homec_r[0]/$Businessc_r[0];
+            $ratio=$Homec[0]/$Businessc[0];
+            $this->assign('ratio_r',$ratio_r);
+            $this->assign('ratio',$ratio);
+
+            $result=db("Businessc_dimension")->select();
+            $this->assign('Bdimension',$result);
+
+            $result=db('Homec_dimension')->select();
+            $this->assign('Hdimension',$result);
+
     		return $this->fetch();
     	}
-    		public function Brands()
-        	{
-        	    session_start();
-                if (isset($_SESSION['adminID']))
+        public function Brands()
+        {
+            session_start();
+            if(isset($_SESSION['name']))
+            {
+                $this->assign('name',$_SESSION['name']);
+            }
+            if(isset($_SESSION['username']))
+            {
+                $this->assign('username',$_SESSION['username']);
+            }
+            if(isset($_SESSION['adminID']))
+            {
+                $this->assign('adminID',$_SESSION['adminID']);
+            }
+            //Total sales
+            $array=DB('Total_sales')->select();
+            $total_sales=array();
+            foreach ($array as $a)
+            {
+                $total_sales[]=$a['sales'];
+            }
+            if($total_sales)
+            {
+                $this->assign('total_sales',$total_sales[0]);
+            }
+            else
+            {
+                $this->error("Something wrong happen");
+            }
+            // Dell
+            $result = db("Brand_sales")->where('brand',"Dell")->select();
+            $dell_sales=array();
+            if($result)
+            {
+                foreach ($result as $a)
                 {
-                    $this->assign('name',$_SESSION['name']);
+                    $dell_sales[]=$a['sales'];
                 }
-        		return $this->fetch();
-        	}
-        		public function Sales()
-            	{
-            	    session_start();
-                    if (isset($_SESSION['adminID']))
-                    {
-                        $this->assign('name',$_SESSION['name']);
-                    }
-            		return $this->fetch();
-            	}
-            		public function Overview()
-                	{
-                	    session_start();
-                        if (isset($_SESSION['adminID']))
-                        {
-                            $this->assign('name',$_SESSION['name']);
-                        }
-                		return $this->fetch();
-                	}
+                $this->assign('dell_sales',$dell_sales[0]);
+            }
+
+            //Apple
+            $result = db("Brand_sales")->where('brand',"Apple")->select();
+            $apple_sales=array();
+            if($result)
+            {
+                foreach ($result as $a)
+                {
+                    $apple_sales[]=$a['sales'];
+                }
+                $this->assign('apple_sales',$apple_sales[0]);
+            }
+
+            //Acer
+            $result = db("Brand_sales")->where('brand',"Acer")->select();
+            $acer_sales=array();
+            if($result)
+            {
+                foreach ($result as $a)
+                {
+                    $acer_sales[]=$a['sales'];
+                }
+                $this->assign('acer_sales',$acer_sales[0]);
+            }
+            //ASUS
+            $result = db("Brand_sales")->where('brand',"ASUS")->select();
+            $asus_sales=array();
+            if($result)
+            {
+                foreach ($result as $a)
+                {
+                    $asus_sales[]=$a['sales'];
+                }
+                $this->assign('asus_sales',$asus_sales[0]);
+            }
+            //
+            $result = db("Brand_sales")->select();
+            $this->assign('brands',$result);
+
+
+            return $this->fetch();
+        }
+        public function Sales()
+        {
+            session_start();
+            if(isset($_SESSION['name']))
+            {
+                $this->assign('name',$_SESSION['name']);
+            }
+            if(isset($_SESSION['username']))
+            {
+                $this->assign('username',$_SESSION['username']);
+            }
+            if(isset($_SESSION['adminID']))
+            {
+                $this->assign('adminID',$_SESSION['adminID']);
+            }
+            return $this->fetch();
+        }
+        public function Overview()
+        {
+            session_start();
+            if(isset($_SESSION['name']))
+            {
+                $this->assign('name',$_SESSION['name']);
+            }
+            if(isset($_SESSION['username']))
+            {
+                $this->assign('username',$_SESSION['username']);
+            }
+            if(isset($_SESSION['adminID']))
+            {
+                $this->assign('adminID',$_SESSION['adminID']);
+            }
+            return $this->fetch();
+        }
 }

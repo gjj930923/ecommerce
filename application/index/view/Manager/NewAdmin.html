@@ -98,7 +98,7 @@
     <div class="navbar-collapse collapse" style="height: 1px;">
         <ul id="main-menu" class="nav navbar-nav navbar-right">
             <li class="dropdown hidden-xs">
-                {if condition="!isset($adminID)"}
+                {if condition="isset($adminID)"}
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span>{$name}
                 </a>

@@ -98,7 +98,7 @@
     <div class="navbar-collapse collapse" style="height: 1px;">
         <ul id="main-menu" class="nav navbar-nav navbar-right">
             <li class="dropdown hidden-xs">
-                {if condition="!isset($adminID)"}
+                {if condition="isset($adminID)"}
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span>{$name}
                 </a>
@@ -127,7 +127,7 @@
 
         <li><a href="#" data-target=".accounts-menu" class="nav-header collapsed" data-toggle="collapse"> Customer<i class="fa fa-collapse"></i></a></li>
         <li><ul class="accounts-menu nav nav-list collapse">
-            <li ><a href="Customer.html"><span class="fa fa-caret-right"></span>Main</a></li>
+            <li ><a href="Customer"><span class="fa fa-caret-right"></span>Main</a></li>
         </ul></li>
 
         <li data-popover="true"  rel="popover" data-placement="right"><a href="#" data-target=".premium-menu" class="nav-header collapsed" data-toggle="collapse">Products<i class="fa fa-collapse"></i></a></li>
@@ -160,32 +160,32 @@
     <div class="main-content">
 
         <div class="panel panel-default">
-            <a href="#page-stats" class="panel-heading" data-toggle="collapse">How do the various brands compare by sales volume? </a>
+            <a href="#page-stats" class="panel-heading" data-toggle="collapse">The total sales: {$total_sales} </a>
             <div id="page-stats" class="panel-collapse panel-body collapse in">
 
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="knob-container">
-                            <input class="knob" data-width="200" data-min="0" data-max="3000" data-displayPrevious="true" value="2500" data-fgColor="#92A3C2" data-readOnly=true;>
-                            <h3 class="text-muted text-center">Brand 1</h3>
+                            <input class="knob" data-width="200" data-min="0" data-max="{$total_sales}" data-displayPrevious="true" value="{$dell_sales}" data-fgColor="#92A3C2" data-readOnly=true;>
+                            <h3 class="text-muted text-center">Dell</h3>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="knob-container">
-                            <input class="knob" data-width="200" data-min="0" data-max="4500" data-displayPrevious="true" value="3299" data-fgColor="#92A3C2" data-readOnly=true;>
-                            <h3 class="text-muted text-center">Brand 2</h3>
+                            <input class="knob" data-width="200" data-min="0" data-max="{$total_sales}" data-displayPrevious="true" value="{$apple_sales}" data-fgColor="#92A3C2" data-readOnly=true;>
+                            <h3 class="text-muted text-center">Apple</h3>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="knob-container">
-                            <input class="knob" data-width="200" data-min="0" data-max="3000" data-displayPrevious="true" value="2500" data-fgColor="#92A3C2" data-readOnly=true;>
-                            <h3 class="text-muted text-center">Brand 3</h3>
+                            <input class="knob" data-width="200" data-min="0" data-max="{$total_sales}" data-displayPrevious="true" value="{$acer_sales}" data-fgColor="#92A3C2" data-readOnly=true;>
+                            <h3 class="text-muted text-center">Acer</h3>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="knob-container">
-                            <input class="knob" data-width="200" data-min="0" data-max="3000" data-displayPrevious="true" value="2500" data-fgColor="#92A3C2" data-readOnly=true;>
-                            <h3 class="text-muted text-center">Brand 4</h3>
+                            <input class="knob" data-width="200" data-min="0" data-max="{$total_sales}" data-displayPrevious="true" value="{$asus_sales}" data-fgColor="#92A3C2" data-readOnly=true;>
+                            <h3 class="text-muted text-center">ASUS</h3>
                         </div>
                     </div>
                 </div>
@@ -201,40 +201,16 @@
                         <tr>
                             <th>Brand Name</th>
                             <th>Sales</th>
-                            <th>Time period</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "brands" id = "vo"}
+
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td class="brand_name">{$vo.brand}</td>
+                            <td class="sales">{$vo.sales}</td>
                         </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
