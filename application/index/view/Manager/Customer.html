@@ -153,11 +153,11 @@
     <div class="header">
         <h1 class="page-title">Registered Customer</h1>
         <ul class="breadcrumb">
-            <li >Ratio(Home/Business):</li>
+            <li >Ratio(Home/Business):{$ratio_r}</li>
         </ul>
         <h1 class="page-title">Ordered Customer</h1>
         <ul class="breadcrumb">
-            <li >Ratio(Home/Business):</li>
+            <li >Ratio(Home/Business):{$ratio}</li>
         </ul>
     </div>
     <div class="main-content">
@@ -178,15 +178,17 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "Hdimension" id = "vo"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td class="Fname">{$vo.Fname}</td>
+                            <td class="Lname">{$vo.Lname}</td>
+                            <td class="Nname">{$vo.Nname}</td>
+                            <td class="gender">{$vo.gender}</td>
+                            <td class="age">{$vo.age}</td>
+                            <td class="income">{$vo.income}</td>
+                            <td class="marriage_status">{$vo.marriage_status}</td>
                         </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
@@ -203,11 +205,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "Bdimension" id = "vo1"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td class="Cname">{$vo1.Cname}</td>
+                            <td class="annual_income">{$vo1.annual_income}</td>
+                            <td class="business_category">{$vo1.business_category}</td>
                         </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
