@@ -335,7 +335,37 @@ class Manager extends Controller
             }
             return $this->fetch();
         }
-        public function Overview()
+        public function BvsP()
+        {
+            session_start();
+            if(isset($_SESSION['name']))
+            {
+                $this->assign('name',$_SESSION['name']);
+            }
+            if(isset($_SESSION['username']))
+            {
+                $this->assign('username',$_SESSION['username']);
+            }
+            if(isset($_SESSION['adminID']))
+            {
+                $this->assign('adminID',$_SESSION['adminID']);
+            }
+            $result=db('Product_dimension')->select();
+            $this->assign('Pdimension',$result);
+
+            if(isset($_POST['Pname']))
+            {
+                $Pname=$_POST['Pname'];
+            }
+            else
+            {
+                $Pname="MacBook Air";
+            }
+            $result=db('Pname_bcategory_sales')->where('Pname',$Pname)->order(['sales'=>'desc'])->select();
+            $this->assign('Pname_Bcategory_sales',$result);
+            return $this->fetch();
+        }
+        public function demand()
         {
             session_start();
             if(isset($_SESSION['name']))
