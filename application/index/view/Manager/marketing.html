@@ -24,11 +24,24 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/premium.css">
 
+    <style>
+            .container {
+                margin: 30px auto;
+                width: 500px;
+                height: 300px;
+                border: 1px solid #000;
+            }
+            .axis path,
+            .axis line,
+            .line {
+                stroke: #000;
+                fill: none;
+            }
+        </style>
+
 </head>
 <body class=" theme-blue">
-
 <!-- Demo page code -->
-
 <script type="text/javascript">
         $(function() {
             var match = document.cookie.match(new RegExp('color=([^;]+)'));
@@ -139,8 +152,10 @@
 
         <li><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse">Sales<i class="fa fa-collapse"></i></a></li>
         <li><ul class="legal-menu nav nav-list collapse in">
-            <li class="active"><a href="sales.html"><span class="fa fa-caret-right"></span>Today's sales</a></li>
+            <li ><a href="sales.html"><span class="fa fa-caret-right"></span>Today's sales</a></li>
             <li ><a href="Overview.html"><span class="fa fa-caret-right"></span>Business vs Product</a></li>
+            <li ><a href="demand"><span class="fa fa-caret-right"></span>Demand Curve</a></li>
+            <li class="active"><a href="marketing"><span class="fa fa-caret-right"></span>Marketing Data</a></li>
             <li ><a href="CheckOrder"><span class="fa fa-caret-right"></span>Check Order</a></li>
         </ul></li>
 
@@ -150,188 +165,41 @@
 <div class="content">
     <div class="header">
 
-        <h1 class="page-title">Sales' info</h1>
+        <h1 class="page-title">Business vs Product</h1>
         <ul class="breadcrumb">
             <li><a href="index.html">Home</a> </li>
-            <li class="active">Sales' info</li>
+            <li class="active">Business vs Product</li>
         </ul>
-
     </div>
     <div class="main-content">
 
-        <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading no-collapse">Brands</div>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Top 5 products</th>
-                            <th>Sales</th>
-                            <th>Profits</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="panel panel-default">
-                    <a href="#widget1container" class="panel-heading" data-toggle="collapse">Products</a>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Top product categories </th>
-                            <th>Sales</th>
-                            <th>Profits</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading no-collapse">Brands</div>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Bottom 5 products</th>
-                            <th>Sales</th>
-                            <th>Profits</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading no-collapse">Customer</div>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Top 2 customer categories </th>
-                            <th>Sales</th>
-                            <th>Profits</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading no-collapse">Brands</div>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Aggregate sales</th>
-                            <th>Total profits</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div class="panel-heading no-collapse">Develop a direct marketing data
+                        <div class="btn-group">
+                            <form id="" action="" method="post">
+                                <table>
+                                    <tr >
+                                        <td width="35%" align="right">Product:</td>
+                                        <td>
+                                            <select name="status" >
+                                                <option selected="" value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                            <input type="submit" value="Search">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="widget1container" class="panel-body collapse in">
+                        <h2>Develop a direct marketing data; for each product, a list of customers that buy the product more than 2 times per week.</h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -354,6 +222,5 @@
             $('.demo-cancel-click').click(function(){return false;});
         });
     </script>
-
 
 </body></html>

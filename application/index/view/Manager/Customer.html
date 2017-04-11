@@ -140,7 +140,9 @@
         <li><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse">Sales<i class="fa fa-collapse"></i></a></li>
         <li><ul class="legal-menu nav nav-list collapse">
             <li ><a href="sales"><span class="fa fa-caret-right"></span>Today's sales</a></li>
-            <li ><a href="Overview"><span class="fa fa-caret-right"></span>Overview</a></li>
+            <li ><a href="Overview"><span class="fa fa-caret-right"></span>Business vs Product</a></li>
+            <li ><a href="demand"><span class="fa fa-caret-right"></span>Demand Curve</a></li>
+            <li ><a href="marketing"><span class="fa fa-caret-right"></span>Marketing Data</a></li>
             <li ><a href="CheckOrder"><span class="fa fa-caret-right"></span>Check Order</a></li>
         </ul></li>
 
@@ -149,18 +151,68 @@
 
 <div class="content">
     <div class="header">
-        <h1 class="page-title">Welcome!</h1>
+        <h1 class="page-title">Registered Customer</h1>
         <ul class="breadcrumb">
-            <li><a href="index.html">Home</a> </li>
-            <li class="active">Welcome!</li>
+            <li >Ratio(Home/Business):</li>
+        </ul>
+        <h1 class="page-title">Ordered Customer</h1>
+        <ul class="breadcrumb">
+            <li >Ratio(Home/Business):</li>
         </ul>
     </div>
     <div class="main-content">
-        <h1 align = "center">Welcome to Pitt Zhong Guan Cun! {$ratio_r}  {$ratio}</h1>
-
-
-
-
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading no-collapse">Home Customer</div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Nick Name</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Income</th>
+                            <th>Marriage Statues</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading no-collapse">Business Customer</div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>Annual Income</th>
+                            <th>Business Category</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <footer>
             <hr>
 
