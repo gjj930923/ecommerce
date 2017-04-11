@@ -1,0 +1,66 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 4.6.4
+ */
+
+// Database 'ecommerce'
+
+// ecommerce.address
+
+[{"addressID":"100","state":"PA","city":"Pittsburgh","street":"4720 Centre Ave, Apt 4E","zip_code":"15213"}, {"addressID":"102","state":"PA","city":"Pittsburgh","street":"6602 Northumberland","zip_code":"15217"}]
+
+// ecommerce.admin
+
+[{"adminID":"1","first_name":"DONALD","last_name":"TRUMP","username":"President","password":"donaldtrump","email":"dt@whitehouse.gov"}, {"adminID":"3","first_name":"Zhaoji","last_name":"Huang","username":"admin","password":"8888","email":"zhh34@pitt.edu"}]
+
+// ecommerce.billinginfo
+
+[{"billingID":"2","creditcard_number":"88888888888888888","expire_month":"12","expire_year":"2019"}, {"billingID":"4","creditcard_number":"66666666666666666","expire_month":"9","expire_year":"2018"}]
+
+// ecommerce.business_category
+
+[{"business_categoryID":"1","business_category_name":"Manufacture"}, {"business_categoryID":"3","business_category_name":"Business"}, {"business_categoryID":"5","business_category_name":"Finance"}, {"business_categoryID":"7","business_category_name":"Service"}, {"business_categoryID":"9","business_category_name":"Retail"}, {"business_categoryID":"11","business_category_name":"Ecommerce"}]
+
+// ecommerce.business_customers
+
+[{"customerID":"10000","username":"zhaoji","password":"1234","company_name":"ZJ company","email":"1234@zj.com","annual_income":"1000000","business_categoryID":"5"}]
+
+// ecommerce.cart
+
+[{"customerID":"10000","productID":"1","quantity":"1"}]
+
+// ecommerce.customers_have_address
+
+[{"addressID":"100","customerID":"10001"}, {"addressID":"102","customerID":"10000"}]
+
+// ecommerce.customers_have_billinginfo
+
+[{"billingID":"2","customerID":"10001"}, {"billingID":"4","customerID":"10000"}]
+
+// ecommerce.hardwares
+
+[{"hardwareID":"1","hardware_name":"i7","hardware_company":"Intel","hardware_categoryID":"1"}, {"hardwareID":"2","hardware_name":"i5","hardware_company":"Intel","hardware_categoryID":"1"}, {"hardwareID":"3","hardware_name":"i3","hardware_company":"Intel","hardware_categoryID":"1"}, {"hardwareID":"4","hardware_name":"Intel HD Graphics 5500","hardware_company":"Intel","hardware_categoryID":"2"}, {"hardwareID":"5","hardware_name":"Intel HD Graphics","hardware_company":"Intel","hardware_categoryID":"2"}, {"hardwareID":"6","hardware_name":"Intel HD Graphics 520","hardware_company":"Intel","hardware_categoryID":"2"}, {"hardwareID":"7","hardware_name":"Intel HD Graphics 620","hardware_company":"Intel","hardware_categoryID":"2"}, {"hardwareID":"8","hardware_name":"AMD Radeon HD 6490M","hardware_company":"AMD","hardware_categoryID":"2"}, {"hardwareID":"9","hardware_name":"4 GB","hardware_company":"Kingston","hardware_categoryID":"3"}, {"hardwareID":"10","hardware_name":"6 GB","hardware_company":"Samsung","hardware_categoryID":"3"}, {"hardwareID":"11","hardware_name":"8 GB","hardware_company":"Samsung","hardware_categoryID":"3"}, {"hardwareID":"12","hardware_name":"13 inch","hardware_company":"Samsung","hardware_categoryID":"4"}, {"hardwareID":"13","hardware_name":"13.3 inch","hardware_company":"Samsung","hardware_categoryID":"4"}, {"hardwareID":"14","hardware_name":"14 inch","hardware_company":"Samsung","hardware_categoryID":"4"}, {"hardwareID":"15","hardware_name":"15.4 inch","hardware_company":"Samsung","hardware_categoryID":"4"}, {"hardwareID":"16","hardware_name":"15.6 inch","hardware_company":"Samsung","hardware_categoryID":"4"}, {"hardwareID":"17","hardware_name":"21.5 inch","hardware_company":"LG","hardware_categoryID":"4"}, {"hardwareID":"18","hardware_name":"SSD","hardware_company":"Kingston","hardware_categoryID":"5"}, {"hardwareID":"19","hardware_name":"HDD","hardware_company":"Kingston","hardware_categoryID":"5"}, {"hardwareID":"20","hardware_name":"128 GB","hardware_company":"Kingston","hardware_categoryID":"6"}, {"hardwareID":"21","hardware_name":"256 GB","hardware_company":"Kingston","hardware_categoryID":"6"}, {"hardwareID":"22","hardware_name":"500 GB","hardware_company":"Kingston","hardware_categoryID":"6"}, {"hardwareID":"23","hardware_name":"1T","hardware_company":"Kingston","hardware_categoryID":"6"}, {"hardwareID":"24","hardware_name":"Windows 10","hardware_company":"Windows","hardware_categoryID":"7"}, {"hardwareID":"25","hardware_name":"Mac OS X","hardware_company":"Apple","hardware_categoryID":"7"}, {"hardwareID":"26","hardware_name":"1366 x 768","hardware_company":"Samsung","hardware_categoryID":"8"}, {"hardwareID":"27","hardware_name":"1440x900","hardware_company":"Samsung","hardware_categoryID":"8"}, {"hardwareID":"28","hardware_name":"1920x1080","hardware_company":"Samsung","hardware_categoryID":"8"}]
+
+// ecommerce.hardware_category
+
+[{"hardware_categoryID":"1","hardware_category_name":"CPU"}, {"hardware_categoryID":"2","hardware_category_name":"Graphics Coprocessor"}, {"hardware_categoryID":"3","hardware_category_name":"RAM Size"}, {"hardware_categoryID":"4","hardware_category_name":"Screen size"}, {"hardware_categoryID":"5","hardware_category_name":"Hard disk Description"}, {"hardware_categoryID":"6","hardware_category_name":"Hard-Drive Size"}, {"hardware_categoryID":"7","hardware_category_name":"Operation System"}, {"hardware_categoryID":"8","hardware_category_name":"Display Resolution Maximum"}]
+
+// ecommerce.home_customers
+
+[{"customerID":"10001","username":"gjj","password":"1234","first_name":"Junjia","last_name":"Guo","nick_name":"Jeff","email":"jug44@pitt.edu","gender":"male","age":"24","income":"11","marriage_status":"no"}]
+
+// ecommerce.manage
+
+[{"since":"2016-12-05 00:00:00","adminID":"1","productID":"1"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"2"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"3"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"4"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"5"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"6"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"7"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"8"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"9"}, {"since":"2016-12-05 00:00:00","adminID":"1","productID":"10"}]
+
+// ecommerce.orders
+
+[{"orderID":"1000","productID":"1","customerID":"10001","billingID":"2","ship_addressID":"100","billing_addressID":"100","year":"2016","month":"12","date":"21","quantity":"1","price":"670","status":"1"}, {"orderID":"1002","productID":"2","customerID":"10001","billingID":"2","ship_addressID":"100","billing_addressID":"100","year":"2016","month":"12","date":"22","quantity":"2","price":"250","status":"1"}, {"orderID":"1004","productID":"9","customerID":"10001","billingID":"2","ship_addressID":"100","billing_addressID":"100","year":"2017","month":"2","date":"14","quantity":"2","price":"350","status":"1"}, {"orderID":"1006","productID":"10","customerID":"10001","billingID":"2","ship_addressID":"102","billing_addressID":"102","year":"2017","month":"3","date":"28","quantity":"1","price":"540","status":"1"}, {"orderID":"1008","productID":"6","customerID":"10000","billingID":"4","ship_addressID":"102","billing_addressID":"102","year":"2017","month":"3","date":"29","quantity":"10","price":"860","status":"1"}, {"orderID":"1010","productID":"7","customerID":"10000","billingID":"4","ship_addressID":"102","billing_addressID":"102","year":"2016","month":"3","date":"29","quantity":"5","price":"600","status":"1"}, {"orderID":"1012","productID":"3","customerID":"10000","billingID":"4","ship_addressID":"102","billing_addressID":"102","year":"2016","month":"3","date":"30","quantity":"8","price":"330","status":"1"}, {"orderID":"1014","productID":"8","customerID":"10000","billingID":"4","ship_addressID":"102","billing_addressID":"102","year":"2016","month":"3","date":"30","quantity":"5","price":"500","status":"1"}, {"orderID":"1016","productID":"4","customerID":"10000","billingID":"4","ship_addressID":"102","billing_addressID":"102","year":"2016","month":"3","date":"30","quantity":"1","price":"780","status":"1"}]
+
+// ecommerce.products
+
+[{"productID":"1","inventory_amount":"80","product_name":"Inspiron 13 5358 Premium Flagship","price":"670","home_discount":"100","business_discount":"100","status":"1","sales_volume":"1","brand":"Dell","weight":"3.68"}, {"productID":"2","inventory_amount":"80","product_name":"Intel Pentium N3700","price":"250","home_discount":"100","business_discount":"100","status":"1","sales_volume":"2","brand":"Dell","weight":"4.85"}, {"productID":"3","inventory_amount":"90","product_name":"Inspiron 3000","price":"330","home_discount":"100","business_discount":"100","status":"1","sales_volume":"8","brand":"Dell","weight":"4.8"}, {"productID":"4","inventory_amount":"80","product_name":"Latitude E7450","price":"780","home_discount":"100","business_discount":"100","status":"1","sales_volume":"1","brand":"Dell","weight":"4"}, {"productID":"5","inventory_amount":"80","product_name":"Inspiron 5000","price":"570","home_discount":"100","business_discount":"100","status":"1","sales_volume":"0","brand":"Dell","weight":"6.5"}, {"productID":"6","inventory_amount":"90","product_name":"MacBook Air","price":"860","home_discount":"100","business_discount":"100","status":"1","sales_volume":"10","brand":"Apple","weight":"2.96"}, {"productID":"7","inventory_amount":"80","product_name":"MacBook Pro","price":"600","home_discount":"100","business_discount":"100","status":"1","sales_volume":"5","brand":"Apple","weight":"5.6"}, {"productID":"8","inventory_amount":"80","product_name":"R5-571T","price":"500","home_discount":"100","business_discount":"100","status":"1","sales_volume":"5","brand":"Acer","weight":"4.96"}, {"productID":"9","inventory_amount":"90","product_name":"Aspire E 15","price":"350","home_discount":"100","business_discount":"100","status":"1","sales_volume":"2","brand":"Acer","weight":"5.27"}, {"productID":"10","inventory_amount":"80","product_name":"F556UA-AB54 NB","price":"540","home_discount":"100","business_discount":"100","status":"1","sales_volume":"1","brand":"ASUS","weight":"5.1"}]
+
+// ecommerce.products_have_hardware
+
+[{"productID":"1","hardwareID":"1"}, {"productID":"1","hardwareID":"4"}, {"productID":"1","hardwareID":"11"}, {"productID":"1","hardwareID":"12"}, {"productID":"1","hardwareID":"18"}, {"productID":"1","hardwareID":"20"}, {"productID":"1","hardwareID":"24"}, {"productID":"1","hardwareID":"28"}, {"productID":"2","hardwareID":"3"}, {"productID":"3","hardwareID":"3"}, {"productID":"4","hardwareID":"2"}, {"productID":"5","hardwareID":"1"}, {"productID":"6","hardwareID":"2"}, {"productID":"7","hardwareID":"1"}, {"productID":"8","hardwareID":"2"}, {"productID":"9","hardwareID":"3"}, {"productID":"10","hardwareID":"2"}, {"productID":"2","hardwareID":"5"}, {"productID":"3","hardwareID":"5"}, {"productID":"4","hardwareID":"5"}, {"productID":"5","hardwareID":"6"}, {"productID":"6","hardwareID":"7"}, {"productID":"7","hardwareID":"8"}, {"productID":"8","hardwareID":"6"}, {"productID":"9","hardwareID":"7"}, {"productID":"10","hardwareID":"6"}, {"productID":"2","hardwareID":"9"}, {"productID":"3","hardwareID":"10"}, {"productID":"4","hardwareID":"11"}, {"productID":"5","hardwareID":"11"}, {"productID":"6","hardwareID":"11"}, {"productID":"7","hardwareID":"9"}, {"productID":"8","hardwareID":"11"}, {"productID":"9","hardwareID":"9"}, {"productID":"10","hardwareID":"11"}, {"productID":"2","hardwareID":"16"}, {"productID":"3","hardwareID":"16"}, {"productID":"4","hardwareID":"14"}, {"productID":"5","hardwareID":"17"}, {"productID":"6","hardwareID":"13"}, {"productID":"7","hardwareID":"15"}, {"productID":"8","hardwareID":"16"}, {"productID":"9","hardwareID":"16"}, {"productID":"10","hardwareID":"16"}, {"productID":"2","hardwareID":"19"}, {"productID":"3","hardwareID":"19"}, {"productID":"4","hardwareID":"18"}, {"productID":"5","hardwareID":"19"}, {"productID":"6","hardwareID":"18"}, {"productID":"7","hardwareID":"19"}, {"productID":"8","hardwareID":"19"}, {"productID":"9","hardwareID":"19"}, {"productID":"10","hardwareID":"18"}, {"productID":"2","hardwareID":"22"}, {"productID":"3","hardwareID":"23"}, {"productID":"4","hardwareID":"21"}, {"productID":"5","hardwareID":"23"}, {"productID":"6","hardwareID":"20"}, {"productID":"7","hardwareID":"22"}, {"productID":"8","hardwareID":"23"}, {"productID":"9","hardwareID":"23"}, {"productID":"10","hardwareID":"20"}, {"productID":"2","hardwareID":"24"}, {"productID":"3","hardwareID":"24"}, {"productID":"4","hardwareID":"24"}, {"productID":"5","hardwareID":"24"}, {"productID":"6","hardwareID":"25"}, {"productID":"7","hardwareID":"25"}, {"productID":"8","hardwareID":"24"}, {"productID":"9","hardwareID":"24"}, {"productID":"10","hardwareID":"24"}, {"productID":"2","hardwareID":"26"}, {"productID":"3","hardwareID":"26"}, {"productID":"4","hardwareID":"28"}, {"productID":"5","hardwareID":"28"}, {"productID":"6","hardwareID":"27"}, {"productID":"7","hardwareID":"27"}, {"productID":"8","hardwareID":"28"}, {"productID":"9","hardwareID":"28"}, {"productID":"10","hardwareID":"28"}]
