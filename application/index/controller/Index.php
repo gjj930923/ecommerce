@@ -29,6 +29,8 @@ class Index extends Controller
             {
                 $this->assign('adminID',$_SESSION['adminID']);
                 $this->assign('name',$_SESSION['name']);
+                $url = str_replace(".html", "", url("Manager/ManagerIndex"));
+                $this->success('Welcome Back!', $url);
             }
             else
             {
