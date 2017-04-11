@@ -140,7 +140,7 @@
         <li><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse">Sales<i class="fa fa-collapse"></i></a></li>
         <li><ul class="legal-menu nav nav-list collapse">
             <li ><a href="sales"><span class="fa fa-caret-right"></span>Today's sales</a></li>
-            <li ><a href="Overview"><span class="fa fa-caret-right"></span>Business vs Product</a></li>
+            <li ><a href="BvsP"><span class="fa fa-caret-right"></span>Business vs Product</a></li>
             <li ><a href="demand"><span class="fa fa-caret-right"></span>Demand Curve</a></li>
             <li ><a href="marketing"><span class="fa fa-caret-right"></span>Marketing Data</a></li>
             <li ><a href="CheckOrder"><span class="fa fa-caret-right"></span>Check Order</a></li>
@@ -151,15 +151,28 @@
 
 <div class="content">
     <div class="header">
-        <h1 class="page-title">Registered Customer</h1>
+        <h1 class="page-title">Customer info</h1>
         <ul class="breadcrumb">
-            <li >Ratio(Home/Business):{$ratio_r}</li>
-        </ul>
-        <h1 class="page-title">Ordered Customer</h1>
-        <ul class="breadcrumb">
-            <li >Ratio(Home/Business):{$ratio}</li>
+            <li><a href="index.html">Home</a> </li>
+            <li class="active">Customer info</li>
         </ul>
     </div>
+
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            <div class="header">
+                <h1 class="page-title">Ordered Customer</h1>
+                <h1 class="page-title">Ratio(Home/Business):{$ratio}</h1>
+            </div>
+        </div>
+        <div class="col-md-6 column">
+            <div class="header">
+                <h1 class="page-title">Registered Customer</h1>
+                <h1 class="page-title">Ratio(Home/Business):{$ratio_r}</h1>
+            </div>
+        </div>
+    </div>
+
     <div class="main-content">
         <div class="row">
             <div class="col-sm-6 col-md-6">
@@ -193,6 +206,9 @@
                     </table>
                 </div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading no-collapse">Business Customer</div>
