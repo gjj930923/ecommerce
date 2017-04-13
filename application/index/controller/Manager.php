@@ -333,6 +333,31 @@ class Manager extends Controller
             {
                 $this->assign('adminID',$_SESSION['adminID']);
             }
+
+            if(isset($_POST['date']))
+            {
+                $date=$_POST['date'];
+                $this->assign('date',$date);
+                $year=date("Y",strtotime($date));
+                $month=(int)date("m",strtotime($date));
+                $day=(int)date("d",strtotime($date));
+            }
+            else
+            {
+                $year=1970;
+                $month=1;
+                $day=1;
+            }
+            $data=(['year'=>$year,'month'=>$month,'day'=>$day]);
+            $top5=db('top5')->where($data)->select();
+            $bottom5=db('bottom5')->where($data)->select();
+            $brand=db('Brand_date_sales')->where($data)->order(['sales'=>'desc'])->limit(1)->select();
+            $bcategory=db('Bcategory_date_sales')->where($data)->order(['sales'=>'desc'])->limit(2)->select();
+            $this->assign('top5',$top5);
+            $this->assign('bottom5',$bottom5);
+            $this->assign('brand',$brand);
+            $this->assign('bcategory',$bcategory);
+
             return $this->fetch();
         }
         public function BvsP()
@@ -359,7 +384,7 @@ class Manager extends Controller
             }
             else
             {
-                $Pname="MacBook Air";
+                $Pname="";
             }
             $result=db('Pname_bcategory_sales')->where('Pname',$Pname)->order(['sales'=>'desc'])->select();
             $this->assign('Pname_Bcategory_sales',$result);
@@ -382,4 +407,21 @@ class Manager extends Controller
             }
             return $this->fetch();
         }
+    public function marketing()
+    {
+        session_start();
+        if(isset($_SESSION['name']))
+        {
+            $this->assign('name',$_SESSION['name']);
+        }
+        if(isset($_SESSION['username']))
+        {
+            $this->assign('username',$_SESSION['username']);
+        }
+        if(isset($_SESSION['adminID']))
+        {
+            $this->assign('adminID',$_SESSION['adminID']);
+        }
+        return $this->fetch();
+    }
 }

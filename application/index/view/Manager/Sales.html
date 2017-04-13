@@ -138,6 +138,8 @@
         <li><ul class="legal-menu nav nav-list collapse in">
             <li class="active"><a href="sales"><span class="fa fa-caret-right"></span>Today's sales</a></li>
             <li ><a href="BvsP"><span class="fa fa-caret-right"></span>Business vs Product</a></li>
+            <li ><a href="demand"><span class="fa fa-caret-right"></span>Demand Curve</a></li>
+            <li ><a href="marketing"><span class="fa fa-caret-right"></span>Marketing Data</a></li>
             <li ><a href="CheckOrder"><span class="fa fa-caret-right"></span>Check Order</a></li>
         </ul></li>
 
@@ -157,11 +159,15 @@
         <div class="col-md-1 column">
             <a>Date:</a>
         </div>
-        <form>
+        <form id="" action="sales" method="post">
         <div class="col-md-4 column">
             <div class="form-group">
                     <div class="input-group date form_date col-md-12" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                        {if condition="isset($date)"}
+                        <input class="form-control" size="10" type="text" value="{$date}" name="date" readonly>
+                        {else/}
                         <input class="form-control" size="10" type="text" value="" name="date" readonly>
+                        {/if}
                         <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
@@ -223,34 +229,15 @@
                         <tr>
                             <th>Top 5 products</th>
                             <th>Sales</th>
-                            <th>Profits</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "top5" id = "vo"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{$vo.Pname}</td>
+                            <td>{$vo.sales}</td>
                         </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                        {/volist}
                         </tr>
                         </tbody>
                     </table>
@@ -308,35 +295,15 @@
                         <tr>
                             <th>Bottom 5 products</th>
                             <th>Sales</th>
-                            <th>Profits</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "bottom5" id = "vo1"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{$vo1.Pname}</td>
+                            <td>{$vo1.sales}</td>
                         </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
@@ -349,20 +316,15 @@
                         <tr>
                             <th>Top 2 customer categories </th>
                             <th>Sales</th>
-                            <th>Profits</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "bcategory" id = "vo2"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{$vo2.Bcategory}</td>
+                            <td>{$vo2.sales}</td>
                         </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
@@ -381,10 +343,12 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "brand" id = "vo3"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{$vo3.brand}</td>
+                            <td>{$vo3.sales}</td>
                         </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
