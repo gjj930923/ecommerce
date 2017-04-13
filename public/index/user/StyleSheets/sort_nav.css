@@ -77,7 +77,7 @@
 	.submenu {
 		display: none;
 		width: 205px;
-		left: 220px;
+		left: 160px;
 		position: absolute;
 		top: 180px;
 		border: 1px solid #DDD;
@@ -106,9 +106,9 @@
 	.leftdiv dl dt {
 		display: block;
 		float: left;
-		width: 60px;
+		width: 130px;
 		text-align: right;
-		height: 22px;
+		height: 35px;
 		/*line-height: 22px;*/
 		padding-right: 6px;
 	}
