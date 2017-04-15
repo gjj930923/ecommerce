@@ -1,4 +1,4 @@
-USE `ecommerce`;/* Choose database */
+﻿USE `ecommerce`;/* Choose database */
 
 set global event_scheduler=1; /* open schedule function*/
 
@@ -48,7 +48,7 @@ begin
 end//
 delimiter ;
 
-/*call update_fact();
+call update_fact();
 select * from fact_memory;*/
 /*select * from Sales*/
 
@@ -97,7 +97,7 @@ begin
 		where current_row=start_row;
 end//
 delimiter ;
-#call update_Hdimension()
+call update_Hdimension()
 #select * from Homec_Dimension;
 #select * from Hdimension_memory
 
@@ -141,7 +141,7 @@ begin
 end//
 delimiter ;
 
-#call update_Bdimension();
+call update_Bdimension();
 #select * from Bdimension_memory;
 #select * from Businessc_dimension;
 
@@ -192,7 +192,7 @@ begin
 end//
 delimiter ;
 
-#call update_Pdimension();
+call update_Pdimension();
 #select * from Pdimension_memory;
 #select * from Product_Dimension;
 
@@ -320,7 +320,7 @@ begin
 end//
 delimiter ;
 
-#call update_brand_sales();
+call update_brand_sales();
 #select * from Brand_sales;
 
 DROP TABLE IF EXISTS `Total_sales`;
@@ -339,7 +339,7 @@ begin
 end//
 delimiter ;
 
-#call update_total_sales();
+call update_total_sales();
 #select * from Total_sales;
 ############################################
 #create table Bcategory_date_sales
