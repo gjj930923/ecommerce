@@ -1,0 +1,28 @@
+1,i7,Intel,1
+2,i5,Intel,1
+3,i3,Intel,1
+4,Intel HD Graphics 5500,Intel,2
+5,Intel HD Graphics,Intel,2
+6,Intel HD Graphics 520,Intel,2
+7,Intel HD Graphics 620,Intel,2
+8,AMD Radeon HD 6490M,AMD,2
+9,4 GB,Kingston,3
+10,6 GB,Samsung,3
+11,8 GB,Samsung,3
+12,13 inch,Samsung,4
+13,13.3 inch,Samsung,4
+14,14 inch,Samsung,4
+15,15.4 inch,Samsung,4
+16,15.6 inch,Samsung,4
+17,21.5 inch,LG,4
+18,SSD,Kingston,5
+19,HDD,Kingston,5
+20,128 GB,Kingston,6
+21,256 GB,Kingston,6
+22,500 GB,Kingston,6
+23,1T,Kingston,6
+24,Windows 10,Windows,7
+25,Mac OS X,Apple,7
+26,1366 x 768,Samsung,8
+27,1440x900,Samsung,8
+28,1920x1080,Samsung,8
