@@ -32,5 +32,5 @@ for keys in whole.keys():
     #print mylist
     name = mylist[0:-3]
     name = " ".join(name)
-    db.top5.insert_one({"brand":name,"Year":mylist[-3],"Month":mylist[-2],"Date":mylist[-1],"Quantity":whole[keys]})
+    db.bottom5.insert_one({"brand":name,"Year":mylist[-3],"Month":mylist[-2],"Date":mylist[-1],"Quantity":whole[keys]})
     mylist = []

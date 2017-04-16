@@ -28,5 +28,5 @@ for keys in whole.keys():
     name = mylist[0:-1]
     name = " ".join(name)
     print name
-    db.productN_price.insert_one({"Pname":name,"price":mylist[-1],"Quantity":whole[keys]})
+    db.pname_price_sales.insert_one({"Pname":name,"price":mylist[-1],"Quantity":whole[keys]})
     mylist = []

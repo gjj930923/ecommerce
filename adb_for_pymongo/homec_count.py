@@ -10,12 +10,12 @@ for i in db.home_customers.find():
             s = i["customerID"]
             if s not in item:
                 item.append(i["customerID"])
-db.Homec_count.insert_one({"count":len(item)})
+db.homec_count.insert_one({"count":len(item)})
 
 
 #registered customers
 num2 = 0
 for i in db.business_customers.find():
     num2 += 1
-db.Homec_count_r.insert_one({"count":num2})
+db.homec_count_r.insert_one({"count":num2})
 

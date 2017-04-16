@@ -18,4 +18,4 @@ for i in db.products.find():
 print dict_for_brandQ
 
 for keys in dict_for_brandQ.keys():
-    db.brand_n_quantity.insert_one({"brand":keys,"quantity":dict_for_brandQ[keys]})
+    db.brand_sales.insert_one({"brand":keys,"sales":dict_for_brandQ[keys]})

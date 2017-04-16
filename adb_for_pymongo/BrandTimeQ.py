@@ -31,6 +31,6 @@ for keys in whole.keys():
     s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
     mylist = s.split()
     #print mylist
-    db.brand_time_quantity.insert_one({"brand":mylist[0],"Year":mylist[1],"Month":mylist[2],"Date":mylist[3],"Quantity":whole[keys]})
+    db.brand_date_sales.insert_one({"brand":mylist[0],"Year":mylist[1],"Month":mylist[2],"Date":mylist[3],"Quantity":whole[keys]})
     mylist = []
 
