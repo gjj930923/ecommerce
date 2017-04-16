@@ -491,6 +491,7 @@ class Manager extends Controller
             {
                 $Pname="";
             }
+            $this->assign('pname', $Pname);
             $result=db('Pname_bcategory_sales')->where('Pname',$Pname)->order(['sales'=>'desc'])->select();
             $this->assign('Pname_Bcategory_sales',$result);
             return $this->fetch();
@@ -523,15 +524,15 @@ class Manager extends Controller
             {
                 $pname="";
             }
+            $this->assign('pname',$pname);
             $result=db("Pname_price_sales")->where('Pname',$pname)->order(['price'=>'asc'])->select();
-                            $d=array();
-                            foreach ($result as $r)
-                            {
-                                $a=['x'=>$r['price'],'y'=>$r['sales']];
-                                $d[]=$a;
-
-                            }
-                            $demand=json_encode($d);
+            $d=array();
+            foreach ($result as $r)
+            {
+                $a=['x'=>$r['price'],'y'=>$r['sales']];
+                $d[]=$a;
+            }
+            $demand=json_encode($d);
             $this->assign('demand',$demand);
 
 
@@ -552,6 +553,55 @@ class Manager extends Controller
         {
             $this->assign('adminID',$_SESSION['adminID']);
         }
+
+        $product=db('Product_dimension')->select();
+        $this->assign('product',$product);
+
+        if(isset($_POST['Pname']))
+        {
+            $pname=$_POST['Pname'];
+        }
+        else
+        {
+            $pname="";
+        }
+        $this->assign('pname',$pname);
+        if(isset($_POST['month']))
+        {
+            $month=$_POST['month'];
+        }
+    else
+        {
+            $month="";
+        }
+
+        $month_convert=(["1"=>"January","2"=>"February","3"=>"March","4"=>"April","5"=>"May","6" =>"June", "7"=>"July", "8"=>"August", "9"=>"September", "10"=>"October", "11"=>"November", "12"=>"December"]);
+        if($month=="")
+        {
+            $month_name="";
+        }
+        else
+        {
+            $month_name=$month_convert[$month];
+        }
+        $this->assign('month',$month_name);
+        if(isset($_POST['year']))
+        {
+            $year=$_POST['year'];
+        }
+    else
+        {
+            $year="";
+        }
+        $this->assign('year',$year);
+        $condition=(['Pname'=>$pname,'year'=>$year,'month'=>$month]);
+        $result=db('Pname_nname_sales')->where($condition)->select();
+        $this->assign('home',$result);
+
+
+        $result=db('Pname_cname_sales')->where($condition)->select();
+        $this->assign('business',$result);
+
         return $this->fetch();
     }
 }

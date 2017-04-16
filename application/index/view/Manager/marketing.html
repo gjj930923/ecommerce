@@ -165,10 +165,10 @@
 <div class="content">
     <div class="header">
 
-        <h1 class="page-title">Business vs Product</h1>
+        <h1 class="page-title">Marketing Data</h1>
         <ul class="breadcrumb">
             <li><a href="index.html">Home</a> </li>
-            <li class="active">Business vs Product</li>
+            <li class="active">Marketing Data</li>
         </ul>
     </div>
     <div class="main-content">
@@ -180,24 +180,28 @@
                 <div class="panel panel-default">
                     <div class="panel-heading no-collapse">
                         <div class="btn-group">
-                            <form id="" action="" method="post">
+                            <form id="" action="marketing" method="post">
                                 <table>
                                     <tr >
-                                        <td width="50%" align="right">Choose Product and Time:</td>
+                                        <td width="50%" align="right">Choose Product:</td>
                                         <td>
-                                            <select name="product" >
-                                                <option >-select-</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
+                                            <select name="Pname" >
+                                                <option selected="true" value="">-select-</option>
+                                                {volist name = "product" id = "vo"}
+                                                <option value="{$vo.Pname}">{$vo.Pname}</option>
+                                                {/volist}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td width="50%" align="right">Choose Time:</td>
+                                            <td>
                                             <select name="month" >
-                                                <option >-select-</option>
+                                                <option value="">-select-</option>
                                                 <option value="1">January</option>
                                                 <option value="2">February</option>
                                                 <option value="3">March</option>
                                                 <option value="4">April</option>
-                                                <option value="5">March</option>
+                                                <option value="5">May</option>
                                                 <option value="6">June</option>
                                                 <option value="7">July</option>
                                                 <option value="8">August</option>
@@ -207,11 +211,10 @@
                                                 <option value="12">December</option>
                                             </select>
                                             <select name="year" >
-                                                <option >-select-</option>
-                                                <option value="">2017</option>
-                                                <option value="">2016</option>
+                                                <option selected="" value="2017">2017</option>
+                                                <option value="2016">2016</option>
                                             </select>
-                                            <input type="submit" value="Search">
+                                                <input type="submit" value="Search">
                                         </td>
                                     </tr>
                                 </table>
@@ -223,7 +226,12 @@
             <div class="col-md-1 column">
             </div>
         </div>
-
+        {if condition="$year neq '' and $month neq '' and $pname neq ''"}
+         <div align="center">{$pname}
+         </div>
+        <div align="center">{$year}  {$month}
+        </div>
+        {/if}
         <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="panel panel-default">
@@ -241,15 +249,17 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "home" id = "vo1"}
                         <tr>
-                            <td class="Fname"></td>
-                            <td class="Lname"></td>
-                            <td class="Nname"></td>
-                            <td class="gender"></td>
-                            <td class="age"></td>
-                            <td class="income"></td>
-                            <td class="marriage_status"></td>
+                            <td class="Fname">{$vo1.Fname}</td>
+                            <td class="Lname">{$vo1.Lname}</td>
+                            <td class="Nname">{$vo1.Nname}</td>
+                            <td class="gender">{$vo1.gender}</td>
+                            <td class="age">{$vo1.age}</td>
+                            <td class="income">{$vo1.income}</td>
+                            <td class="marriage_status">{$vo1.marriage_status}</td>
                         </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
@@ -267,11 +277,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "business" id = "vo2"}
                         <tr>
-                            <td class="Cname"></td>
-                            <td class="annual_income"></td>
-                            <td class="business_category"></td>
+                            <td class="Cname">{$vo2.Cname}</td>
+                            <td class="annual_income">{$vo2.annual_income}</td>
+                            <td class="business_category">{$vo2.business_category}</td>
                         </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
