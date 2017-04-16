@@ -309,6 +309,14 @@ var g = svg.append('g').attr("transform","translate("+margin.left+","+margin.top
         .attr("font-size","14px")
         .attr("fill","#000")
         .text(str);
+
+            d3.select(".axis--x")
+        .append("text")
+        .attr("x",720)
+        .attr("text-anchor","start")
+        .attr("font-size","14px")
+        .attr("fill","#000")
+        .text('Date');
 //6.开始画曲线
 var path =  g.append("g").attr("class","path").attr('transform','translate('+(width/xLength)/2+',0)');
 var brand1_g = path.append('g');

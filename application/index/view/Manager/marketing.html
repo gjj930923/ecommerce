@@ -173,22 +173,43 @@
     </div>
     <div class="main-content">
 
-
-        <div class="row">
-            <div class="col-sm-6 col-md-6">
+        <div class="row clearfix">
+            <div class="col-md-1 column">
+            </div>
+            <div class="col-md-10 column">
                 <div class="panel panel-default">
-                    <div class="panel-heading no-collapse">Develop a direct marketing data
+                    <div class="panel-heading no-collapse">
                         <div class="btn-group">
                             <form id="" action="" method="post">
                                 <table>
                                     <tr >
-                                        <td width="35%" align="right">Product:</td>
+                                        <td width="50%" align="right">Choose Product and Time:</td>
                                         <td>
-                                            <select name="status" >
-                                                <option selected="" value="1">1</option>
+                                            <select name="product" >
+                                                <option >-select-</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
+                                            </select>
+                                            <select name="month" >
+                                                <option >-select-</option>
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">March</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                            <select name="year" >
+                                                <option >-select-</option>
+                                                <option value="">2017</option>
+                                                <option value="">2016</option>
                                             </select>
                                             <input type="submit" value="Search">
                                         </td>
@@ -197,13 +218,65 @@
                             </form>
                         </div>
                     </div>
-                    <div id="widget1container" class="panel-body collapse in">
-                        <h2>Develop a direct marketing data; for each product, a list of customers that buy the product more than 2 times per week.</h2>
-                    </div>
                 </div>
+            </div>
+            <div class="col-md-1 column">
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading no-collapse">Vips (Home Customer)</div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Nick Name</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Income</th>
+                            <th>Marriage Statues</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="Fname"></td>
+                            <td class="Lname"></td>
+                            <td class="Nname"></td>
+                            <td class="gender"></td>
+                            <td class="age"></td>
+                            <td class="income"></td>
+                            <td class="marriage_status"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading no-collapse">Vips (Business Customer)</div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>Annual Income</th>
+                            <th>Business Category</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="Cname"></td>
+                            <td class="annual_income"></td>
+                            <td class="business_category"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <footer>
             <hr>
 

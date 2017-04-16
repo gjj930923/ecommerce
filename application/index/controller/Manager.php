@@ -516,42 +516,22 @@ class Manager extends Controller
             if(isset($_POST['Pname']))
             {
                 $pname=$_POST['Pname'];
-                $this->assign('pname',$pname);
-                $result=db("Pname_price_sales")->where('Pname',$pname)->order(['price'=>'asc'])->select();
-                $d=array();
-                foreach ($result as $r)
-                {
-                    $a=['x'=>$r['price'],'y'=>$r['sales']];
-                    $d[]=$a;
+               //$this->assign('pname',$pname);
 
-                }
-                $demand=json_encode($d);
             }
-            //$ttest=array();
-            //$a=array();
-            //$b=array();
-            //$a=['x'=>0,'y'=>11];
-            //$b=['x'=>1,'y'=>35];
-            //$ttest[]=$a;
-            //$ttest[]=$b;
+            else
+            {
+                $pname="";
+            }
+            $result=db("Pname_price_sales")->where('Pname',$pname)->order(['price'=>'asc'])->select();
+                            $d=array();
+                            foreach ($result as $r)
+                            {
+                                $a=['x'=>$r['price'],'y'=>$r['sales']];
+                                $d[]=$a;
 
-            //$test=json_encode($ttest);
-            //$test=(object)array();
-
-           //foreach ($ttest as $k=>$v)
-            //{
-              // $test->$k=$v;
-            //}
-
-
-           // $test[]->x=0;
-            //$test[]->y=11;
-            //$test[]->x=1;
-            //$test[]->y=35;
-            //$ttest=json_encode($test);
-
-            //$test['x']=1;
-            //$test['y']=35;
+                            }
+                            $demand=json_encode($d);
             $this->assign('demand',$demand);
 
 
