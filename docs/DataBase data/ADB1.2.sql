@@ -607,7 +607,7 @@ begin
 	declare dt date;
 	truncate table `top5`;
 
-	set start_dt=str_to_date('01/04/2017','%d/%m/%Y');
+	set start_dt=str_to_date('01/01/2017','%d/%m/%Y');
 	set end_dt=current_date;
 	set dt=start_dt;
 	while dt<=end_dt do
@@ -667,7 +667,7 @@ begin
 	declare dt date;
 	truncate table `bottom5`;
 
-	set start_dt=str_to_date('01/04/2017','%d/%m/%Y');
+	set start_dt=str_to_date('01/01/2017','%d/%m/%Y');
 	set end_dt=current_date;
 	set dt=start_dt;
 	while dt<=end_dt do
