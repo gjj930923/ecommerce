@@ -9,5 +9,9 @@ db = client.ecommerce
 #db.ecommerce.aggregate([{$group: {_id:"productID",total:{$sum:"quantity"}}}])
 # for i in cursor:
 #     print i
+num = 0
+for i in db.home_customers.find():
+    num += 1
+db.Homec_count.insert_one({"count":num})
 
 
