@@ -1,0 +1,1 @@
+The code for pymongo can only run once, otherwise it will generate duplicate records in database.
