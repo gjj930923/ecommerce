@@ -186,6 +186,7 @@
                                 <td width="35%" align="right">Product:</td>
                                 <td>
                                     <select name="Pname">
+                                        {if condition="isset($adminID)"}
                                         <option value="kongbai">--Select--</option>
                                         {volist name = "Pdimension" id = "vo"}
                                         <option value="{$vo.Pname}">{$vo.Pname}</option>

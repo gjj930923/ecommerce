@@ -177,16 +177,19 @@
                 <div class="panel panel-default">
                     <div class="panel-heading no-collapse">What is the demand curve for each product category?
                         <div class="btn-group">
-                            <form id="" action="" method="post">
+                            <form id="" action="demand" method="post">
                                 <table>
                                     <tr >
                                         <td width="35%" align="right">Product:</td>
                                         <td>
-                                            <select name="status" >
-                                                <option selected="" value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
+
+                                            <select name="Pname" >
+                                                {if condition="isset($pname)"}
+                                                <option selected="" value="">--Select--</option>
+                                                {volist name = "product" id = "vo"}
+                                                <option value="{$vo.Pname}">{$vo.Pname}</option>
+                                                {/volist}
+
                                             </select>
                                             <input type="submit" value="Search">
                                         </td>
@@ -211,13 +214,15 @@
                         .classed('main', true)
                         .attr('transform', "translate(" + padding.top + ',' + padding.left + ')');
                 // 模拟数据
-                var dataset = [
+
+                var dataset={$demand};
+               /* var dataset = [
                     {x: 0, y: 11}, {x: 1, y: 35},
                     {x: 2, y: 23}, {x: 3, y: 78},
-                    {x: 4, y: 55}, {x: 5, y: 18},
+                    {x: 1, y: 55}, {x: 5, y: 18},
                     {x: 6, y: 98}, {x: 7, y: 100},
-                    {x: 8, y: 22}, {x: 9, y: 65}
-                ];
+                    {x: 8, y: 22}, {x:10, y: 65}
+                ];*/
                 // 创建x轴的比例尺(线性比例尺)
                 var xScale = d3.scale.linear()
                         .domain(d3.extent(dataset, function(d) {
@@ -244,7 +249,7 @@
                         .attr('transform', 'translate(0,' + (height - padding.top - padding.bottom) + ')')
                         .call(xAxis)
                         .append('text')
-                        .text('Time')
+                        .text('Price')
                         .attr('transform', 'translate(' + 360 + ',-10)');
                 // 添加SVG元素并与y轴进行“绑定”
                 main.append('g')

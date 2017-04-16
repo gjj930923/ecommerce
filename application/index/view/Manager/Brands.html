@@ -172,7 +172,7 @@
     <div class="main-content">
 
         <div class="panel panel-default">
-            <a href="#page-stats" class="panel-heading" data-toggle="collapse">The total sales: {$total_sales} </a>
+            <a href="#page-stats" class="panel-heading" data-toggle="collapse">The total sales: {$total_sales}</a>
             <div id="page-stats" class="panel-collapse panel-body collapse in">
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
@@ -204,6 +204,7 @@
         </div>
         <div class="row">
             <div id="widget1container" class="panel-body collapse in">
+
                 <style>
  line{stroke-width: .7px;}
 .line { fill: none; stroke-width: 1.5px; stroke-linejoin: round; stroke-linecap: round;}
@@ -226,36 +227,34 @@
                 <script>
 
 //1.准备数据
-var xNum = ["2016-07-20","2016-07-21","2016-07-22","2016-07-23","2016-07-24","2016-07-25","2016-07-26","2016-07-27","2016-07-28","2016-07-29"];
+//var xNum = ["2016-07-20","2016-07-21","2016-07-22","2016-07-23","2016-07-24","2016-07-25","2016-07-26","2016-07-27","2016-07-28","2016-07-28"];
+var xNum={:json_encode($date)};
+
                var aData = [
-                    {x: 0, y: 11}, {x: 1, y: 35},
-                    {x: 2, y: 23}, {x: 3, y: 58},
-                   {x: 4, y: 55}, {x: 5, y: 18},
-                    {x: 6, y: 18}, {x: 7, y: 10},
-                    {x: 8, y: 22}, {x: 9, y: 6}
+                    {x: 0, y: "{$dell[0]}"}, {x: 1, y: "{$dell[1]}"},
+                    {x: 2, y: "{$dell[2]}"}, {x: 3, y: "{$dell[3]}"},
+                    {x: 4, y: "{$dell[4]}"}, {x: 5, y: "{$dell[5]}"},
+                    {x: 6, y: "{$dell[6]}"}
                 ];
                var bData = [
-                    {x: 0, y: 21}, {x: 1, y: 45},
-                    {x: 2, y: 43}, {x: 3, y: 28},
-                    {x: 4, y: 25}, {x: 5, y: 28},
-                    {x: 6, y: 38}, {x: 7, y: 30},
-                    {x: 8, y: 12}, {x: 9, y: 26}
+                    {x: 0, y: "{$apple[0]}"}, {x: 1, y: "{$apple[1]}"},
+                    {x: 2, y: "{$apple[2]}"}, {x: 3, y: "{$apple[3]}"},
+                    {x: 4, y: "{$apple[4]}"}, {x: 5, y: "{$apple[5]}"},
+                    {x: 6, y: "{$apple[6]}"}
                 ];
-                              var cData = [
-                    {x: 0, y: 11}, {x: 1, y: 49},
-                    {x: 2, y: 33}, {x: 3, y: 29},
-                    {x: 4, y: 35}, {x: 5, y: 29},
-                    {x: 6, y: 28}, {x: 7, y: 32},
-                    {x: 8, y: 4}, {x: 9, y: 16}
+                var cData = [
+                    {x: 0, y: "{$acer[0]}"}, {x: 1, y: "{$acer[1]}"},
+                    {x: 2, y: "{$acer[2]}"}, {x: 3, y: "{$acer[3]}"},
+                    {x: 4, y: "{$acer[4]}"}, {x: 5, y: "{$acer[5]}"},
+                    {x: 6, y: "{$acer[6]}"}
                 ];
-                              var dData = [
-                    {x: 0, y: 45}, {x: 1, y: 41},
-                    {x: 2, y: 53}, {x: 3, y: 58},
-                    {x: 4, y: 15}, {x: 5, y: 38},
-                    {x: 6, y: 28}, {x: 7, y: 40},
-                    {x: 8, y: 2}, {x: 9, y: 16}
+                var dData = [
+                    {x: 0, y: "{$asus[0]}"}, {x: 1, y: "{$asus[1]}"},
+                    {x: 2, y: "{$asus[2]}"}, {x: 3, y: "{$asus[3]}"},
+                    {x: 4, y: "{$asus[4]}"}, {x: 5, y: "{$asus[5]}"},
+                    {x: 6, y: "{$asus[6]}"}
                 ];
-      var yLengthL = 60;
+      var yLengthL = "{$ymax}";
       var yLengthR = 60;
       var xLength  = xNum.length;
       var str      = "Total sales";
@@ -352,7 +351,7 @@ var brand1 = legend.append('g').attr('class','brand1');
         legendData1.shift();
         legendData1.pop();
     brand1.call(createSymbol,legendData1,"circle1",d3.symbolCircle);
-    brand1.call(addDiscrible,"brand1",4);
+    brand1.call(addDiscrible,"Dell",4);
 
 //2.画红色图例
 var brand2 = legend.append('g').attr('class','brand2');
@@ -360,7 +359,7 @@ var brand2 = legend.append('g').attr('class','brand2');
         legendData2.shift();
         legendData2.pop();
     brand2.call(createSymbol,legendData2,"circle2",d3.symbolCircle);
-    brand2.call(addDiscrible,"brand2",2);
+    brand2.call(addDiscrible," Apple",2);
     legend.select(".brand2").attr('transform','translate(0,'+30+')');
 
 //3.
@@ -370,7 +369,7 @@ var brand3 = legend.append('g').attr('class','brand3');
         legendData3.pop();
     brand3.call(createSymbol,legendData3,"circle3",d3.symbolCircle);
 
-    brand3.call(addDiscrible,"brand3",2);
+    brand3.call(addDiscrible," Acer",2);
     legend.select(".brand3").attr('transform','translate(0,'+60+')');
 
     var brand4 = legend.append('g').attr('class','brand4');
@@ -379,7 +378,7 @@ var brand3 = legend.append('g').attr('class','brand3');
         legendData4.pop();
     brand4.call(createSymbol,legendData3,"circle4",d3.symbolCircle);
 
-    brand4.call(addDiscrible,"brand4",2);
+    brand4.call(addDiscrible," ASUS",2);
     legend.select(".brand4").attr('transform','translate(0,'+90+')');
 
 //添加图例的文字

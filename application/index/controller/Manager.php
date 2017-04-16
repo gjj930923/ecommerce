@@ -315,7 +315,112 @@ class Manager extends Controller
             $result = db("Brand_sales")->select();
             $this->assign('brands',$result);
 
+           //strtotime
+            $date=array();
+            $date[]=date("Y-m-d", strtotime("-7 day"));
+            $date[]=date("Y-m-d", strtotime("-6 day"));
+            $date[]=date("Y-m-d", strtotime("-5 day"));
+            $date[]=date("Y-m-d", strtotime("-4 day"));
+            $date[]=date("Y-m-d", strtotime("-3 day"));
+            $date[]=date("Y-m-d", strtotime("-2 day"));
+            $date[]=date("Y-m-d", strtotime("-1 day"));
+            $this->assign('date',$date);
 
+            $ymax=0;
+
+            $dell=[];
+
+            for($i=0;$i<7;$i++)
+            {
+                $condition=(['year'=>date("Y",strtotime($date[$i])),'month'=>(int)date("m",strtotime($date[$i])),'day'=>(int)date("d",strtotime($date[$i])),'brand'=>"Dell"]);
+                $result=db('brand_date_sales')->where($condition)->select();
+                if($result)
+                {
+                    foreach ($result as $a)
+                    {
+                        $dell[]=$a['sales'];
+                        if($a['sales']>$ymax)
+                        {
+                            $ymax=$a['sales'];
+                        }
+                    }
+                }
+                else
+                {
+                        $dell[]=0;
+                }
+            }
+            $this->assign('dell',$dell);
+
+            $apple=[];
+            for($i=0;$i<7;$i++)
+            {
+                $condition=(['year'=>date("Y",strtotime($date[$i])),'month'=>(int)date("m",strtotime($date[$i])),'day'=>(int)date("d",strtotime($date[$i])),'brand'=>"Apple"]);
+                $result=db('brand_date_sales')->where($condition)->select();
+                if($result)
+                {
+                    foreach ($result as $a)
+                    {
+                        $apple[]=$a['sales'];
+                        if($a['sales']>$ymax)
+                        {
+                            $ymax=$a['sales'];
+                        }
+                    }
+                }
+                else
+                {
+                    $apple[]=0;
+                }
+            }
+            $this->assign('apple',$apple);
+
+            $acer=[];
+            for($i=0;$i<7;$i++)
+            {
+                $condition=(['year'=>date("Y",strtotime($date[$i])),'month'=>(int)date("m",strtotime($date[$i])),'day'=>(int)date("d",strtotime($date[$i])),'brand'=>"Acer"]);
+                $result=db('brand_date_sales')->where($condition)->select();
+                if($result)
+                {
+                    foreach ($result as $a)
+                    {
+                        $acer[]=$a['sales'];
+                        if($a['sales']>$ymax)
+                        {
+                            $ymax=$a['sales'];
+                        }
+                    }
+                }
+                else
+                {
+                    $acer[]=0;
+                }
+            }
+            $this->assign('acer',$acer);
+
+            $asus=[];
+            for($i=0;$i<7;$i++)
+            {
+                $condition=(['year'=>date("Y",strtotime($date[$i])),'month'=>(int)date("m",strtotime($date[$i])),'day'=>(int)date("d",strtotime($date[$i])),'brand'=>"ASUS"]);
+                $result=db('brand_date_sales')->where($condition)->select();
+                if($result)
+                {
+                    foreach ($result as $a)
+                    {
+                        $asus[]=$a['sales'];
+                        if($a['sales']>$ymax)
+                        {
+                            $ymax=$a['sales'];
+                        }
+                    }
+                }
+                else
+                {
+                    $asus[]=0;
+                }
+            }
+            $this->assign('asus',$asus);
+            $this->assign('ymax',$ymax);
             return $this->fetch();
         }
         public function Sales()
@@ -405,6 +510,51 @@ class Manager extends Controller
             {
                 $this->assign('adminID',$_SESSION['adminID']);
             }
+            $product=db('Product_dimension')->select();
+            $this->assign('product',$product);
+
+            if(isset($_POST['Pname']))
+            {
+                $pname=$_POST['Pname'];
+                $this->assign('pname',$pname);
+                $result=db("Pname_price_sales")->where('Pname',$pname)->order(['price'=>'asc'])->select();
+                $d=array();
+                foreach ($result as $r)
+                {
+                    $a=['x'=>$r['price'],'y'=>$r['sales']];
+                    $d[]=$a;
+
+                }
+                $demand=json_encode($d);
+            }
+            //$ttest=array();
+            //$a=array();
+            //$b=array();
+            //$a=['x'=>0,'y'=>11];
+            //$b=['x'=>1,'y'=>35];
+            //$ttest[]=$a;
+            //$ttest[]=$b;
+
+            //$test=json_encode($ttest);
+            //$test=(object)array();
+
+           //foreach ($ttest as $k=>$v)
+            //{
+              // $test->$k=$v;
+            //}
+
+
+           // $test[]->x=0;
+            //$test[]->y=11;
+            //$test[]->x=1;
+            //$test[]->y=35;
+            //$ttest=json_encode($test);
+
+            //$test['x']=1;
+            //$test['y']=35;
+            $this->assign('demand',$demand);
+
+
             return $this->fetch();
         }
     public function marketing()
