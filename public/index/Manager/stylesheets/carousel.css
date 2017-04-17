@@ -1,0 +1,53 @@
+		
+		#nav {background-color:white; height:40px;float: left; }
+       
+        ul { list-style:none; }
+        #nav ul li {float:left; line-height:40px; width:180px;text-align:center; position:relative;}
+        #nav ul li ul{position:absolute; left:0;width: 180px;padding: 0px 0px;display: none;}
+        #nav ul li ul li {float:none; width:180px;padding:5px ;z-index:100;}
+        #nav a {text-decoration:none; color:white; background-color:#1E90FF; padding:0 10px; display:block;}
+        #nav a:hover {color:#1E90FF;background-color:white; }
+      
+        #header {    
+        				width: 1095px;
+					position: relative;
+					height: 165px;
+					margin: 0 auto;
+					z-index: 2;
+					overflow: hidden;
+				}
+		.logo{     
+					width: 100px;
+					height:100px;
+					float: left;
+					overflow: hidden;
+			}
+    		.header_top{
+		    				height: 35px;
+		   			    background: url(png/index/) no-repeat right;
+		  				text-align: right;
+	  				}
+	  	.header_top span {
+						    font-size: 12px;
+						    color: #fff;
+						    display: inline-block;
+						    margin-right: 12px;
+						}
+		.ico_place {		
+					    position: relative;
+					    top: 3px;
+					    margin-right: 5px;
+					}
+
+
+
+
+
+
+.poster-main{ position:relative;width:800px;height:270px;margin: 10px 200px;}
+.poster-main a,.poster-main img{display:block;}
+.poster-main .poster-list{width:800px;height:270px;}
+.poster-main .poster-list .poster-item{ position:absolute;left:0;top:0;}
+.poster-main .poster-btn{ position:absolute;top:0;width:100px;height:270px; z-index:10; cursor:pointer;  opacity:0.8}
+.poster-main .poster-prev-btn{left:0; background: url(../png/index/btn_l.png) no-repeat center center;}
+.poster-main .poster-next-btn{right:0; background: url(../png/index/btn_r.png) no-repeat center center;}

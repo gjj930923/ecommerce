@@ -177,16 +177,19 @@
                 <div class="panel panel-default">
                     <div class="panel-heading no-collapse">What is the demand curve for each product category?
                         <div class="btn-group">
-                            <form id="" action="" method="post">
+                            <form id="" action="demand" method="post">
                                 <table>
                                     <tr >
                                         <td width="35%" align="right">Product:</td>
                                         <td>
-                                            <select name="status" >
-                                                <option selected="" value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
+
+                                            <select name="Pname" >
+                                                {if condition="isset($pname)"}
+                                                <option selected="" value="">--Select--</option>
+                                                {volist name = "product" id = "vo"}
+                                                <option value="{$vo.Pname}">{$vo.Pname}</option>
+                                                {/volist}
+
                                             </select>
                                             <input type="submit" value="Search">
                                         </td>
@@ -195,15 +198,19 @@
                             </form>
                         </div>
                     </div>
-
                     <div id="widget1container" class="panel-body collapse in">
                         <div class="container">
+                            {if condition="$pname neq ''"}
+                            <p align="center">{$pname}</p>
+                            {else/}
+                            <p align="center"></p>
+                            {/if}
                             <svg width="100%" height="100%"></svg>
                         </div>
                         <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
                         <script>
             window.onload = function() {
-                var width = 500, height = 300;
+                var width = 480, height = 280;
                 // SVG画布边缘与图表内容的距离
                 var padding = { top: 50, right: 50, bottom: 50, left: 50 };
                 // 创建一个分组用来组合要画的图表元素
@@ -211,13 +218,15 @@
                         .classed('main', true)
                         .attr('transform', "translate(" + padding.top + ',' + padding.left + ')');
                 // 模拟数据
-                var dataset = [
+
+                var dataset={$demand};
+               /* var dataset = [
                     {x: 0, y: 11}, {x: 1, y: 35},
                     {x: 2, y: 23}, {x: 3, y: 78},
-                    {x: 4, y: 55}, {x: 5, y: 18},
+                    {x: 1, y: 55}, {x: 5, y: 18},
                     {x: 6, y: 98}, {x: 7, y: 100},
-                    {x: 8, y: 22}, {x: 9, y: 65}
-                ];
+                    {x: 8, y: 22}, {x:10, y: 65}
+                ];*/
                 // 创建x轴的比例尺(线性比例尺)
                 var xScale = d3.scale.linear()
                         .domain(d3.extent(dataset, function(d) {
@@ -244,14 +253,15 @@
                         .attr('transform', 'translate(0,' + (height - padding.top - padding.bottom) + ')')
                         .call(xAxis)
                         .append('text')
-                        .text('Time')
-                        .attr('transform', 'translate(' + 360 + ',-10)');
+                        .text('Price')
+                        .attr('transform', 'translate(' + 385 + ',-10)');
                 // 添加SVG元素并与y轴进行“绑定”
                 main.append('g')
                         .attr('class', 'axis')
                         .call(yAxis)
                         .append('text')
                         .text('Demand');
+
                 // 添加折线
                 var line = d3.svg.line()
                         .x(function(d) {
