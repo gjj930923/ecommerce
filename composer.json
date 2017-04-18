@@ -24,7 +24,8 @@
         "topthink/think-testing": "^1.0",
         "topthink/think-sae": "^1.0",
         "topthink/think-queue": "^1.0",
-        "topthink/think-migration": "^1.0"
+        "topthink/think-migration": "^1.0",
+        "graphaware/neo4j-php-client": "^4.0"
     },
     "extra": {
         "think-path": "thinkphp"

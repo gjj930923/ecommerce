@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
-
     <script src="lib/jquery-1.11.1.min.js" type="text/javascript"></script>
-
     <script src="lib/jQuery-Knob/js/jquery.knob.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function() {
@@ -141,6 +138,8 @@
         <li><ul class="legal-menu nav nav-list collapse in">
             <li class="active"><a href="sales"><span class="fa fa-caret-right"></span>Today's sales</a></li>
             <li ><a href="BvsP"><span class="fa fa-caret-right"></span>Business vs Product</a></li>
+            <li ><a href="demand"><span class="fa fa-caret-right"></span>Demand Curve</a></li>
+            <li ><a href="marketing"><span class="fa fa-caret-right"></span>Marketing Data</a></li>
             <li ><a href="CheckOrder"><span class="fa fa-caret-right"></span>Check Order</a></li>
         </ul></li>
 
@@ -155,10 +154,71 @@
             <li><a href="index.html">Home</a> </li>
             <li class="active">Sales' info</li>
         </ul>
-
     </div>
-    <div class="main-content">
+    <div class="row clearfix">
+        <div class="col-md-1 column">
+            <a>Date:</a>
+        </div>
+        <form id="" action="sales" method="post">
+        <div class="col-md-4 column">
+            <div class="form-group">
+                    <div class="input-group date form_date col-md-12" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                        {if condition="isset($date)"}
+                        <input class="form-control" size="10" type="text" value="{$date}" name="date" readonly>
+                        {else/}
+                        <input class="form-control" size="10" type="text" value="" name="date" readonly>
+                        {/if}
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-1 column">
+            <input type="submit" value="Search">
+        </div>
+        </form>
+        <div class="col-md-6 column">
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+    });
+	$('.form_date').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+	$('.form_time').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
+</script>
 
+    <div class="main-content">
         <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="panel panel-default">
@@ -168,83 +228,20 @@
                         <tr>
                             <th>Top 5 products</th>
                             <th>Sales</th>
-                            <th>Profits</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "top5" id = "vo"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{$vo.Pname}</td>
+                            <td>{$vo.sales}</td>
                         </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                        {/volist}
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="panel panel-default">
-                    <a href="#widget1container" class="panel-heading" data-toggle="collapse">Products</a>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Top product categories </th>
-                            <th>Sales</th>
-                            <th>Profits</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading no-collapse">Brands</div>
@@ -253,39 +250,22 @@
                         <tr>
                             <th>Bottom 5 products</th>
                             <th>Sales</th>
-                            <th>Profits</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "bottom5" id = "vo1"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{$vo1.Pname}</td>
+                            <td>{$vo1.sales}</td>
                         </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading no-collapse">Customer</div>
@@ -294,27 +274,19 @@
                         <tr>
                             <th>Top 2 customer categories </th>
                             <th>Sales</th>
-                            <th>Profits</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "bcategory" id = "vo2"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{$vo2.Bcategory}</td>
+                            <td>{$vo2.sales}</td>
                         </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading no-collapse">Brands</div>
@@ -326,10 +298,12 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name = "brand" id = "vo3"}
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{$vo3.brand}</td>
+                            <td>{$vo3.sales}</td>
                         </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
@@ -354,6 +328,5 @@
             $('.demo-cancel-click').click(function(){return false;});
         });
     </script>
-
 
 </body></html>

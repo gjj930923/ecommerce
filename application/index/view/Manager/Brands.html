@@ -12,18 +12,28 @@
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
 
     <script src="lib/jquery-1.11.1.min.js" type="text/javascript"></script>
-
     <script src="lib/jQuery-Knob/js/jquery.knob.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function() {
             $(".knob").knob();
         });
     </script>
-
-
     <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/premium.css">
-
+    <style>
+            .container {
+                margin: 30px auto;
+                width: 500px;
+                height: 300px;
+                border: 1px solid #000;
+            }
+            .axis path,
+            .axis line,
+            .line {
+                stroke: #000;
+                fill: none;
+            }
+        </style>
 </head>
 <body class=" theme-blue">
 
@@ -162,9 +172,8 @@
     <div class="main-content">
 
         <div class="panel panel-default">
-            <a href="#page-stats" class="panel-heading" data-toggle="collapse">The total sales: {$total_sales} </a>
+            <a href="#page-stats" class="panel-heading" data-toggle="collapse">The total sales: {$total_sales}</a>
             <div id="page-stats" class="panel-collapse panel-body collapse in">
-
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="knob-container">
@@ -193,43 +202,244 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading no-collapse">All brands</div>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Brand Name</th>
-                            <th>Sales</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {volist name = "brands" id = "vo"}
+            <div id="widget1container" class="panel-body collapse in">
 
-                        <tr>
-                            <td class="brand_name">{$vo.brand}</td>
-                            <td class="sales">{$vo.sales}</td>
-                        </tr>
-                        {/volist}
-                        </tbody>
-                    </table>
-                </div>
+                <style>
+ line{stroke-width: .7px;}
+.line { fill: none; stroke-width: 1.5px; stroke-linejoin: round; stroke-linecap: round;}
+.brand1{stroke: #1f77b4;}
+.brand2{stroke: #d62728;}
+.brand3{stroke: #c14089;}
+.brand4{stroke: #FFCC00;}
+.circle1{fill:#1f77b4;}
+.circle2{fill:#d62728;}
+.circle3{fill:#c14089;}
+.circle4{fill:#FFCC00;}
+//.negative{stroke:#1f77b4; } /* 负舆情 */
+//.square{fill: #1f77b4;}     /* 正方形 -红色*/
+//.positive{stroke: #d62728; }/* 正舆情 */
+//.diamond{fill: #d62728;}    /* 菱形-蓝色 */
+</style>
+                <svg width="1000" height="400"></svg>
+                <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+                <script>
+
+//1.准备数据
+//var xNum = ["2016-07-20","2016-07-21","2016-07-22","2016-07-23","2016-07-24","2016-07-25","2016-07-26","2016-07-27","2016-07-28","2016-07-28"];
+var xNum={:json_encode($date)};
+
+               var aData = [
+                    {x: 0, y: "{$dell[0]}"}, {x: 1, y: "{$dell[1]}"},
+                    {x: 2, y: "{$dell[2]}"}, {x: 3, y: "{$dell[3]}"},
+                    {x: 4, y: "{$dell[4]}"}, {x: 5, y: "{$dell[5]}"},
+                    {x: 6, y: "{$dell[6]}"}
+                ];
+               var bData = [
+                    {x: 0, y: "{$apple[0]}"}, {x: 1, y: "{$apple[1]}"},
+                    {x: 2, y: "{$apple[2]}"}, {x: 3, y: "{$apple[3]}"},
+                    {x: 4, y: "{$apple[4]}"}, {x: 5, y: "{$apple[5]}"},
+                    {x: 6, y: "{$apple[6]}"}
+                ];
+                var cData = [
+                    {x: 0, y: "{$acer[0]}"}, {x: 1, y: "{$acer[1]}"},
+                    {x: 2, y: "{$acer[2]}"}, {x: 3, y: "{$acer[3]}"},
+                    {x: 4, y: "{$acer[4]}"}, {x: 5, y: "{$acer[5]}"},
+                    {x: 6, y: "{$acer[6]}"}
+                ];
+                var dData = [
+                    {x: 0, y: "{$asus[0]}"}, {x: 1, y: "{$asus[1]}"},
+                    {x: 2, y: "{$asus[2]}"}, {x: 3, y: "{$asus[3]}"},
+                    {x: 4, y: "{$asus[4]}"}, {x: 5, y: "{$asus[5]}"},
+                    {x: 6, y: "{$asus[6]}"}
+                ];
+      var yLengthL = "{$ymax}";
+      var yLengthR = 60;
+      var xLength  = xNum.length;
+      var str      = "Total sales";
+//      var xData    = [];
+      var xTickNum = [];
+//      var yData    = [];
+for(var i =0;i<= xLength;i++){
+    xTickNum.push(i);
+//    xData.push({x:i,y:(Math.random()*yLengthR)});
+ //   yData.push({x:i,y:(Math.random()*yLengthL)});
+}
+//删除最后一个
+//xData.pop();
+//yData.pop();
+//2.创建画布
+var svg = d3.select("svg"),
+    margin = {top: 40, left: 90, bottom: 100, right: 200},
+    width  = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
+//3.建轴线的比例尺
+var xScale  = d3.scaleLinear().domain([0,xLength]).range([0,width]),
+    yScale = d3.scaleLinear().domain([0,yLengthL]).range([height, 0]);
+
+//4.创建x和y轴的生成函数
+var xAxis = d3.axisBottom(xScale)
+        .tickValues(xTickNum)   //指定刻度
+        .tickFormat(formatTick);//对指定刻度进行转换
+var yAxis = d3.axisLeft(yScale)
+        .ticks(8)
+        .tickSize(-width)
+        .tickSizeOuter(6);
+//5.创建xy轴
+var g = svg.append('g').attr("transform","translate("+margin.left+","+margin.top+")");
+    //创建x轴
+    g.append("g").attr("class","axis--x").attr("transform","translate(0,"+yScale(0)+")")
+        .call(xAxis)
+        .selectAll(".tick text")
+        .attr("text-anchor","middle")
+        .attr('transform','translate('+(width/xLength)/2+',0)')
+
+    //创建y轴
+    g.append("g").attr("class","axis--y")
+        .call(yAxis)
+        .selectAll("text")
+        .attr('dx','-1em');
+
+    //图标题
+    d3.select(".axis--y")
+        .append("text")
+        .attr("y",-10)
+        .attr("text-anchor","start")
+        .attr("font-size","14px")
+        .attr("fill","#000")
+        .text(str);
+
+            d3.select(".axis--x")
+        .append("text")
+        .attr("x",720)
+        .attr("text-anchor","start")
+        .attr("font-size","14px")
+        .attr("fill","#000")
+        .text('Date');
+//6.开始画曲线
+var path =  g.append("g").attr("class","path").attr('transform','translate('+(width/xLength)/2+',0)');
+var brand1_g = path.append('g');
+    //画正舆情曲线 //square
+    brand1_g.call(createLine,aData,"line brand1");
+    //画曲线上的正方形
+    brand1_g.call(createSymbol,aData,"circle1",d3.symbolCircle);
+
+var brand2_g = path.append('g');
+    //画负舆情曲线
+    brand2_g.call(createLine,bData,"line brand2");
+    //画曲线上的菱形
+    brand2_g.call(createSymbol,bData,"circle2",d3.symbolCircle);
+
+var brand3_g = path.append('g');
+    //画负舆情曲线
+    brand3_g.call(createLine,cData,"line brand3");
+    //画曲线上的菱形
+    brand3_g.call(createSymbol,cData,"circle3",d3.symbolCircle);
+
+    var brand4_g = path.append('g');
+    //画负舆情曲线
+    brand4_g.call(createLine,dData,"line brand4");
+    //画曲线上的菱形
+    brand4_g.call(createSymbol,dData,"circle4",d3.symbolCircle);
+
+
+
+//开始画图例
+var v_v = yLengthL/70,
+    legendData1 = [{x:(xLength-0.3),y:0},{x:xLength,y:0},{x:(xLength+0.3),y:0}],
+    legendData2 = [{x:(xLength-0.3),y:0},{x:xLength,y:0},{x:(xLength+0.3),y:0}],
+    legendData3 = [{x:(xLength-0.3),y:0},{x:xLength,y:0},{x:(xLength+0.3),y:0}],
+    legendData4 = [{x:(xLength-0.3),y:0},{x:xLength,y:0},{x:(xLength+0.3),y:0}];
+
+//1.画蓝色图例
+var legend = g.append('g').attr('class','legend').attr('transform','translate('+(40)+','+(-height/2)+')');
+var brand1 = legend.append('g').attr('class','brand1');
+    brand1.call(createLine,legendData1,"line brand1");
+        legendData1.shift();
+        legendData1.pop();
+    brand1.call(createSymbol,legendData1,"circle1",d3.symbolCircle);
+    brand1.call(addDiscrible,"Dell",4);
+
+//2.画红色图例
+var brand2 = legend.append('g').attr('class','brand2');
+    brand2.call(createLine,legendData2,"line brand2");
+        legendData2.shift();
+        legendData2.pop();
+    brand2.call(createSymbol,legendData2,"circle2",d3.symbolCircle);
+    brand2.call(addDiscrible," Apple",2);
+    legend.select(".brand2").attr('transform','translate(0,'+30+')');
+
+//3.
+var brand3 = legend.append('g').attr('class','brand3');
+    brand3.call(createLine,legendData3,"line brand3");
+        legendData3.shift();
+        legendData3.pop();
+    brand3.call(createSymbol,legendData3,"circle3",d3.symbolCircle);
+
+    brand3.call(addDiscrible," Acer",2);
+    legend.select(".brand3").attr('transform','translate(0,'+60+')');
+
+    var brand4 = legend.append('g').attr('class','brand4');
+    brand4.call(createLine,legendData4,"line brand4");
+        legendData4.shift();
+        legendData4.pop();
+    brand4.call(createSymbol,legendData3,"circle4",d3.symbolCircle);
+
+    brand4.call(addDiscrible," ASUS",2);
+    legend.select(".brand4").attr('transform','translate(0,'+90+')');
+
+//添加图例的文字
+function  addDiscrible(container,str,num){
+    container
+        .append("text")
+        .attr("font-size","14px")
+        .attr("fill","#000")
+        .attr('transform','translate('+(width+30)+','+(height+num)+')')
+        .text(str);
+}
+//创建节点上的符号
+function createSymbol(container,datas,className,symbols){
+    container
+          .selectAll("."+className)
+            .data(datas)
+            .enter()
+            .append("path")
+            .attr("d", d3.symbol().type(symbols))
+            .attr("class",className)
+            .attr('transform',function(d){
+               return 'translate('+xScale(d.x)+','+yScale(d.y)+')';
+           })
+            ;
+}
+//创建曲线
+function createLine(container,datas,className){
+     var line = d3.line()
+                .x(function(d) { return  xScale(d.x); })
+             .y(function(d) { return  yScale(d.y); });
+     container
+          .append("path")
+          .datum(datas)
+          .attr("class", className)
+          .attr("d", line);
+}
+//取每个刻度对应的日期
+function formatTick(d,i){
+    return xNum[i];
+}
+
+</script>
+
             </div>
         </div>
-
         <footer>
             <hr>
-
             <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
-            <p class="pull-right">A <a href="http://www.portnine.com/bootstrap-themes" target="_blank">Database Project</a> by <a href="http://www.portnine.com" target="_blank">Max</a></p>
-            <p>© 2017 <a href="http://www.portnine.com" target="_blank">University of Pittsburgh</a></p>
+            <p class="pull-right">A <a target="_blank">Database Project</a> by <a target="_blank">Max</a></p>
+            <p>© 2017 <a target="_blank">University of Pittsburgh</a></p>
         </footer>
     </div>
 </div>
-
-
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript">
         $("[rel=tooltip]").tooltip();
@@ -237,6 +447,5 @@
             $('.demo-cancel-click').click(function(){return false;});
         });
     </script>
-
-
-</body></html>
+</body>
+</html>
