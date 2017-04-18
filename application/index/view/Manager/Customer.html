@@ -87,15 +87,19 @@
 
 <div class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="" href="index.html"><span class="navbar-brand">Pitt Zhong Guan Cun</span></a></div>
-
-    <div class="navbar-collapse collapse" style="height: 1px;">
+        <a ><span class="navbar-brand">Pitt Zhong Guan Cun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Database:</span></a></div>
+    <div class="navbar-collapse collapse" >
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="http://localhost/MySql/public/index/manager/Customer">MySql</a>
+            </li>
+            <li class="active">
+                <a href="http://localhost/MongoDB/public/index/manager/Customer">MongoDB</a>
+            </li>
+            <li>
+                <a href="http://localhost/Neo4j/public/index/manager/Customer">Neo4j</a>
+            </li>
+        </ul>
         <ul id="main-menu" class="nav navbar-nav navbar-right">
             <li class="dropdown hidden-xs">
                 {if condition="isset($adminID)"}
@@ -114,7 +118,6 @@
 
     </div>
 </div>
-
 
 <div class="sidebar-nav">
     <ul>
@@ -139,7 +142,7 @@
 
         <li><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse">Sales<i class="fa fa-collapse"></i></a></li>
         <li><ul class="legal-menu nav nav-list collapse">
-            <li ><a href="sales"><span class="fa fa-caret-right"></span>Today's sales</a></li>
+            <li ><a href="sales"><span class="fa fa-caret-right"></span>Sales Information</a></li>
             <li ><a href="BvsP"><span class="fa fa-caret-right"></span>Business vs Product</a></li>
             <li ><a href="demand"><span class="fa fa-caret-right"></span>Demand Curve</a></li>
             <li ><a href="marketing"><span class="fa fa-caret-right"></span>Marketing Data</a></li>
